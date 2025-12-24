@@ -20,8 +20,8 @@ body, html {
 
 /* --- ここで画像ファイルを指定します --- */
 /* あなたがアップロードしたファイル名に書き換えてください！ */
-.slide1 { background-image: url('../images/photo1.jpg'); }
-.slide2 { background-image: url('../images/photo2.jpg'); }
+.slide1 { background-image: url('../images/home/IMG_0906.jpg'); }
+.slide2 { background-image: url('../images/home/IMG_2346.jpg'); }
 .slide3 { background-image: url('../images/photo3.jpg'); }
 
 
