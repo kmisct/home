@@ -3,80 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KMI - Science Communication Team</title>
+    <title>KMISCT</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 <body>
 
-    <header class="header">
-        <div class="container header-inner">
-            <div class="logo">KMISCT</div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#activities">Activities</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1"></div>
+            <div class="swiper-slide slide2"></div>
+            <div class="swiper-slide slide3"></div>
         </div>
-    </header>
-
-    <div class="hero">
-        <div class="hero-content">
-            <h1>知の最前線を、<br>もっと身近に。</h1>
-            <p>名古屋大学 素粒子宇宙物理学専攻の学生による<br>サイエンス・アウトリーチグループ</p>
-        </div>
+        <div class="swiper-pagination"></div>
     </div>
 
-    <main>
-        <section id="about" class="section">
-            <div class="container">
-                <h2 class="section-title">Who We Are</h2>
-                <div class="about-text">
-                    <p>KMISCT（カミシット）は、宇宙論や素粒子物理学を専門とする大学院生が集まり、科学の面白さを社会に伝える活動を行っています。</p>
-                    <p>「難解」と思われがちな基礎物理学の世界を、カフェイベントやワークショップを通じて、中高生から大人まで楽しめる形で提供します。</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="activities" class="section bg-gray">
-            <div class="container">
-                <h2 class="section-title">Activities</h2>
-                <div class="grid">
-                    <div class="card">
-                        <h3>サイエンスカフェ</h3>
-                        <p>コーヒーを片手に、ブラックホールや暗黒物質の謎について語り合うイベントを開催しています。</p>
-                    </div>
-                    <div class="card">
-                        <h3>出張授業・講演</h3>
-                        <p>中学校・高校へ訪問し、最先端の研究内容を分かりやすく解説する授業を行っています。</p>
-                    </div>
-                    <div class="card">
-                        <h3>ワークショップ</h3>
-                        <p>トポロジーや物理法則を体感できる実験教室や、工作を通じた学びの場を提供します。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 class="section-title">Contact</h2>
-                <p class="center-text">活動のご依頼やスポンサーに関するお問い合わせは、<br>以下のフォームよりご連絡ください。</p>
-                <div class="btn-wrapper">
-                    <a href="mailto:your-email@example.com" class="btn">お問い合わせはこちら</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 KMISCT. All Rights Reserved.</p>
-        </div>
-    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: true,       // 最後の次に最初に戻る
+            effect: 'fade',   // ふわっと切り替わるフェード効果
+            speed: 2000,      // 2秒かけてゆっくり切り替わる
+            autoplay: {
+                delay: 5000,  // 5秒ごとに次の写真へ
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
 
 </body>
 </html>
