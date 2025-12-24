@@ -1,37 +1,99 @@
-/* 余白をなくして全画面使えるようにする */
-body, html {
+/* 全体のフォントを少しおしゃれに（Google Fontsを使う準備） */
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+/* ヘッダー：上部に固定して透明にする */
+.page-header {
+    position: fixed; /* 画面に固定 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* ロゴとメニューを左右に離す */
+    align-items: center;
+    padding: 20px 40px; /* 余白 */
+    z-index: 100; /* 写真より手前に */
+    box-sizing: border-box; /* パディングを含めたサイズ計算 */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent); /* 上だけ少し暗くして文字を見やすく */
+}
+
+/* ロゴのデザイン */
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px; /* 文字間隔を広げて高級感を出す */
+}
+
+/* メニューの並び */
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 30px; /* メニュー同士の間隔 */
     margin: 0;
     padding: 0;
-    height: 100%; /* 高さを画面いっぱいにする */
-    background-color: #000; /* 画像読み込み前の背景色を黒に */
 }
 
-/* スライダー本体のサイズ設定 */
-.swiper {
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: opacity 0.3s;
+}
+
+.nav-list a:hover {
+    opacity: 0.7;
+}
+
+/* 真ん中のキャッチコピー */
+.hero-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* ど真ん中に配置 */
+    z-index: 10; /* 写真より手前に */
+    text-align: center;
+    color: white;
     width: 100%;
-    height: 100vh; /* ビューポート（画面）の高さの100% */
 }
 
-/* 各スライド（写真）の共通設定 */
-.swiper-slide {
-    background-size: cover;      /* 画面いっぱいに写真を広げる */
-    background-position: center; /* 写真の中心を表示する */
+.hero-message h1 {
+    font-size: 4rem; /* かなり大きく */
+    margin: 0 0 20px 0;
+    line-height: 1.1;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3); /* 影をつけて読みやすく */
+    letter-spacing: 3px;
 }
 
-/* --- ここで画像ファイルを指定します --- */
-/* あなたがアップロードしたファイル名に書き換えてください！ */
-.slide1 { background-image: url('../images/home/IMG_0906.jpg'); }
-.slide2 { background-image: url('../images/home/IMG_2346.jpg'); }
-.slide3 { background-image: url('../images/home/2022-08-09 10 07 54_edited.jpg'); }
+.hero-message p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
 
+/* アクションボタン */
+.btn-visual {
+    display: inline-block;
+    border: 1px solid white;
+    color: white;
+    padding: 15px 50px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
 
-/* 下のポチポチの色を白にする */
-.swiper-pagination-bullet {
+.btn-visual:hover {
     background: white;
-    opacity: 0.4;
-    width: 10px; height: 10px; /* 少し大きく */
+    color: black;
 }
-.swiper-pagination-bullet-active {
-    opacity: 1;
-    background: white;
+
+/* スマホ対応（文字サイズ調整） */
+@media (max-width: 600px) {
+    .hero-message h1 { font-size: 2.5rem; }
+    .page-header { padding: 15px 20px; }
+    .nav-list { display: none; } /* スマホでは一旦メニューを隠す（後でハンバーガーメニューにします） */
 }
