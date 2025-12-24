@@ -25,16 +25,16 @@ body, html {
 /* ファイル名が本当に合っているか、もう一度GitHubのimagesフォルダを見て確認してください */
 
 .slide1 {
-    background-image: url('../images/IMG_0906.jpg');
+    background-image: url('../images/home/IMG_0906.jpg');
 }
 
 .slide2 {
-    background-image: url('../images/IMG_2346.png');
+    background-image: url('../images/home/IMG_2346.png');
 }
 
 .slide3 {
     /* webpファイルの場合、拡張子が二重になっていないか注意 */
-    background-image: url('../images/1712279552111-DhLgWuQjWq.jpg.webp');
+    background-image: url('../images/home/1712279552111-DhLgWuQjWq.jpg');
 }
 
 /* === ポチポチのデザイン === */
