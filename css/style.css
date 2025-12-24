@@ -1,43 +1,43 @@
-/* 余白をなくして全画面黒背景にする */
+/* === 基本設定 === */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #000;
+    background-color: #000; /* 背景黒 */
+    /* フォント設定をここに統合 */
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+    color: #333;
 }
 
-/* スライダーの枠を画面いっぱいに */
+/* === スライダー設定 === */
 .swiper {
     width: 100%;
     height: 100vh;
 }
 
-/* 写真の共通設定 */
 .swiper-slide {
-    background-size: cover;      /* 画面いっぱいに引き伸ばす */
-    background-position: center; /* 写真の真ん中を表示 */
+    background-size: cover;
+    background-position: center;
 }
 
-/* === ここであなたの画像を指名しています === */
+/* === 画像の指定 === */
+/* ここが一番怪しいポイント！ */
+/* ファイル名が本当に合っているか、もう一度GitHubのimagesフォルダを見て確認してください */
 
-/* 1枚目 */
 .slide1 {
-    /* cssフォルダから見て、一つ上の階層(../)のimagesフォルダの中を見る */
     background-image: url('../images/IMG_0906.jpg');
 }
 
-/* 2枚目 */
 .slide2 {
     background-image: url('../images/IMG_2346.png');
 }
 
-/* 3枚目（長いファイル名） */
 .slide3 {
+    /* webpファイルの場合、拡張子が二重になっていないか注意 */
     background-image: url('../images/1712279552111-DhLgWuQjWq.jpg.webp');
 }
 
-
-/* 下のポチポチのデザイン */
+/* === ポチポチのデザイン === */
 .swiper-pagination-bullet {
     background: white;
     opacity: 0.5;
@@ -48,39 +48,32 @@ body, html {
     background: white;
 }
 
-/* 全体のフォントを少しおしゃれに（Google Fontsを使う準備） */
-body {
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
-}
-
-/* ヘッダー：上部に固定して透明にする */
+/* === ヘッダー（メニュー） === */
 .page-header {
-    position: fixed; /* 画面に固定 */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between; /* ロゴとメニューを左右に離す */
+    justify-content: space-between;
     align-items: center;
-    padding: 20px 40px; /* 余白 */
-    z-index: 100; /* 写真より手前に */
-    box-sizing: border-box; /* パディングを含めたサイズ計算 */
-    background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent); /* 上だけ少し暗くして文字を見やすく */
+    padding: 20px 40px;
+    z-index: 100;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
 }
 
-/* ロゴのデザイン */
 .logo {
     color: white;
     font-size: 1.5rem;
     font-weight: bold;
-    letter-spacing: 2px; /* 文字間隔を広げて高級感を出す */
+    letter-spacing: 2px;
 }
 
-/* メニューの並び */
 .nav-list {
     display: flex;
     list-style: none;
-    gap: 30px; /* メニュー同士の間隔 */
+    gap: 30px;
     margin: 0;
     padding: 0;
 }
@@ -97,23 +90,23 @@ body {
     opacity: 0.7;
 }
 
-/* 真ん中のキャッチコピー */
+/* === 真ん中のキャッチコピー === */
 .hero-message {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* ど真ん中に配置 */
-    z-index: 10; /* 写真より手前に */
+    transform: translate(-50%, -50%);
+    z-index: 10;
     text-align: center;
     color: white;
     width: 100%;
 }
 
 .hero-message h1 {
-    font-size: 4rem; /* かなり大きく */
+    font-size: 4rem;
     margin: 0 0 20px 0;
     line-height: 1.1;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.3); /* 影をつけて読みやすく */
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
     letter-spacing: 3px;
 }
 
@@ -123,7 +116,7 @@ body {
     opacity: 0.9;
 }
 
-/* アクションボタン */
+/* === ボタン === */
 .btn-visual {
     display: inline-block;
     border: 1px solid white;
@@ -141,9 +134,9 @@ body {
     color: black;
 }
 
-/* スマホ対応（文字サイズ調整） */
+/* === スマホ対応 === */
 @media (max-width: 600px) {
     .hero-message h1 { font-size: 2.5rem; }
     .page-header { padding: 15px 20px; }
-    .nav-list { display: none; } /* スマホでは一旦メニューを隠す（後でハンバーガーメニューにします） */
+    .nav-list { display: none; }
 }
