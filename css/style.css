@@ -1,151 +1,37 @@
-/* 全体の設定 */
-body {
-    font-family: 'Noto Sans JP', sans-serif;
+/* 余白をなくして全画面使えるようにする */
+body, html {
     margin: 0;
     padding: 0;
-    color: #333;
-    line-height: 1.8;
+    height: 100%; /* 高さを画面いっぱいにする */
+    background-color: #000; /* 画像読み込み前の背景色を黒に */
 }
 
-/* レイアウト共通 */
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.section {
-    padding: 80px 0;
-}
-
-.bg-gray {
-    background-color: #f5f7fa;
-}
-
-/* ヘッダー */
-.header {
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    position: fixed;
+/* スライダー本体のサイズ設定 */
+.swiper {
     width: 100%;
-    top: 0;
-    z-index: 100;
+    height: 100vh; /* ビューポート（画面）の高さの100% */
 }
 
-.header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
+/* 各スライド（写真）の共通設定 */
+.swiper-slide {
+    background-size: cover;      /* 画面いっぱいに写真を広げる */
+    background-position: center; /* 写真の中心を表示する */
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #001f3f; /* 宇宙っぽい濃紺 */
-    letter-spacing: 0.1em;
-}
+/* --- ここで画像ファイルを指定します --- */
+/* あなたがアップロードしたファイル名に書き換えてください！ */
+.slide1 { background-image: url('../images/photo1.jpg'); }
+.slide2 { background-image: url('../images/photo2.jpg'); }
+.slide3 { background-image: url('../images/photo3.jpg'); }
 
-.nav ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
 
-.nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.nav a:hover {
-    color: #0074D9;
-}
-
-/* ヒーローセクション（トップ画像） */
-.hero {
-    background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
-    color: white;
-    height: 500px; /* 高さを指定 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 70px; /* ヘッダーの分だけ下げる */
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-/* 活動カード（グリッド） */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.card {
+/* 下のポチポチの色を白にする */
+.swiper-pagination-bullet {
     background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    opacity: 0.4;
+    width: 10px; height: 10px; /* 少し大きく */
 }
-
-.card h3 {
-    color: #001f3f;
-    border-bottom: 2px solid #0074D9;
-    padding-bottom: 10px;
-    display: inline-block;
-}
-
-/* セクションタイトル */
-.section-title {
-    text-align: center;
-    font-size: 2rem;
-    color: #001f3f;
-    margin-bottom: 40px;
-}
-
-.center-text {
-    text-align: center;
-}
-
-/* ボタン */
-.btn-wrapper {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.btn {
-    display: inline-block;
-    background-color: #001f3f;
-    color: white;
-    text-decoration: none;
-    padding: 15px 40px;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.btn:hover {
-    background-color: #003366;
-}
-
-/* フッター */
-.footer {
-    background: #111;
-    color: #888;
-    text-align: center;
-    padding: 30px 0;
-    font-size: 0.9rem;
-}
-
-/* スマホ対応 */
-@media (max-width: 600px) {
-    .hero h1 { font-size: 2rem; }
-    .nav { display: none; } /* 簡易的にメニューを消す */
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: white;
 }
