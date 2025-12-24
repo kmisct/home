@@ -9,6 +9,18 @@
 </head>
 <body>
 
+    <header class="page-header">
+        <div class="logo">KMI SCT</div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">CONTENTS</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide slide1"></div>
@@ -18,22 +30,21 @@
         <div class="swiper-pagination"></div>
     </div>
 
+    <div class="hero-message">
+        <h1>Science Communication<br>Team</h1>
+        <p>科学とあなたを、もっと近くに。</p>
+        <a href="#" class="btn-visual">Learn More</a>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
-            loop: true,       // 最後の次に最初に戻る
-            effect: 'fade',   // ふわっと切り替わるフェード効果
-            speed: 2000,      // 2秒かけてゆっくり切り替わる
-            autoplay: {
-                delay: 5000,  // 5秒ごとに次の写真へ
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
+            loop: true,
+            effect: 'fade',
+            speed: 2000,
+            autoplay: { delay: 5000, disableOnInteraction: false },
+            pagination: { el: '.swiper-pagination', clickable: true },
         });
     </script>
-
 </body>
 </html>
