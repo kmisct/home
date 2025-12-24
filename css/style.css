@@ -1,9 +1,17 @@
-/* 余白をなくして全画面黒背景にする */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: #000;
+/* サイト全体の基本設定 */
+body {
+    /* 英語はMontserrat、日本語はNoto Sans JPを優先して使う設定 */
+    font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+    
+    /* 文字の色と背景 */
+    color: #ffffff;
+    background-color: #000000;
+    
+    /* 行間を少し広めに取って読みやすく */
+    line-height: 1.8;
+    
+    /* ★ここがポイント！文字の間隔を少し広げると高級感が出る */
+    letter-spacing: 0.05em; 
 }
 
 /* スライダーの枠を画面いっぱいに */
