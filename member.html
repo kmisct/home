@@ -3,38 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Member - KMI SCT</title>
+    <title>Members - KMI Science Communication Team</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <header class="page-header" style="background: rgba(0,0,0,0.8);">
+    <header class="page-header js-fade-down">
         <div class="logo">KMI SCT</div>
         <nav>
             <ul class="nav-list">
                 <li><a href="index.html">HOME</a></li>
-                <li><a href="member.html">ABOUT</a></li> <li><a href="index.html#news">NEWS</a></li>
-                <li><a href="#">CONTACT</a></li>
+                <li class="dropdown">
+                    <a href="about.html" class="dropdown-toggle">ABOUT</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">活動理念 (Philosophy)</a></li>
+                        <li><a href="member.html">メンバー紹介 (Members)</a></li>
+                    </ul>
+                </li>
+                <li><a href="news.html">NEWS</a></li>
+                <li><a href="contents.html">CONTENTS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
             </ul>
         </nav>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
 
+    <div class="page-hero">
+        <div class="page-hero-inner js-fade-up">
+            <h1>MEMBERS</h1>
+            <p>私たちについて</p>
+        </div>
+    </div>
+
     <section class="content-section">
-        <div class="container" style="padding-top: 80px;"> <div class="section-header">
-                <span class="subtitle">OUR MEMBERS</span>
-                <h2>メンバー紹介</h2>
-            </div>
+        <div class="container">
             
-            <div class="about-text">
-                <p>ここにメンバーの顔写真や紹介文を載せていきます。</p>
-                <p>準備中...</p>
-                <a href="index.html" class="btn-more">HOMEへ戻る</a>
+            <div class="rep-area js-fade-up">
+                <div class="section-header">
+                    <span class="subtitle">REPRESENTATIVE</span>
+                    <h2>代表挨拶</h2>
+                </div>
+                <div class="rep-content">
+                    <div class="rep-image">
+                        <img src="images/home/IMG_0906.jpg" alt="代表写真">
+                    </div>
+                    <div class="rep-text">
+                        <h3>藤川 太郎 <span class="rep-en">Taro Fujikawa</span></h3>
+                        <p class="rep-affil">名古屋大学大学院 理学研究科 素粒子宇宙物理学専攻 M2</p>
+                        <p class="rep-message">
+                            ここに代表の熱いメッセージを入れます。なぜこの活動を始めたのか、KMI SCTを通して何を伝えたいのか。
+                            物理学は決して遠い世界の出来事ではありません。私たちの活動を通して、宇宙の謎に挑むワクワク感を共有できれば嬉しいです。
+                        </p>
+                    </div>
+                </div>
             </div>
+
+            <div class="members-area js-fade-up">
+                <div class="section-header">
+                    <span class="subtitle">CURRENT MEMBERS</span>
+                    <h2>メンバー紹介</h2>
+                </div>
+                
+                <div class="members-grid">
+                    <div class="member-card">
+                        <div class="member-img">
+                            <img src="images/home/IMG_0906.jpg" alt="メンバー写真">
+                        </div>
+                        <div class="member-info">
+                            <h4>山田 花子 <span class="member-en">Hanako Yamada</span></h4>
+                            <p class="member-role">理学研究科 M1 / 素粒子実験</p>
+                            <p class="member-comment">実験装置を作るのが好きです。サイエンスカフェでは広報を担当しています。</p>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-img">
+                            <img src="images/home/IMG_0906.jpg" alt="メンバー写真">
+                        </div>
+                        <div class="member-info">
+                            <h4>佐藤 健太 <span class="member-en">Kenta Sato</span></h4>
+                            <p class="member-role">理学研究科 D1 / 宇宙論理論</p>
+                            <p class="member-comment">ダークマターの正体を探っています。ワークショップの企画リーダーです。</p>
+                        </div>
+                    </div>
+
+                    <div class="member-card">
+                        <div class="member-img">
+                            <img src="images/home/IMG_0906.jpg" alt="メンバー写真">
+                        </div>
+                        <div class="member-info">
+                            <h4>鈴木 一郎 <span class="member-en">Ichiro Suzuki</span></h4>
+                            <p class="member-role">理学研究科 M2 / 重力波天文学</p>
+                            <p class="member-comment">重力波で宇宙の音を聞く研究をしています。Webサイト管理担当。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-img">
+                            <img src="images/home/IMG_0906.jpg" alt="メンバー写真">
+                        </div>
+                        <div class="member-info">
+                            <h4>田中 未来 <span class="member-en">Miku Tanaka</span></h4>
+                            <p class="member-role">工学研究科 B4 / 学部生メンバー</p>
+                            <p class="member-comment">学部生ですが物理が好きで参加しました！SNSの中の人をやっています。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
+    <footer id="contact" class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">KMI SCT</div>
+                    <p>名古屋大学 素粒子宇宙起源研究所<br>サイエンス・コミュニケーション・チーム</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="news.html">News & Events</a></li>
+                        <li><a href="contents.html">Contents</a></li>
+                        <li><a href="member.html">Members</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 KMI Science Communication Team. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // フェードインアニメーション
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-active');
+                }
+            });
+        }, { rootMargin: '0px 0px -15% 0px' });
+        document.querySelectorAll('.js-fade-up, .js-fade-down').forEach(el => observer.observe(el));
+        
+        // スマホメニュー
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('.nav-list');
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('is-open');
+        });
+    </script>
 </body>
 </html>

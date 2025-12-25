@@ -218,3 +218,170 @@ body, html {
     vertical-align: middle;
     opacity: 0.7;
 }
+
+/* =========================================
+   下層ページ共通デザイン (Members, About等)
+   ========================================= */
+
+/* ページトップのタイトルエリア（ヒーローエリア） */
+.page-hero {
+    width: 100%;
+    height: 350px; /* 高さを指定 */
+    background-color: #111; /* 黒背景 */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg'); /* 背景画像があれば薄く表示 */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 0;
+}
+
+.page-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.1em;
+}
+
+.page-hero p {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 10px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+/* =========================================
+   MEMBERSページ専用デザイン
+   ========================================= */
+
+/* --- 代表挨拶エリア --- */
+.rep-area {
+    margin-bottom: 120px;
+}
+
+.rep-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.rep-image {
+    flex-basis: 40%; /* 画像の幅 */
+    position: relative;
+}
+
+.rep-image img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 20px 20px 0px rgba(0,0,0,0.1); /* ちょっとおしゃれな影 */
+}
+
+.rep-text {
+    flex-basis: 60%;
+}
+
+.rep-text h3 {
+    font-size: 1.8rem;
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.rep-en {
+    font-size: 1rem;
+    color: #888;
+    font-weight: 400;
+}
+
+.rep-affil {
+    font-weight: bold;
+    color: #0056b3;
+    margin-bottom: 20px;
+}
+
+.rep-message {
+    line-height: 2;
+    color: #555;
+    text-align: justify; /* 文字を両端揃え */
+}
+
+/* --- メンバーリストエリア --- */
+.members-grid {
+    display: grid;
+    /* 自動で列数を調整（最低250px幅） */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.member-card {
+    text-align: left;
+}
+
+.member-img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 正方形にする */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+}
+
+.member-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.member-card:hover .member-img img {
+    transform: scale(1.05); /* ホバーで少し拡大 */
+}
+
+.member-info h4 {
+    font-size: 1.2rem;
+    margin: 0 0 5px 0;
+    font-weight: 700;
+}
+
+.member-en {
+    display: block;
+    font-size: 0.8rem;
+    color: #999;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.member-role {
+    font-size: 0.85rem;
+    color: #0056b3;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.member-comment {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* --- スマホ対応 --- */
+@media (max-width: 768px) {
+    .rep-content {
+        flex-direction: column; /* 代表挨拶を縦並びに */
+        gap: 30px;
+    }
+    
+    .rep-text h3 {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .page-hero h1 { font-size: 2rem; }
+}
