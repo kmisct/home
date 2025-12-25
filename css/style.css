@@ -1,4 +1,6 @@
-/* === 基本設定 === */
+/* =========================================
+   1. 基本設定 & アニメーション
+   ========================================= */
 body, html {
     margin: 0; padding: 0; height: 100%;
     background-color: #000;
@@ -6,7 +8,7 @@ body, html {
     color: #333; line-height: 1.8; letter-spacing: 0.05em;
 }
 
-/* === アニメーション === */
+/* ふわっと浮き上がるアニメーション */
 .js-fade-up {
     opacity: 0; transform: translateY(40px);
     transition: opacity 1.5s cubic-bezier(0.2, 1, 0.3, 1), transform 1.5s cubic-bezier(0.2, 1, 0.3, 1);
@@ -16,34 +18,25 @@ body, html {
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 .is-active { opacity: 1 !important; transform: translateY(0) !important; }
+
+/* 順番に表示させる設定 */
 .news-card:nth-child(2) { transition-delay: 0.2s; }
 .news-card:nth-child(3) { transition-delay: 0.4s; }
 
-/* === スライダー === */
+
+/* =========================================
+   2. メインビジュアル (Slider & Hero)
+   ========================================= */
 .swiper { width: 100%; height: 100vh; }
 .swiper-slide { background-size: cover; background-position: center; }
-/* 画像パスはあなたの環境に合わせています */
+/* 画像パス（環境に合わせて調整済み） */
 .slide1 { background-image: url('../images/home/IMG_0906.jpg'); }
 .slide2 { background-image: url('../images/home/IMG_2346.png'); }
 .slide3 { background-image: url('../images/home/1712279552111-DhLgWuQjWq.jpg'); }
+
 .swiper-pagination-bullet { background: white; opacity: 0.5; width: 10px; height: 10px; }
 .swiper-pagination-bullet-active { opacity: 1; background: white; }
 
-/* === ヘッダー === */
-.page-header {
-    position: fixed; top: 0; left: 0; width: 100%;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 20px 40px; z-index: 100; box-sizing: border-box;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
-}
-.logo { color: white; font-size: 1.5rem; font-weight: 700; letter-spacing: 2px; }
-.nav-list { display: flex; list-style: none; gap: 30px; margin: 0; padding: 0; }
-.nav-list a { text-decoration: none; color: white; font-size: 0.9rem; font-weight: 700; transition: opacity 0.3s; }
-.nav-list a:hover { opacity: 0.7; }
-/* スマホメニュー（簡易） */
-.menu-toggle { display: none; cursor: pointer; }
-
-/* === キャッチコピー === */
 .hero-message {
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
     z-index: 10; text-align: center; color: white; width: 100%;
@@ -55,20 +48,57 @@ body, html {
 }
 .hero-message p { font-size: 1.2rem; font-weight: 400; opacity: 0.9; }
 
-/* === コンテンツ共通 === */
+
+/* =========================================
+   3. ヘッダー & ナビゲーション
+   ========================================= */
+.page-header {
+    position: fixed; top: 0; left: 0; width: 100%;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 40px; z-index: 100; box-sizing: border-box;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+}
+.logo { color: white; font-size: 1.5rem; font-weight: 700; letter-spacing: 2px; }
+.nav-list { display: flex; list-style: none; gap: 30px; margin: 0; padding: 0; }
+.nav-list a { text-decoration: none; color: white; font-size: 0.9rem; font-weight: 700; transition: opacity 0.3s; }
+.nav-list a:hover { opacity: 0.7; }
+.menu-toggle { display: none; cursor: pointer; }
+
+/* プルダウンメニュー設定 */
+.dropdown { position: relative; padding-bottom: 10px; margin-bottom: -10px; }
+.dropdown-menu {
+    position: absolute; top: 100%; left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(0, 0, 0, 0.9);
+    list-style: none; padding: 10px 0; margin: 0; min-width: 200px;
+    border-radius: 4px; opacity: 0; visibility: hidden;
+    transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 200;
+}
+.dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+.dropdown-menu li { display: block; text-align: center; }
+.dropdown-menu a {
+    display: block; padding: 12px 20px; color: #ccc; font-size: 0.85rem;
+    white-space: nowrap; transition: background 0.3s, color 0.3s;
+}
+.dropdown-menu a:hover { background: rgba(255, 255, 255, 0.1); color: white; opacity: 1; }
+.dropdown-toggle::after { content: "▼"; font-size: 0.6rem; margin-left: 6px; vertical-align: middle; opacity: 0.7; }
+
+
+/* =========================================
+   4. コンテンツ共通パーツ
+   ========================================= */
 .content-section { background: white; padding: 120px 0; position: relative; z-index: 20; }
 .bg-gray { background-color: #f7f9fb; }
 .bg-dark { background-color: #1a1a1a; color: white; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+
 .section-header { margin-bottom: 60px; }
 .subtitle { display: block; color: #0056b3; font-weight: 700; letter-spacing: 0.2em; font-size: 0.9rem; margin-bottom: 15px; }
 .section-header h2 { font-size: 2.5rem; margin: 0; font-weight: 700; }
 .text-center { text-align: center; }
-.text-white .subtitle { color: #8ab4f8; }
-.text-white h2 { color: white; }
 .mt-50 { margin-top: 50px; }
 
-/* === ボタン === */
+/* ボタン */
 .btn-more {
     display: inline-block; padding: 12px 40px;
     border: 1px solid #333; color: #333; text-decoration: none;
@@ -79,11 +109,27 @@ body, html {
 .btn-white { border-color: white; color: white; }
 .btn-white:hover { background-color: white; color: #333; }
 
-/* === About === */
+
+/* =========================================
+   5. セクション別デザイン (Home)
+   ========================================= */
+
+/* About */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .about-image img { width: 100%; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 
-/* === News === */
+/* Site Updates (更新履歴) ★ここ追加しました！ */
+.update-section { padding: 60px 0; border-top: 1px solid #eee; }
+.update-wrapper { display: flex; align-items: flex-start; gap: 60px; }
+.update-header { flex-basis: 200px; flex-shrink: 0; }
+.update-header h3 { font-size: 1.5rem; margin: 0; font-weight: 700; }
+.update-list { list-style: none; padding: 0; margin: 0; flex-grow: 1; }
+.update-list li { display: flex; padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px dotted #ddd; }
+.update-list li:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.update-date { font-weight: 700; font-size: 0.9rem; color: #0056b3; width: 120px; flex-shrink: 0; }
+.update-text { font-size: 0.95rem; color: #333; }
+
+/* News */
 .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
 .news-card a {
     text-decoration: none; color: #333; display: block; background: white;
@@ -102,7 +148,7 @@ body, html {
 .news-body time { font-size: 0.85rem; color: #888; display: block; margin-bottom: 10px; }
 .news-body h3 { font-size: 1.1rem; margin: 0; line-height: 1.5; font-weight: 700; }
 
-/* === Contents (Media) === */
+/* Contents (Media) */
 .media-wrapper { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: flex-start; }
 .video-container {
     position: relative; width: 100%; padding-bottom: 56.25%; height: 0;
@@ -125,11 +171,10 @@ body, html {
 .article-title { flex-grow: 1; font-size: 1rem; font-weight: 500; margin: 0; }
 .mt-small { margin-top: 30px; }
 
-/* === Members (Teaser) === */
-.members-inner { text-align: center; max-width: 700px; margin: 0 auto; }
-.members-desc { font-size: 1.1rem; margin-bottom: 30px; opacity: 0.8; }
 
-/* === Footer === */
+/* =========================================
+   6. Footer & Mobile
+   ========================================= */
 .site-footer { background: #111; color: #aaa; padding: 60px 0 30px; }
 .footer-content { display: flex; justify-content: space-between; margin-bottom: 50px; }
 .footer-logo { color: white; font-size: 1.5rem; font-weight: bold; margin-bottom: 15px; letter-spacing: 2px; }
@@ -141,247 +186,74 @@ body, html {
 .footer-nav a:hover { color: white; }
 .copyright { text-align: center; font-size: 0.8rem; border-top: 1px solid #333; padding-top: 30px; }
 
-/* === スマホ対応 === */
+/* スマホ対応 */
 @media (max-width: 768px) {
     .hero-message h1 { font-size: 2.5rem; }
-    .about-grid, .media-wrapper { grid-template-columns: 1fr; }
-    .nav-list { display: none; } /* ハンバーガーにするなら別途JS必要 */
+    .about-grid, .media-wrapper, .update-wrapper, .rep-content { flex-direction: column; grid-template-columns: 1fr; }
+    .nav-list { display: none; }
     .menu-toggle { display: block; color: white; font-size: 1.5rem; }
-    .footer-content { flex-direction: column; gap: 40px; }
-    .footer-nav ul { flex-direction: column; gap: 10px; }
+    .footer-content, .footer-nav ul { flex-direction: column; gap: 40px; }
+    .rep-image { flex: auto; width: 100%; max-width: 400px; margin: 0 auto; }
+    .page-hero { height: 200px; }
+    .page-hero h1 { font-size: 1.8rem; }
 }
 
-/* === プルダウンメニューの設定 === */
-
-/* 親メニュー（ABOUT）の位置基準 */
-.dropdown {
-    position: relative;
-    padding-bottom: 10px; /* マウスが離れて消えるのを防ぐための見えない余白 */
-    margin-bottom: -10px; /* 余白の調整 */
-}
-
-/* ドロップダウンメニュー（隠れている箱） */
-.dropdown-menu {
-    position: absolute;
-    top: 100%; /* 親のすぐ下に配置 */
-    left: 50%;
-    transform: translateX(-50%) translateY(10px); /* 中央寄せ & 少し下に配置 */
-    background: rgba(0, 0, 0, 0.9); /* 濃い黒の半透明 */
-    list-style: none;
-    padding: 10px 0;
-    margin: 0;
-    min-width: 200px; /* 箱の幅 */
-    border-radius: 4px;
-    opacity: 0;       /* 透明にして隠す */
-    visibility: hidden; /* クリック判定も消す */
-    transition: all 0.3s ease; /* ふわっと動かす */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    /* 矢印（▲）を上につける装飾 */
-    z-index: 200;
-}
-
-/* ホバーした時に表示する（動き） */
-.dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0); /* 元の位置にふわっと戻る */
-}
-
-/* ドロップダウンの中のリンク設定 */
-.dropdown-menu li {
-    display: block;
-    text-align: center;
-}
-
-.dropdown-menu a {
-    display: block;
-    padding: 12px 20px;
-    color: #ccc; /* 文字色 */
-    font-size: 0.85rem;
-    white-space: nowrap; /* 折返し禁止 */
-    transition: background 0.3s, color 0.3s;
-}
-
-/* カーソルを乗せた時の色 */
-.dropdown-menu a:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    opacity: 1;
-}
-
-/* 親メニュー（ABOUT）自体のホバー調整 */
-.dropdown-toggle::after {
-    /* 下向き矢印（▼）をCSSで作る */
-    content: "▼";
-    font-size: 0.6rem;
-    margin-left: 6px;
-    vertical-align: middle;
-    opacity: 0.7;
-}
 
 /* =========================================
-   下層ページ共通デザイン (Members, About等)
+   7. 下層ページ共通 (Members, About等)
    ========================================= */
-
-/* ページトップのタイトルエリア（ヒーローエリア） */
+/* ★修正点：タイトルエリアの高さを少し抑えました */
 .page-hero {
-    width: 100%;
-    height: 350px; /* 高さを指定 */
-    background-color: #111; /* 黒背景 */
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg'); /* 背景画像があれば薄く表示 */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    margin-bottom: 0;
+    width: 100%; height: 300px;
+    background-color: #111;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; color: white; margin-bottom: 0;
 }
-
-.page-hero h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin: 0;
-    letter-spacing: 0.1em;
-}
-
-.page-hero p {
-    font-size: 1rem;
-    opacity: 0.8;
-    margin-top: 10px;
-    font-family: 'Noto Sans JP', sans-serif;
-}
+.page-hero h1 { font-size: 2.5rem; font-weight: 700; margin: 0; letter-spacing: 0.1em; }
+.page-hero p { font-size: 1rem; opacity: 0.8; margin-top: 10px; font-family: 'Noto Sans JP', sans-serif; }
 
 
 /* =========================================
-   MEMBERSページ専用デザイン
+   8. MEMBERSページ専用デザイン
    ========================================= */
 
 /* --- 代表挨拶エリア --- */
-.rep-area {
-    margin-bottom: 120px;
-}
+.rep-area { margin-bottom: 120px; }
+.rep-content { display: flex; align-items: flex-start; gap: 50px; }
 
-.rep-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 60px;
-}
+/* ★修正点：代表画像のサイズを固定して、デカくなりすぎないようにしました */
+.rep-image { flex: 0 0 320px; max-width: 100%; }
+.rep-image img { width: 100%; border-radius: 4px; box-shadow: 15px 15px 0px rgba(0,0,0,0.08); }
 
-.rep-image {
-    flex-basis: 40%; /* 画像の幅 */
-    position: relative;
-}
-
-.rep-image img {
-    width: 100%;
-    border-radius: 4px;
-    box-shadow: 20px 20px 0px rgba(0,0,0,0.1); /* ちょっとおしゃれな影 */
-}
-
-.rep-text {
-    flex-basis: 60%;
-}
-
+.rep-text { flex: 1; }
 .rep-text h3 {
-    font-size: 1.8rem;
-    margin: 0 0 10px 0;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 15px;
-    display: flex;
-    align-items: baseline;
-    gap: 15px;
+    font-size: 1.6rem; margin: 0 0 10px 0;
+    border-bottom: 1px solid #ddd; padding-bottom: 15px;
+    display: flex; align-items: baseline; gap: 15px;
 }
-
-.rep-en {
-    font-size: 1rem;
-    color: #888;
-    font-weight: 400;
-}
-
-.rep-affil {
-    font-weight: bold;
-    color: #0056b3;
-    margin-bottom: 20px;
-}
-
-.rep-message {
-    line-height: 2;
-    color: #555;
-    text-align: justify; /* 文字を両端揃え */
-}
+.rep-en { font-size: 0.9rem; color: #888; font-weight: 400; }
+.rep-affil { font-weight: bold; color: #0056b3; margin-bottom: 20px; }
+.rep-message { line-height: 1.9; color: #555; text-align: justify; }
 
 /* --- メンバーリストエリア --- */
+/* ★修正点：メンバーカードを小さくして、並びをきれいにしました */
 .members-grid {
     display: grid;
-    /* 自動で列数を調整（最低250px幅） */
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 40px 30px;
 }
 
-.member-card {
-    text-align: left;
-}
-
+.member-card { text-align: left; }
 .member-img {
-    width: 100%;
-    aspect-ratio: 1 / 1; /* 正方形にする */
-    overflow: hidden;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    background-color: #f0f0f0;
+    width: 100%; aspect-ratio: 1 / 1; overflow: hidden;
+    border-radius: 8px; margin-bottom: 15px; background-color: #f0f0f0;
 }
+.member-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.member-card:hover .member-img img { transform: scale(1.05); }
 
-.member-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-}
-
-.member-card:hover .member-img img {
-    transform: scale(1.05); /* ホバーで少し拡大 */
-}
-
-.member-info h4 {
-    font-size: 1.2rem;
-    margin: 0 0 5px 0;
-    font-weight: 700;
-}
-
-.member-en {
-    display: block;
-    font-size: 0.8rem;
-    color: #999;
-    font-weight: 400;
-    margin-bottom: 5px;
-}
-
-.member-role {
-    font-size: 0.85rem;
-    color: #0056b3;
-    font-weight: bold;
-    margin: 0 0 10px 0;
-}
-
-.member-comment {
-    font-size: 0.9rem;
-    color: #666;
-    line-height: 1.6;
-}
-
-/* --- スマホ対応 --- */
-@media (max-width: 768px) {
-    .rep-content {
-        flex-direction: column; /* 代表挨拶を縦並びに */
-        gap: 30px;
-    }
-    
-    .rep-text h3 {
-        flex-direction: column;
-        gap: 5px;
-    }
-    
-    .page-hero h1 { font-size: 2rem; }
-}
+.member-info h4 { font-size: 1.1rem; margin: 0 0 5px 0; font-weight: 700; }
+.member-en { display: block; font-size: 0.75rem; color: #999; font-weight: 400; margin-bottom: 5px; }
+.member-role { font-size: 0.8rem; color: #0056b3; font-weight: bold; margin: 0 0 8px 0; }
+.member-comment { font-size: 0.85rem; color: #666; line-height: 1.5; }
