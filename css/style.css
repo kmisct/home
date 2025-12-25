@@ -14,7 +14,7 @@ body, html {
 .js-fade-up {
     opacity: 0;
     transform: translateY(40px);
-    transition: opacity 1.2s cubic-bezier(0.2, 1, 0.3, 1), transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+    transition: opacity 4.0s cubic-bezier(0.2, 1, 0.3, 1), transform 4.0s cubic-bezier(0.2, 1, 0.3, 1);
 }
 /* 上からふわっと（ヘッダー） */
 .js-fade-down {
