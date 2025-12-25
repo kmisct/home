@@ -29,7 +29,7 @@ body, html {
    ========================================= */
 .swiper { width: 100%; height: 100vh; }
 .swiper-slide { background-size: cover; background-position: center; }
-/* 画像パス */
+/* 画像パス（必要に応じて変更してください） */
 .slide1 { background-image: url('../images/home/IMG_0906.jpg'); }
 .slide2 { background-image: url('../images/home/IMG_2346.png'); }
 .slide3 { background-image: url('../images/home/1712279552111-DhLgWuQjWq.jpg'); }
@@ -196,6 +196,7 @@ body, html {
     .rep-image { flex: auto; width: 100%; max-width: 400px; margin: 0 auto; }
     .page-hero { height: 200px; }
     .page-hero h1 { font-size: 1.8rem; }
+    
     /* スマホでメンバーリストを1列にする */
     .members-grid { grid-template-columns: 1fr !important; }
 }
