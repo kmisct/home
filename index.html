@@ -17,12 +17,12 @@
         <div class="logo">KMI SCT</div>
         <nav>
             <ul class="nav-list">
-                <li><a href="#">HOME</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#news">NEWS</a></li>
-                <li><a href="#contents">CONTENTS</a></li>
-                <li><a href="#members">MEMBERS</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="news.html">NEWS</a></li>
+                <li><a href="contents.html">CONTENTS</a></li>
+                <li><a href="member.html">MEMBERS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
             </ul>
         </nav>
         <div class="menu-toggle">
@@ -46,7 +46,7 @@
         <p>「素粒子・宇宙」を、あなたのもっと近くに。</p>
     </div>
 
-    <section id="about" class="content-section">
+    <section class="content-section">
         <div class="container">
             <div class="section-header js-fade-up">
                 <span class="subtitle">WHO WE ARE</span>
@@ -65,7 +65,7 @@
         </div>
     </section>
 
-    <section id="news" class="content-section bg-gray">
+    <section class="content-section bg-gray">
         <div class="container">
             <div class="section-header js-fade-up">
                 <span class="subtitle">LATEST REPORT</span>
@@ -118,7 +118,7 @@
         </div>
     </section>
 
-    <section id="contents" class="content-section">
+    <section class="content-section">
         <div class="container">
             <div class="section-header js-fade-up">
                 <span class="subtitle">MEDIA & ARCHIVES</span>
@@ -144,18 +144,13 @@
                         <p class="article-title">「わかった気になる素粒子」ワークショップレポート</p>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
-                    <a href="#" class="article-item">
-                        <span class="article-tag">Interview</span>
-                        <p class="article-title">研究者×バリスタ：異色の対談イベントの裏側</p>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
                     <a href="contents.html" class="btn-more mt-small">View All Contents</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="members" class="content-section bg-dark">
+    <section class="content-section bg-dark">
         <div class="container">
             <div class="members-inner js-fade-up">
                 <div class="section-header text-white">
@@ -201,14 +196,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // スライダー
         const swiper = new Swiper('.swiper', {
             loop: true, effect: 'fade', speed: 2000,
             autoplay: { delay: 5000, disableOnInteraction: false },
             pagination: { el: '.swiper-pagination', clickable: true },
         });
 
-        // スクロールアニメーション
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -219,7 +212,6 @@
 
         document.querySelectorAll('.js-fade-up, .js-fade-down').forEach(el => observer.observe(el));
         
-        // スマホメニュー（簡易版）
         const menuToggle = document.querySelector('.menu-toggle');
         const navList = document.querySelector('.nav-list');
         menuToggle.addEventListener('click', () => {
