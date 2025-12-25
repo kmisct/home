@@ -123,3 +123,27 @@ body, html {
     .nav-list { display: none; }
     .content-section { padding: 80px 0; }
 }
+
+/* === 新しいボタンのデザイン（白い背景用） === */
+.btn-more {
+    display: inline-block;
+    margin-top: 30px; /* 上に少し隙間を空ける */
+    padding: 15px 50px;
+    border: 1px solid #333; /* 黒い枠線 */
+    color: #333;            /* 黒い文字 */
+    text-decoration: none;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+/* マウスを乗せた時の色変わり */
+.btn-more:hover {
+    background-color: #333; /* 背景を黒に */
+    color: white;           /* 文字を白に */
+    transform: translateY(-3px); /* 少し浮く */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* 影をつける */
+}
