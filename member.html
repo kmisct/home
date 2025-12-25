@@ -12,29 +12,7 @@
 </head>
 <body>
 
-    <header class="page-header js-fade-down">
-        <div class="logo">KMI SCT</div>
-        <nav>
-            <ul class="nav-list">
-                <li><a href="index.html">HOME</a></li>
-                <li class="dropdown">
-                    <a href="about.html" class="dropdown-toggle">ABOUT</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="about.html">活動理念</a></li>
-                        <li><a href="member.html">メンバー紹介</a></li>
-                    </ul>
-                </li>
-                <li><a href="news.html">NEWS & EVENTS</a></li>
-                <li><a href="contents.html">CONTENTS</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-        </nav>
-        <div class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </header>
+    <div id="header-placeholder"></div>
 
     <div class="page-hero">
         <div class="page-hero-inner js-fade-up">
@@ -197,7 +175,7 @@
                             <img src="images/home/IMG_0906.jpg" alt="メンバー写真">
                         </div>
                         <div class="member-info">
-                            <h4>竹内 希 <span class="member-en">Nozomi Takeuchi  2022.4-</span></h4>
+                            <h4>竹内 希 <span class="member-en">Nozomi Takeuchi 2022.4-</span></h4>
                             <p class="rep-affil">
                                 名古屋大学 <a href="https://www.kmi.nagoya-u.ac.jp/" target="_blank">KMI事務室</a>
                             </p>
@@ -218,7 +196,10 @@
                         </div>
                     </div>
 
-                </div> </div> <div class="advisors-area js-fade-up" style="margin-top: 100px;">
+                </div>
+            </div> 
+            
+            <div class="advisors-area js-fade-up" style="margin-top: 100px;">
                 <div class="section-header">
                     <span class="subtitle">ADVISORS</span>
                     <h2>アドバイザー</h2>
@@ -252,57 +233,18 @@
                         </div>
                     </div>
                 </div>
-            </div> <div class="text-center mt-50 js-fade-up">
-                <a href="past_member.html" class="btn-more">View Past Members</a>
+            </div> 
+            
+            <div class="text-center mt-50 js-fade-up">
+                <a href="past_members.html" class="btn-more">View Past Members</a>
             </div>
 
-        </div> </section>
+        </div> 
+    </section>
 
-    <footer id="contact" class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <div class="footer-logo">KMI SCT</div>
-                    <p>名古屋大学 素粒子宇宙起源研究所<br>サイエンス・コミュニケーション・チーム</p>
-                    <div class="social-links">
-                        <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-nav">
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="news.html">News & Events</a></li>
-                        <li><a href="contents.html">Contents</a></li>
-                        <li><a href="member.html">Members</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                &copy; 2025 KMI Science Communication Team. All Rights Reserved.
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
-    <script>
-        // フェードインアニメーション
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-active');
-                }
-            });
-        }, { rootMargin: '0px 0px -15% 0px' });
-        document.querySelectorAll('.js-fade-up, .js-fade-down').forEach(el => observer.observe(el));
-        
-        // スマホメニュー
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navList = document.querySelector('.nav-list');
-        menuToggle.addEventListener('click', () => {
-            navList.classList.toggle('is-open');
-        });
-    </script>
+    <script src="js/include.js"></script>
+
 </body>
 </html>
