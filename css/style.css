@@ -150,3 +150,71 @@ body, html {
     .footer-content { flex-direction: column; gap: 40px; }
     .footer-nav ul { flex-direction: column; gap: 10px; }
 }
+
+/* === プルダウンメニューの設定 === */
+
+/* 親メニュー（ABOUT）の位置基準 */
+.dropdown {
+    position: relative;
+    padding-bottom: 10px; /* マウスが離れて消えるのを防ぐための見えない余白 */
+    margin-bottom: -10px; /* 余白の調整 */
+}
+
+/* ドロップダウンメニュー（隠れている箱） */
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* 親のすぐ下に配置 */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); /* 中央寄せ & 少し下に配置 */
+    background: rgba(0, 0, 0, 0.9); /* 濃い黒の半透明 */
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    min-width: 200px; /* 箱の幅 */
+    border-radius: 4px;
+    opacity: 0;       /* 透明にして隠す */
+    visibility: hidden; /* クリック判定も消す */
+    transition: all 0.3s ease; /* ふわっと動かす */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    /* 矢印（▲）を上につける装飾 */
+    z-index: 200;
+}
+
+/* ホバーした時に表示する（動き） */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); /* 元の位置にふわっと戻る */
+}
+
+/* ドロップダウンの中のリンク設定 */
+.dropdown-menu li {
+    display: block;
+    text-align: center;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: #ccc; /* 文字色 */
+    font-size: 0.85rem;
+    white-space: nowrap; /* 折返し禁止 */
+    transition: background 0.3s, color 0.3s;
+}
+
+/* カーソルを乗せた時の色 */
+.dropdown-menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    opacity: 1;
+}
+
+/* 親メニュー（ABOUT）自体のホバー調整 */
+.dropdown-toggle::after {
+    /* 下向き矢印（▼）をCSSで作る */
+    content: "▼";
+    font-size: 0.6rem;
+    margin-left: 6px;
+    vertical-align: middle;
+    opacity: 0.7;
+}
