@@ -199,6 +199,7 @@ body, html {
     /* スマホでメンバーリストを1列にする */
     .members-grid { grid-template-columns: 1fr !important; }
 }
+
 /* タブレットなどでメンバーリストを2列にする */
 @media (max-width: 1024px) {
     .members-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
