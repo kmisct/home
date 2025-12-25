@@ -217,9 +217,7 @@
                             <p class="member-comment">サイエンスコミュニケーションの仕事ができたらいいな、と勉強中。情報を体系化し、やわらかい言葉やビジュアルで表現することに一定のしつこさを持ちます。もともとは農学専攻なので素粒子物理学は楽しい未知の世界。</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="advisors-area js-fade-up" style="margin-top: 100px;">
+                </div> </div> <div class="advisors-area js-fade-up" style="margin-top: 100px;">
                 <div class="section-header">
                     <span class="subtitle">ADVISORS</span>
                     <h2>アドバイザー</h2>
@@ -253,12 +251,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="text-center mt-50 js-fade-up">
+            </div> <div class="text-center mt-50 js-fade-up">
                 <a href="past_members.html" class="btn-more">View Past Members</a>
             </div>
-        </div>
-    </section>
+
+        </div> </section>
 
     <footer id="contact" class="site-footer">
         <div class="container">
@@ -298,3 +295,13 @@
             });
         }, { rootMargin: '0px 0px -15% 0px' });
         document.querySelectorAll('.js-fade-up, .js-fade-down').forEach(el => observer.observe(el));
+        
+        // スマホメニュー
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('.nav-list');
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('is-open');
+        });
+    </script>
+</body>
+</html>
