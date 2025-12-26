@@ -288,3 +288,94 @@ body, html {
     letter-spacing: 0.05em;
     margin-bottom: 2px; /* スマホで折り返した時の調整 */
 }
+
+/* -------------------------------------------
+   EVENTSページ用スタイル
+------------------------------------------- */
+
+/* ニュースカテゴリのバッジ（青いブロック） */
+.news-badge {
+    display: inline-block;
+    background-color: #0056b3; /* KMIブルー */
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+}
+
+/* 活動実績リストの全体枠 */
+.archive-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* 年ごとのグループ */
+.archive-year-group {
+    margin-bottom: 50px;
+}
+
+/* 年号見出し (2025, 2024...) */
+.archive-year {
+    font-size: 1.8rem;
+    color: #ddd; /* 薄いグレーで背景っぽく */
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+/* リスト本体 */
+.archive-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* リストの各行 */
+.archive-list li {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px dotted #ccc;
+    flex-wrap: wrap; /* スマホ用に折り返し許可 */
+}
+
+/* 日付 */
+.archive-date {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    margin-right: 15px;
+    color: #666;
+    min-width: 50px;
+}
+
+/* リスト内のバッジ調整 */
+.archive-list .news-badge {
+    margin-right: 15px;
+    font-size: 0.7rem;
+    padding: 4px 8px;
+}
+
+/* タイトル部分 */
+.archive-title {
+    flex: 1; /* 余ったスペースを埋める */
+    font-weight: 500;
+}
+
+/* スマホ対応（縦並びにする） */
+@media (max-width: 600px) {
+    .archive-list li {
+        align-items: flex-start; /* 上揃え */
+    }
+    .archive-date {
+        font-size: 0.9rem;
+    }
+    .archive-title {
+        width: 100%;
+        margin-top: 5px; /* バッジの下に少し隙間 */
+        display: block;
+    }
+}
