@@ -2,16 +2,18 @@ const NEWS_JSON_URL = 'data/news.json';
 const ITEMS_PER_PAGE_NEWS = 20; // ニュースページの表示件数
 const ITEMS_PER_PAGE_HOME = 5;  // ホームの表示件数
 
-// データを取得して表示するメイン関数
+// メイン処理
 async function loadNews() {
     try {
         const response = await fetch(NEWS_JSON_URL);
         const data = await response.json();
 
-        // 今いるページによって処理を分ける
+        // ホーム画面（最新5件）
         if (document.getElementById('news-list-home')) {
-            renderNews(data, 'news-list-home', 1, ITEMS_PER_PAGE_HOME, false);
-        } else if (document.getElementById('news-list-page')) {
+            renderNewsList(data, 'news-list-home', 1, ITEMS_PER_PAGE_HOME);
+        } 
+        // ニュース一覧画面（20件＋ページ送り）
+        else if (document.getElementById('news-list-page')) {
             setupPagination(data);
         }
 
@@ -20,98 +22,82 @@ async function loadNews() {
     }
 }
 
-// ニュース記事のHTMLを生成して埋め込む関数
-function renderNews(data, targetId, page, perPage, showPagination) {
+// リスト（<li>）を生成して表示する関数
+function renderNewsList(data, targetId, page, perPage) {
     const container = document.getElementById(targetId);
-    container.innerHTML = ''; // 一旦クリア
+    container.innerHTML = ''; // クリア
 
-    // データの切り出し（ページネーション計算）
+    // 表示する範囲を計算
     const start = (page - 1) * perPage;
     const end = start + perPage;
     const pageData = data.slice(start, end);
 
-    // 記事がない場合
     if (pageData.length === 0) {
-        container.innerHTML = '<p class="text-center">お知らせはありません。</p>';
+        container.innerHTML = '<li><span class="update-text">お知らせはありません。</span></li>';
         return;
     }
 
-    // HTML生成
+    // HTML生成（update-sectionのCSSクラスを使用）
     pageData.forEach(item => {
+        // カテゴリラベルの色分け（必要ならCSSで .cat-EVENT { color: red; } など追加）
+        const categoryLabel = item.category ? `[${item.category}] ` : '';
+        
         const html = `
-            <article class="news-card js-fade-up">
-                <a href="${item.url}">
-                    <div class="news-img">
-                        <img src="${item.image}" alt="${item.title}">
-                    </div>
-                    <div class="news-body">
-                        <span class="news-cat">${item.category}</span>
-                        <time>${item.date}</time>
-                        <h3>${item.title}</h3>
-                    </div>
-                </a>
-            </article>
+            <li>
+                <span class="update-date">${item.date}</span>
+                <span class="update-text">
+                    <a href="${item.url}" style="text-decoration: none; color: inherit;">
+                        ${categoryLabel}${item.title}
+                    </a>
+                </span>
+            </li>
         `;
         container.insertAdjacentHTML('beforeend', html);
     });
-
-    // アニメーションの再適用（動的に追加した要素のため）
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('is-active');
-        });
-    });
-    container.querySelectorAll('.js-fade-up').forEach(el => observer.observe(el));
 }
 
-// ページネーションの設定関数
+// ページネーション機能
 function setupPagination(data) {
     const totalItems = data.length;
     const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE_NEWS);
     let currentPage = 1;
 
     // 初回表示
-    renderNews(data, 'news-list-page', currentPage, ITEMS_PER_PAGE_NEWS, true);
+    renderNewsList(data, 'news-list-page', currentPage, ITEMS_PER_PAGE_NEWS);
     renderPaginationButtons(totalPages, currentPage);
 
-    // ボタン描画関数
     function renderPaginationButtons(total, current) {
         const paginationContainer = document.getElementById('pagination');
+        if (!paginationContainer) return;
+        
         paginationContainer.innerHTML = '';
+        if (total <= 1) return;
 
-        if (total <= 1) return; // 1ページしかなければボタン不要
-
-        // 「前へ」ボタン
+        // 前へ
         if (current > 1) {
-            const prevBtn = createButton('< 前へ', () => changePage(current - 1));
-            paginationContainer.appendChild(prevBtn);
+            paginationContainer.appendChild(createButton('< 前へ', () => changePage(current - 1)));
         }
 
-        // ページ番号ボタン
+        // ページ番号
         for (let i = 1; i <= total; i++) {
-            const pageBtn = createButton(i, () => changePage(i));
-            if (i === current) pageBtn.classList.add('active');
-            paginationContainer.appendChild(pageBtn);
+            const btn = createButton(i, () => changePage(i));
+            if (i === current) btn.classList.add('active');
+            paginationContainer.appendChild(btn);
         }
 
-        // 「次へ」ボタン
+        // 次へ
         if (current < total) {
-            const nextBtn = createButton('次へ >', () => changePage(current + 1));
-            paginationContainer.appendChild(nextBtn);
+            paginationContainer.appendChild(createButton('次へ >', () => changePage(current + 1)));
         }
     }
 
-    // ページ切り替え処理
     function changePage(newPage) {
         currentPage = newPage;
-        renderNews(data, 'news-list-page', currentPage, ITEMS_PER_PAGE_NEWS, true);
+        renderNewsList(data, 'news-list-page', currentPage, ITEMS_PER_PAGE_NEWS);
         renderPaginationButtons(totalPages, currentPage);
-        // ページトップへスクロール
-        const target = document.querySelector('.content-section');
-        if(target) target.scrollIntoView({behavior: 'smooth'});
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // ボタン生成ヘルパー
     function createButton(text, onClick) {
         const btn = document.createElement('button');
         btn.innerText = text;
@@ -121,5 +107,4 @@ function setupPagination(data) {
     }
 }
 
-// 実行
 document.addEventListener('DOMContentLoaded', loadNews);

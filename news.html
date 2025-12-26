@@ -10,15 +10,20 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* ページネーション用CSS（ここだけに追加） */
-        .pagination { text-align: center; margin-top: 50px; }
+        /* ページネーション用CSS */
+        .pagination { text-align: center; margin-top: 60px; }
         .pagination-btn {
-            background: #fff; border: 1px solid #ddd; padding: 10px 15px;
+            background: #fff; border: 1px solid #ddd; padding: 10px 18px;
             margin: 0 5px; cursor: pointer; transition: 0.3s;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Montserrat', sans-serif; border-radius: 4px;
         }
-        .pagination-btn:hover { background: #eee; }
-        .pagination-btn.active { background: #0056b3; color: white; border-color: #0056b3; }
+        .pagination-btn:hover { background: #f7f9fb; }
+        .pagination-btn.active { background: #333; color: white; border-color: #333; }
+        
+        /* ニュースページ専用レイアウト調整 */
+        .news-page-list { max-width: 900px; margin: 0 auto; }
+        /* update-listのスタイルを流用しつつ、少し余白を広げる */
+        .update-list li { padding-bottom: 20px; margin-bottom: 20px; }
     </style>
 </head>
 <body>
@@ -28,22 +33,24 @@
     <div class="page-hero">
         <div class="page-hero-inner js-fade-up">
             <h1>NEWS</h1>
-            <p>お知らせ・活動報告</p>
+            <p>お知らせ</p>
         </div>
     </div>
 
     <section class="content-section">
         <div class="container">
-            <div id="news-list-page" class="news-grid"></div>
+            <div class="js-fade-up news-page-list">
+                
+                <ul id="news-list-page" class="update-list">
+                    </ul>
 
-            <div id="pagination" class="pagination js-fade-up"></div>
+                <div id="pagination" class="pagination"></div>
+            </div>
         </div>
     </section>
 
     <div id="footer-placeholder"></div>
-
     <script src="js/include.js"></script>
     <script src="js/news.js"></script>
-
 </body>
 </html>
