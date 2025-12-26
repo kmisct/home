@@ -29,7 +29,7 @@ body, html {
    ========================================= */
 .swiper { width: 100%; height: 100vh; }
 .swiper-slide { background-size: cover; background-position: center; }
-/* 画像パス（必要に応じて変更してください） */
+/* 画像パス */
 .slide1 { background-image: url('../images/home/IMG_0906.jpg'); }
 .slide2 { background-image: url('../images/home/IMG_2346.png'); }
 .slide3 { background-image: url('../images/home/1712279552111-DhLgWuQjWq.jpg'); }
@@ -108,6 +108,20 @@ body, html {
 .btn-more:hover { background-color: #333; color: white; transform: translateY(-3px); }
 .btn-white { border-color: white; color: white; }
 .btn-white:hover { background-color: white; color: #333; }
+
+/* ニュース/イベント共通バッジ */
+.news-badge {
+    display: inline-block;
+    background-color: #0056b3;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+}
 
 
 /* =========================================
@@ -196,8 +210,6 @@ body, html {
     .rep-image { flex: auto; width: 100%; max-width: 400px; margin: 0 auto; }
     .page-hero { height: 200px; }
     .page-hero h1 { font-size: 1.8rem; }
-    
-    /* スマホでメンバーリストを1列にする */
     .members-grid { grid-template-columns: 1fr !important; }
 }
 
@@ -242,7 +254,6 @@ body, html {
 .rep-en { font-size: 0.9rem; color: #888; font-weight: 400; }
 .rep-affil { font-weight: bold; color: #0056b3; margin-bottom: 20px; }
 
-/* ★追加修正：研究室リンクの青色固定と下線 */
 .rep-affil a,
 .rep-affil a:visited {
     color: #0056b3;
@@ -257,7 +268,6 @@ body, html {
 /* --- メンバーリストエリア --- */
 .members-grid {
     display: grid;
-    /* ★追加修正：PCでは強制的に4列にする */
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
@@ -275,72 +285,82 @@ body, html {
 .member-role { font-size: 0.8rem; color: #0056b3; font-weight: bold; margin: 0 0 8px 0; }
 .member-comment { font-size: 0.85rem; color: #666; line-height: 1.5; }
 
-/* ニュースカテゴリの青いブロック */
-.news-badge {
-    display: inline-block;
-    background-color: #0056b3; /* 青色 */
-    color: white;
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 4px; /* 角丸 */
-    white-space: nowrap; /* 改行させない */
-    letter-spacing: 0.05em;
-    margin-bottom: 2px; /* スマホで折り返した時の調整 */
-}
 
-/* -------------------------------------------
-   EVENTSページ用スタイル
-------------------------------------------- */
+/* =========================================
+   9. EVENTSページ & アーカイブ用スタイル
+   ========================================= */
 
-/* ニュースカテゴリのバッジ（青いブロック） */
-.news-badge {
-    display: inline-block;
-    background-color: #0056b3; /* KMIブルー */
-    color: white;
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 4px;
-    white-space: nowrap;
-    letter-spacing: 0.05em;
-    margin-bottom: 2px;
-}
-
-/* 活動実績リストの全体枠 */
+/* アーカイブ全体のコンテナ */
 .archive-container {
     max-width: 900px;
     margin: 0 auto;
 }
 
-/* 年ごとのグループ */
+/* 年ごとのグループ枠 */
 .archive-year-group {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden; /* 角丸からはみ出ないように */
 }
 
-/* 年号見出し (2025, 2024...) */
-.archive-year {
-    font-size: 1.8rem;
-    color: #ddd; /* 薄いグレーで背景っぽく */
-    border-bottom: 2px solid #eee;
-    margin-bottom: 20px;
+/* アコーディオンのボタン（年号） */
+.accordion-btn {
+    background-color: #f9f9f9;
+    color: #333;
+    cursor: pointer;
+    padding: 18px 25px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.2rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+    transition: 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* リスト本体 */
+/* ホバー時とアクティブ（開いている）時 */
+.accordion-btn:hover, .accordion-btn.active {
+    background-color: #eef2f6;
+    color: #0056b3;
+}
+
+/* アイコン（矢印） */
+.accordion-btn .icon {
+    font-size: 1rem;
+    color: #999;
+    transition: transform 0.3s;
+}
+
+/* 開閉するパネル部分（初期状態は高さ0） */
+.accordion-panel {
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+/* パネルが開いた時のリスト */
 .archive-list {
     list-style: none;
-    padding: 0;
+    padding: 10px 20px 20px 20px;
+    margin: 0;
 }
 
-/* リストの各行 */
+/* 各行 */
 .archive-list li {
     display: flex;
     align-items: center;
-    padding: 15px 0;
-    border-bottom: 1px dotted #ccc;
-    flex-wrap: wrap; /* スマホ用に折り返し許可 */
+    padding: 12px 0;
+    border-bottom: 1px dotted #eee;
+    flex-wrap: wrap;
+}
+.archive-list li:last-child {
+    border-bottom: none;
 }
 
 /* 日付 */
@@ -352,83 +372,29 @@ body, html {
     min-width: 50px;
 }
 
-/* リスト内のバッジ調整 */
+/* バッジの微調整 */
 .archive-list .news-badge {
     margin-right: 15px;
-    font-size: 0.7rem;
-    padding: 4px 8px;
 }
 
-/* タイトル部分 */
+/* タイトル */
 .archive-title {
-    flex: 1; /* 余ったスペースを埋める */
+    flex: 1;
     font-weight: 500;
 }
 
-/* スマホ対応（縦並びにする） */
+/* スマホ対応 */
 @media (max-width: 600px) {
     .archive-list li {
-        align-items: flex-start; /* 上揃え */
+        align-items: flex-start;
     }
     .archive-date {
         font-size: 0.9rem;
+        margin-top: 2px;
     }
     .archive-title {
         width: 100%;
-        margin-top: 5px; /* バッジの下に少し隙間 */
+        margin-top: 5px;
         display: block;
     }
-}
-
-/* -------------------------------------------
-   アーカイブのアコーディオンデザイン
-------------------------------------------- */
-
-/* ボタン部分 */
-.accordion-btn {
-    background-color: #f7f9fb;
-    color: #333;
-    cursor: pointer;
-    padding: 18px 20px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 1.2rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    transition: 0.4s;
-    border-bottom: 2px solid #ddd;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* ホバー時とアクティブ（開いている）時 */
-.accordion-btn:hover, .accordion-btn.active {
-    background-color: #eef2f6;
-    color: #0056b3; /* 青色に */
-}
-
-/* アイコンの回転アニメーション */
-.accordion-btn .icon {
-    transition: transform 0.3s;
-}
-.accordion-btn.active .icon {
-    transform: rotate(180deg);
-}
-
-/* 開閉するパネル部分 */
-.accordion-panel {
-    padding: 0 10px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    border-bottom: 1px solid #eee;
-}
-
-/* 中身のリスト調整 */
-.accordion-panel .archive-list li {
-    padding: 15px 5px;
 }
