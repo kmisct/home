@@ -52,23 +52,15 @@
         <div class="container">
             <div class="update-wrapper js-fade-up">
                 <div class="update-header">
-                    <span class="subtitle">NEWS</span>
+                    <span class="subtitle">NEWS & TOPICS</span>
                     <h3>お知らせ</h3>
                 </div>
-                <ul class="update-list">
-                    <li>
-                        <span class="update-date">2025.12.25</span>
-                        <span class="update-text">KMISCT 新しい公式Webサイトを公開しました。</span>
-                    </li>
-                    <li>
-                        <span class="update-date">2025.12.24</span>
-                        <span class="update-text">メンバー紹介ページを追加しました。</span>
-                    </li>
-                    <li>
-                        <span class="update-date">2025.12.20</span>
-                        <span class="update-text">スマートフォン表示に対応しました。</span>
-                    </li>
-                </ul>
+                <ul id="news-list-home" class="update-list">
+                    </ul>
+                </div>
+            
+            <div class="text-center mt-50 js-fade-up">
+                <a href="news.html" class="btn-more">View All News</a>
             </div>
         </div>
     </section>
@@ -163,6 +155,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="js/include.js"></script>
+    <script src="js/news.js"></script>
 
     <script>
         const swiper = new Swiper('.swiper', {

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - KMI Science Communication Team</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ページネーション用CSS（ここだけに追加） */
+        .pagination { text-align: center; margin-top: 50px; }
+        .pagination-btn {
+            background: #fff; border: 1px solid #ddd; padding: 10px 15px;
+            margin: 0 5px; cursor: pointer; transition: 0.3s;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .pagination-btn:hover { background: #eee; }
+        .pagination-btn.active { background: #0056b3; color: white; border-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <div class="page-hero">
+        <div class="page-hero-inner js-fade-up">
+            <h1>NEWS</h1>
+            <p>お知らせ・活動報告</p>
+        </div>
+    </div>
+
+    <section class="content-section">
+        <div class="container">
+            <div id="news-list-page" class="news-grid"></div>
+
+            <div id="pagination" class="pagination js-fade-up"></div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/include.js"></script>
+    <script src="js/news.js"></script>
+
+</body>
+</html>
