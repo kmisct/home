@@ -39,15 +39,16 @@ function renderNewsList(data, targetId, page, perPage) {
 
     // HTML生成（update-sectionのCSSクラスを使用）
     pageData.forEach(item => {
-        // カテゴリラベルの色分け（必要ならCSSで .cat-EVENT { color: red; } など追加）
-        const categoryLabel = item.category ? `[${item.category}] ` : '';
-        
+        // カテゴリがある場合のみ、バッジ用spanタグを生成
+        const categoryBadge = item.category ? `<span class="news-badge">${item.category}</span>` : '';
+
         const html = `
             <li>
                 <span class="update-date">${item.date}</span>
-                <span class="update-text">
-                    <a href="${item.url}" style="text-decoration: none; color: inherit;">
-                        ${categoryLabel}${item.title}
+                <span class="update-text" style="display: flex; align-items: center; flex-wrap: wrap;">
+                    ${categoryBadge}
+                    <a href="${item.url}" style="text-decoration: none; color: inherit; margin-left: 10px; flex: 1;">
+                        ${item.title}
                     </a>
                 </span>
             </li>

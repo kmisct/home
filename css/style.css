@@ -274,3 +274,17 @@ body, html {
 .member-en { display: block; font-size: 0.75rem; color: #999; font-weight: 400; margin-bottom: 5px; }
 .member-role { font-size: 0.8rem; color: #0056b3; font-weight: bold; margin: 0 0 8px 0; }
 .member-comment { font-size: 0.85rem; color: #666; line-height: 1.5; }
+
+/* ニュースカテゴリの青いブロック */
+.news-badge {
+    display: inline-block;
+    background-color: #0056b3; /* 青色 */
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px; /* 角丸 */
+    white-space: nowrap; /* 改行させない */
+    letter-spacing: 0.05em;
+    margin-bottom: 2px; /* スマホで折り返した時の調整 */
+}
