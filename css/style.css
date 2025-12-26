@@ -379,3 +379,56 @@ body, html {
         display: block;
     }
 }
+
+/* -------------------------------------------
+   アーカイブのアコーディオンデザイン
+------------------------------------------- */
+
+/* ボタン部分 */
+.accordion-btn {
+    background-color: #f7f9fb;
+    color: #333;
+    cursor: pointer;
+    padding: 18px 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    transition: 0.4s;
+    border-bottom: 2px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ホバー時とアクティブ（開いている）時 */
+.accordion-btn:hover, .accordion-btn.active {
+    background-color: #eef2f6;
+    color: #0056b3; /* 青色に */
+}
+
+/* アイコンの回転アニメーション */
+.accordion-btn .icon {
+    transition: transform 0.3s;
+}
+.accordion-btn.active .icon {
+    transform: rotate(180deg);
+}
+
+/* 開閉するパネル部分 */
+.accordion-panel {
+    padding: 0 10px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    border-bottom: 1px solid #eee;
+}
+
+/* 中身のリスト調整 */
+.accordion-panel .archive-list li {
+    padding: 15px 5px;
+}
