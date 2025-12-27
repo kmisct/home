@@ -414,3 +414,30 @@ body, html {
     opacity: 0.6;          /* ホバー時に薄くする */
     color: #333;           /* 色は変えない */
 }
+
+/* -------------------------------------------
+   NEWSリスト（リンクデザイン統一）
+------------------------------------------- */
+
+/* リンクがある場合のスタイル（黒・下線・紫防止） */
+.news-link,
+.news-link:visited,
+.news-link:hover,
+.news-link:active {
+    color: #333;                /* 常に黒色 */
+    text-decoration: underline;      /* 最初から下線 */
+    text-underline-offset: 3px;      /* 下線の位置調整 */
+    transition: opacity 0.3s;
+    display: inline-block;           /* 崩れ防止 */
+}
+
+.news-link:hover {
+    opacity: 0.6;               /* ホバー時に薄く */
+    color: #333;                /* 色は変えない */
+}
+
+/* リンクがない場合のスタイル */
+.news-no-link {
+    color: #333;
+    text-decoration: none;
+}

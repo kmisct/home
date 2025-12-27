@@ -37,19 +37,35 @@ function renderNewsList(data, targetId, page, perPage) {
         return;
     }
 
-    // HTML生成（update-sectionのCSSクラスを使用）
+    // HTML生成
     pageData.forEach(item => {
         // カテゴリがある場合のみ、バッジ用spanタグを生成
         const categoryBadge = item.category ? `<span class="news-badge">${item.category}</span>` : '';
+
+        // ★リンク生成ロジック
+        let titleHtml = item.title; // デフォルトは文字のみ
+
+        // URLがあり、かつ "#" ではない場合にリンク化
+        if (item.url && item.url.trim() !== "" && item.url !== "#") {
+            // httpから始まるなら別タブ(_blank)、それ以外は同タブ(_self)
+            const isExternal = item.url.startsWith('http');
+            const target = isExternal ? '_blank' : '_self';
+            
+            // クラス news-link を付与してデザインを適用
+            titleHtml = `<a href="${item.url}" class="news-link" target="${target}">${item.title}</a>`;
+        } else {
+            // リンクがない場合もレイアウト崩れ防止のため span で囲む
+            titleHtml = `<span class="news-no-link">${item.title}</span>`;
+        }
 
         const html = `
             <li>
                 <span class="update-date">${item.date}</span>
                 <span class="update-text" style="display: flex; align-items: center; flex-wrap: wrap;">
                     ${categoryBadge}
-                    <a href="${item.url}" style="text-decoration: none; color: inherit; margin-left: 10px; flex: 1;">
-                        ${item.title}
-                    </a>
+                    <div style="margin-left: 10px; flex: 1;">
+                        ${titleHtml}
+                    </div>
                 </span>
             </li>
         `;
