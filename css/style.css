@@ -437,3 +437,87 @@ body, html {
         display: block;
     }
 }
+
+/* -------------------------------------------
+   HOME: 最新の活動（カード形式）
+------------------------------------------- */
+
+/* グリッドレイアウト（3列） */
+#latest-events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* PCは3列 */
+    gap: 30px;
+    width: 100%;
+}
+
+/* カード本体 */
+.latest-card {
+    display: block;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%; /* 高さを揃える */
+}
+
+.latest-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* 画像エリア */
+.latest-card-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px; /* 画像の高さを固定 */
+}
+
+.latest-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 画像を枠いっぱいにトリミング */
+}
+
+/* カテゴリバッジ（画像の右下に配置） */
+.latest-card-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #0056b3;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 15px;
+    border-top-left-radius: 8px; /* 左上だけ丸く */
+}
+
+/* テキストエリア */
+.latest-card-body {
+    padding: 20px;
+}
+
+/* 日付 */
+.latest-card-date {
+    display: block;
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* タイトル */
+.latest-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0;
+    color: #333;
+}
+
+/* スマホ対応（1列にする） */
+@media (max-width: 768px) {
+    #latest-events-grid {
+        grid-template-columns: 1fr;
+    }
+}
