@@ -978,8 +978,8 @@ textarea:focus {
     .footer-nav li {
         margin-bottom: 0;
     }
-}
-{    
+
+    
     .rep-image { flex: auto; width: 100%; max-width: 400px; margin: 0 auto; }
     .page-hero { height: 200px; }
     .page-hero h1 { font-size: 1.8rem; }
