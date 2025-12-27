@@ -8,7 +8,7 @@
         "link1_text": "YouTubeを見る",
         "link1_url": "https://www.youtube.com/@kmi_sct",
         "link2_text": "アーカイブ一覧",
-        "link2_url": "youtube.html"
+        "link2_url": "youtube_podcast.html"
     },
     {
         "id": "podcast",
@@ -19,7 +19,7 @@
         "link1_text": "Spotifyで聴く",
         "link1_url": "#",
         "link2_text": "",
-        "link2_url": ""
+        "link2_url": "youtube_podcast.html"
     },
     {
         "id": "darkcandy",
@@ -30,7 +30,7 @@
         "link1_text": "記事を読む",
         "link1_url": "#",
         "link2_text": "",
-        "link2_url": ""
+        "link2_url": "youtube_podcast.html"
     },
     {
         "id": "pocket",
@@ -41,6 +41,6 @@
         "link1_text": "グッズ詳細",
         "link1_url": "#",
         "link2_text": "",
-        "link2_url": ""
+        "link2_url": "youtube_podcast.html"
     }
 ]
