@@ -1,21 +1,21 @@
 /* =========================================
-1. 基本設定 & アニメーション
-========================================= */
+   1. 基本設定 & アニメーション
+   ========================================= */
 body, html {
-margin: 0; padding: 0; height: 100%;
-background-color: #000;
-font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
-color: #333; line-height: 1.8; letter-spacing: 0.05em;
+    margin: 0; padding: 0; height: 100%;
+    background-color: #000;
+    font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+    color: #333; line-height: 1.8; letter-spacing: 0.05em;
 }
 
 /* ふわっと浮き上がるアニメーション */
 .js-fade-up {
-opacity: 0; transform: translateY(40px);
-transition: opacity 1.5s cubic-bezier(0.2, 1, 0.3, 1), transform 1.5s cubic-bezier(0.2, 1, 0.3, 1);
+    opacity: 0; transform: translateY(40px);
+    transition: opacity 1.5s cubic-bezier(0.2, 1, 0.3, 1), transform 1.5s cubic-bezier(0.2, 1, 0.3, 1);
 }
 .js-fade-down {
-opacity: 0; transform: translateY(-20px);
-transition: opacity 1s ease-out, transform 1s ease-out;
+    opacity: 0; transform: translateY(-20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 .is-active { opacity: 1 !important; transform: translateY(0) !important; }
 
@@ -25,8 +25,8 @@ transition: opacity 1s ease-out, transform 1s ease-out;
 
 
 /* =========================================
-2. メインビジュアル (Slider & Hero)
-========================================= */
+   2. メインビジュアル (Slider & Hero)
+   ========================================= */
 .swiper { width: 100%; height: 100vh; }
 .swiper-slide { background-size: cover; background-position: center; }
 
@@ -39,25 +39,25 @@ transition: opacity 1s ease-out, transform 1s ease-out;
 .swiper-pagination-bullet-active { opacity: 1; background: white; }
 
 .hero-message {
-position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-z-index: 10; text-align: center; color: white; width: 100%;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    z-index: 10; text-align: center; color: white; width: 100%;
 }
 .hero-message.is-active { opacity: 1 !important; transform: translate(-50%, -50%) !important; }
 .hero-message h1 {
-font-size: 4rem; margin: 0 0 20px 0; line-height: 1.1; font-weight: 700;
-text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    font-size: 4rem; margin: 0 0 20px 0; line-height: 1.1; font-weight: 700;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 .hero-message p { font-size: 1.2rem; font-weight: 400; opacity: 0.9; }
 
 
 /* =========================================
-3. ヘッダー & ナビゲーション
-========================================= */
+   3. ヘッダー & ナビゲーション
+   ========================================= */
 .page-header {
-position: fixed; top: 0; left: 0; width: 100%;
-display: flex; justify-content: space-between; align-items: center;
-padding: 20px 40px; z-index: 100; box-sizing: border-box;
-background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+    position: fixed; top: 0; left: 0; width: 100%;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 40px; z-index: 100; box-sizing: border-box;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
 }
 .logo { color: white; font-size: 1.5rem; font-weight: 700; letter-spacing: 2px; }
 .nav-list { display: flex; list-style: none; gap: 30px; margin: 0; padding: 0; }
@@ -68,26 +68,26 @@ background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
 /* プルダウンメニュー設定 */
 .dropdown { position: relative; padding-bottom: 10px; margin-bottom: -10px; }
 .dropdown-menu {
-position: absolute; top: 100%; left: 50%;
-transform: translateX(-50%) translateY(10px);
-background: rgba(0, 0, 0, 0.9);
-list-style: none; padding: 10px 0; margin: 0; min-width: 200px;
-border-radius: 4px; opacity: 0; visibility: hidden;
-transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 200;
+    position: absolute; top: 100%; left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(0, 0, 0, 0.9);
+    list-style: none; padding: 10px 0; margin: 0; min-width: 200px;
+    border-radius: 4px; opacity: 0; visibility: hidden;
+    transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 200;
 }
 .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
 .dropdown-menu li { display: block; text-align: center; }
 .dropdown-menu a {
-display: block; padding: 12px 20px; color: #ccc; font-size: 0.85rem;
-white-space: nowrap; transition: background 0.3s, color 0.3s;
+    display: block; padding: 12px 20px; color: #ccc; font-size: 0.85rem;
+    white-space: nowrap; transition: background 0.3s, color 0.3s;
 }
 .dropdown-menu a:hover { background: rgba(255, 255, 255, 0.1); color: white; opacity: 1; }
 .dropdown-toggle::after { content: "▼"; font-size: 0.6rem; margin-left: 6px; vertical-align: middle; opacity: 0.7; }
 
 
 /* =========================================
-4. コンテンツ共通パーツ
-========================================= */
+   4. コンテンツ共通パーツ
+   ========================================= */
 .content-section { background: white; padding: 120px 0; position: relative; z-index: 20; }
 .bg-gray { background-color: #f7f9fb; }
 .bg-dark { background-color: #1a1a1a; color: white; }
@@ -101,10 +101,10 @@ white-space: nowrap; transition: background 0.3s, color 0.3s;
 
 /* ボタン */
 .btn-more {
-display: inline-block; padding: 12px 40px;
-border: 1px solid #333; color: #333; text-decoration: none;
-border-radius: 50px; font-weight: 700; font-size: 0.9rem; transition: all 0.3s;
-margin-top: 20px;
+    display: inline-block; padding: 12px 40px;
+    border: 1px solid #333; color: #333; text-decoration: none;
+    border-radius: 50px; font-weight: 700; font-size: 0.9rem; transition: all 0.3s;
+    margin-top: 20px;
 }
 .btn-more:hover { background-color: #333; color: white; transform: translateY(-3px); }
 .btn-white { border-color: white; color: white; }
@@ -112,22 +112,22 @@ margin-top: 20px;
 
 /* ニュース/イベント共通バッジ */
 .news-badge {
-display: inline-block;
-background-color: #0056b3;
-color: white;
-font-size: 0.7rem;
-font-weight: 700;
-padding: 3px 8px;
-border-radius: 4px;
-white-space: nowrap;
-letter-spacing: 0.05em;
-margin-bottom: 2px;
+    display: inline-block;
+    background-color: #0056b3;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
 }
 
 
 /* =========================================
-5. セクション別デザイン (Home) & News
-========================================= */
+   5. セクション別デザイン (Home) & News
+   ========================================= */
 
 /* About */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
@@ -144,34 +144,39 @@ margin-bottom: 2px;
 .update-date { font-weight: 700; font-size: 0.9rem; color: #0056b3; width: 120px; flex-shrink: 0; }
 .update-text { font-size: 0.95rem; color: #333; }
 
-/* News Link Styles (黒・下線) */
+/* リンクスタイル統一（News & Archive） */
 .news-link,
 .news-link:visited,
 .news-link:hover,
-.news-link:active {
-color: #333; /* 常に黒色 */
-text-decoration: underline; /* 最初から下線 */
-text-underline-offset: 3px; /* 下線の位置調整 */
-transition: opacity 0.3s;
-display: inline-block; /* 崩れ防止 */
+.news-link:active,
+.archive-link,
+.archive-link:visited,
+.archive-link:hover,
+.archive-link:active {
+    color: #333;                /* 常に黒色 */
+    text-decoration: underline;      /* 最初から下線 */
+    text-underline-offset: 3px;      /* 下線の位置調整 */
+    transition: opacity 0.3s;
+    display: inline-block;           /* 崩れ防止 */
 }
 
-.news-link:hover {
-opacity: 0.6; /* ホバー時に薄く */
-color: #333; /* 色は変えない */
+.news-link:hover,
+.archive-link:hover {
+    opacity: 0.6;               /* ホバー時に薄く */
+    color: #333;                /* 色は変えない */
 }
 
 .news-no-link {
-color: #333;
-text-decoration: none;
+    color: #333;
+    text-decoration: none;
 }
 
 /* News Grid (Old Style) */
 .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
 .news-card a {
-text-decoration: none; color: #333; display: block; background: white;
-border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-transition: transform 0.4s, box-shadow 0.4s;
+    text-decoration: none; color: #333; display: block; background: white;
+    border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.4s, box-shadow 0.4s;
 }
 .news-card a:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 .news-img { height: 200px; overflow: hidden; }
@@ -179,8 +184,8 @@ transition: transform 0.4s, box-shadow 0.4s;
 .news-card a:hover .news-img img { transform: scale(1.08); }
 .news-body { padding: 25px; position: relative; }
 .news-cat {
-position: absolute; top: -15px; right: 20px; background: #0056b3; color: white;
-font-size: 0.7rem; padding: 4px 10px; border-radius: 4px; font-weight: bold;
+    position: absolute; top: -15px; right: 20px; background: #0056b3; color: white;
+    font-size: 0.7rem; padding: 4px 10px; border-radius: 4px; font-weight: bold;
 }
 .news-body time { font-size: 0.85rem; color: #888; display: block; margin-bottom: 10px; }
 .news-body h3 { font-size: 1.1rem; margin: 0; line-height: 1.5; font-weight: 700; }
@@ -188,30 +193,30 @@ font-size: 0.7rem; padding: 4px 10px; border-radius: 4px; font-weight: bold;
 /* Contents (Media) */
 .media-wrapper { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: flex-start; }
 .video-container {
-position: relative; width: 100%; padding-bottom: 56.25%; height: 0;
-overflow: hidden; border-radius: 8px; box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    position: relative; width: 100%; padding-bottom: 56.25%; height: 0;
+    overflow: hidden; border-radius: 8px; box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 .video-caption { font-size: 0.9rem; color: #666; margin-top: 10px; text-align: right; }
 
 .article-item {
-display: flex; align-items: center; justify-content: space-between;
-text-decoration: none; color: #333; padding: 20px 0;
-border-bottom: 1px solid #eee; transition: all 0.3s;
+    display: flex; align-items: center; justify-content: space-between;
+    text-decoration: none; color: #333; padding: 20px 0;
+    border-bottom: 1px solid #eee; transition: all 0.3s;
 }
 .article-item:first-child { border-top: 1px solid #eee; }
 .article-item:hover { padding-left: 15px; border-bottom: 1px solid #333; }
 .article-tag {
-font-size: 0.7rem; background: #333; color: white; padding: 3px 8px;
-border-radius: 4px; margin-right: 15px; white-space: nowrap;
+    font-size: 0.7rem; background: #333; color: white; padding: 3px 8px;
+    border-radius: 4px; margin-right: 15px; white-space: nowrap;
 }
 .article-title { flex-grow: 1; font-size: 1rem; font-weight: 500; margin: 0; }
 .mt-small { margin-top: 30px; }
 
 
 /* =========================================
-6. Footer & Mobile
-========================================= */
+   6. Footer & Mobile
+   ========================================= */
 .site-footer { background: #111; color: #aaa; padding: 60px 0 30px; }
 .footer-content { display: flex; justify-content: space-between; margin-bottom: 50px; }
 .footer-logo { color: white; font-size: 1.5rem; font-weight: bold; margin-bottom: 15px; letter-spacing: 2px; }
@@ -225,41 +230,41 @@ border-radius: 4px; margin-right: 15px; white-space: nowrap;
 
 /* スマホ対応 */
 @media (max-width: 768px) {
-.hero-message h1 { font-size: 2.5rem; }
-.about-grid, .media-wrapper, .update-wrapper, .rep-content { flex-direction: column; grid-template-columns: 1fr; }
-.nav-list { display: none; }
-.menu-toggle { display: block; color: white; font-size: 1.5rem; }
-.footer-content, .footer-nav ul { flex-direction: column; gap: 40px; }
-.rep-image { flex: auto; width: 100%; max-width: 400px; margin: 0 auto; }
-.page-hero { height: 200px; }
-.page-hero h1 { font-size: 1.8rem; }
-.members-grid { grid-template-columns: 1fr !important; }
+    .hero-message h1 { font-size: 2.5rem; }
+    .about-grid, .media-wrapper, .update-wrapper, .rep-content { flex-direction: column; grid-template-columns: 1fr; }
+    .nav-list { display: none; }
+    .menu-toggle { display: block; color: white; font-size: 1.5rem; }
+    .footer-content, .footer-nav ul { flex-direction: column; gap: 40px; }
+    .rep-image { flex: auto; width: 100%; max-width: 400px; margin: 0 auto; }
+    .page-hero { height: 200px; }
+    .page-hero h1 { font-size: 1.8rem; }
+    .members-grid { grid-template-columns: 1fr !important; }
 }
 
 /* タブレットなどでメンバーリストを2列にする */
 @media (max-width: 1024px) {
-.members-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    .members-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
 }
 
 
 /* =========================================
-7. 下層ページ共通 (Members, About等)
-========================================= */
+   7. 下層ページ共通 (Members, About等)
+   ========================================= */
 .page-hero {
-width: 100%; height: 300px;
-background-color: #111;
-background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
-background-size: cover; background-position: center;
-display: flex; align-items: center; justify-content: center;
-text-align: center; color: white; margin-bottom: 0;
+    width: 100%; height: 300px;
+    background-color: #111;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; color: white; margin-bottom: 0;
 }
 .page-hero h1 { font-size: 2.5rem; font-weight: 700; margin: 0; letter-spacing: 0.1em; }
 .page-hero p { font-size: 1rem; opacity: 0.8; margin-top: 10px; font-family: 'Noto Sans JP', sans-serif; }
 
 
 /* =========================================
-8. MEMBERSページ専用デザイン
-========================================= */
+   8. MEMBERSページ専用デザイン
+   ========================================= */
 
 /* --- 代表挨拶エリア --- */
 .rep-area { margin-bottom: 120px; }
@@ -270,19 +275,19 @@ text-align: center; color: white; margin-bottom: 0;
 
 .rep-text { flex: 1; }
 .rep-text h3 {
-font-size: 1.6rem; margin: 0 0 10px 0;
-border-bottom: 1px solid #ddd; padding-bottom: 15px;
-display: flex; align-items: baseline; gap: 15px;
+    font-size: 1.6rem; margin: 0 0 10px 0;
+    border-bottom: 1px solid #ddd; padding-bottom: 15px;
+    display: flex; align-items: baseline; gap: 15px;
 }
 .rep-en { font-size: 0.9rem; color: #888; font-weight: 400; }
 .rep-affil { font-weight: bold; color: #0056b3; margin-bottom: 20px; }
 
 .rep-affil a,
 .rep-affil a:visited {
-color: #0056b3;
-text-decoration: underline;
-cursor: pointer;
-transition: opacity 0.3s;
+    color: #0056b3;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: opacity 0.3s;
 }
 .rep-affil a:hover { opacity: 0.7; color: #0056b3; }
 
@@ -290,15 +295,15 @@ transition: opacity 0.3s;
 
 /* --- メンバーリストエリア --- */
 .members-grid {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
 .member-card { text-align: left; }
 .member-img {
-width: 100%; aspect-ratio: 1 / 1; overflow: hidden;
-border-radius: 8px; margin-bottom: 15px; background-color: #f0f0f0;
+    width: 100%; aspect-ratio: 1 / 1; overflow: hidden;
+    border-radius: 8px; margin-bottom: 15px; background-color: #f0f0f0;
 }
 .member-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
 .member-card:hover .member-img img { transform: scale(1.05); }
@@ -310,318 +315,479 @@ border-radius: 8px; margin-bottom: 15px; background-color: #f0f0f0;
 
 
 /* =========================================
-9. EVENTSページ & アーカイブ用スタイル
-========================================= */
+   9. EVENTSページ & アーカイブ用スタイル
+   ========================================= */
 
 /* アーカイブ全体のコンテナ */
 .archive-container {
-max-width: 900px;
-margin: 0 auto;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 /* 年ごとのグループ枠 */
 .archive-year-group {
-margin-bottom: 20px;
-border: 1px solid #eee;
-border-radius: 8px;
-overflow: hidden; /* 角丸からはみ出ないように */
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden; /* 角丸からはみ出ないように */
 }
 
 /* アコーディオンのボタン（年号） */
 .accordion-btn {
-background-color: #f9f9f9;
-color: #333;
-cursor: pointer;
-padding: 18px 25px;
-width: 100%;
-border: none;
-text-align: left;
-outline: none;
-font-size: 1.2rem;
-font-family: 'Montserrat', sans-serif;
-font-weight: 700;
-transition: 0.3s;
-display: flex;
-justify-content: space-between;
-align-items: center;
+    background-color: #f9f9f9;
+    color: #333;
+    cursor: pointer;
+    padding: 18px 25px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    transition: 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* ホバー時とアクティブ（開いている）時 */
 .accordion-btn:hover, .accordion-btn.active {
-background-color: #eef2f6;
-color: #0056b3;
+    background-color: #eef2f6;
+    color: #0056b3;
 }
 
 /* アイコン（矢印） */
 .accordion-btn .icon {
-font-size: 1rem;
-color: #999;
-transition: transform 0.3s;
+    font-size: 1rem;
+    color: #999;
+    transition: transform 0.3s;
 }
 
 /* 開閉するパネル部分（初期状態は高さ0） */
 .accordion-panel {
-background-color: white;
-max-height: 0;
-overflow: hidden;
-transition: max-height 0.3s ease-out;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
 }
 
 /* パネルが開いた時のリスト */
 .archive-list {
-list-style: none;
-padding: 10px 20px 20px 20px;
-margin: 0;
+    list-style: none;
+    padding: 10px 20px 20px 20px;
+    margin: 0;
 }
 
 /* 各行 */
 .archive-list li {
-display: flex;
-align-items: center;
-padding: 12px 0;
-border-bottom: 1px dotted #eee;
-flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px dotted #eee;
+    flex-wrap: wrap;
 }
 .archive-list li:last-child {
-border-bottom: none;
+    border-bottom: none;
 }
 
 /* 日付 */
 .archive-date {
-font-family: 'Montserrat', sans-serif;
-font-weight: 500;
-margin-right: 15px;
-color: #666;
-min-width: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    margin-right: 15px;
+    color: #666;
+    min-width: 50px;
 }
 
 /* バッジの微調整 */
 .archive-list .news-badge {
-margin-right: 15px;
+    margin-right: 15px;
 }
 
 /* タイトル */
 .archive-title {
-flex: 1;
-font-weight: 500;
-}
-
-/* アーカイブリスト内のリンクスタイル (News Linkと同じく黒・下線) */
-.archive-link,
-.archive-link:visited,
-.archive-link:hover,
-.archive-link:active {
-color: #333; /* 常に黒色（紫防止） */
-text-decoration: underline; /* 最初から下線を引く */
-text-underline-offset: 3px; /* 下線と文字の間に少し隙間を空けて見やすく */
-transition: opacity 0.3s;
-}
-
-.archive-link:hover {
-opacity: 0.6; /* ホバー時に薄くする */
-color: #333; /* 色は変えない */
+    flex: 1;
+    font-weight: 500;
 }
 
 /* スマホ対応 */
 @media (max-width: 600px) {
-.archive-list li {
-align-items: flex-start;
-}
-.archive-date {
-font-size: 0.9rem;
-margin-top: 2px;
-}
-.archive-title {
-width: 100%;
-margin-top: 5px;
-display: block;
-}
+    .archive-list li {
+        align-items: flex-start;
+    }
+    .archive-date {
+        font-size: 0.9rem;
+        margin-top: 2px;
+    }
+    .archive-title {
+        width: 100%;
+        margin-top: 5px;
+        display: block;
+    }
 }
 
-/* -------------------------------------------
-HOME: 最新の活動（カード形式）
-------------------------------------------- */
+
+/* =========================================
+   10. HOME: 最新の活動（カード形式）
+   ========================================= */
 
 /* グリッドレイアウト（3列） */
 #latest-events-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr); /* PCは3列 */
-gap: 30px;
-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* PCは3列 */
+    gap: 30px;
+    width: 100%;
 }
 
 /* カード本体 */
 .latest-card {
-display: block;
-background: white;
-border-radius: 12px;
-overflow: hidden;
-box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-transition: transform 0.3s, box-shadow 0.3s;
-height: 100%; /* 高さを揃える */
+    display: block;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%; /* 高さを揃える */
 }
 
 .latest-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
 /* 画像エリア */
 .latest-card-img-wrapper {
-position: relative;
-width: 100%;
-height: 200px; /* 画像の高さを固定 */
+    position: relative;
+    width: 100%;
+    height: 200px; /* 画像の高さを固定 */
 }
 
 .latest-card-img {
-width: 100%;
-height: 100%;
-object-fit: cover; /* 画像を枠いっぱいにトリミング */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 画像を枠いっぱいにトリミング */
 }
 
 /* カテゴリバッジ（画像の右下に配置） */
 .latest-card-badge {
-position: absolute;
-bottom: 0;
-right: 0;
-background-color: #0056b3;
-color: white;
-font-size: 0.75rem;
-font-weight: 700;
-padding: 6px 15px;
-border-top-left-radius: 8px; /* 左上だけ丸く */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #0056b3;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 15px;
+    border-top-left-radius: 8px; /* 左上だけ丸く */
 }
 
 /* テキストエリア */
 .latest-card-body {
-padding: 20px;
+    padding: 20px;
 }
 
 /* 日付 */
 .latest-card-date {
-display: block;
-font-size: 0.85rem;
-color: #888;
-margin-bottom: 10px;
-font-family: 'Montserrat', sans-serif;
+    display: block;
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* タイトル */
 .latest-card-title {
-font-size: 1rem;
-font-weight: 700;
-line-height: 1.5;
-margin: 0;
-color: #333;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0;
+    color: #333;
 }
 
 /* スマホ対応（1列にする） */
 @media (max-width: 768px) {
-#latest-events-grid {
-grid-template-columns: 1fr;
-}
+    #latest-events-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
-/* -------------------------------------------
-   蛇のタイムライン (Archive Timeline)
-------------------------------------------- */
+
+/* =========================================
+   11. MEDIA ARCHIVE (Snake Timeline & Filter)
+   ========================================= */
+
+/* フィルターボタン */
+.filter-btn {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 8px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #666;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.filter-btn.active {
+    background: #333;
+    color: white;
+    border-color: #333;
+}
+
+/* 蛇のタイムライン (Archive Timeline) 決定版 */
 .timeline-wrapper {
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 40px 0;
+    min-height: 500px; /* アイテムがなくても蛇が表示されるように高さを確保 */
 }
 
-/* 中央の蛇（紐） */
+/* 中央の蛇（紐）エリア */
 .snake-line {
     position: absolute;
-    top: 0; bottom: 0; left: 50%;
+    top: 0;
+    bottom: 0; /* 上から下まで突き通す */
+    left: 50%;
     transform: translateX(-50%);
-    width: 60px; /* 蛇の太さ */
-    z-index: 0;
-    /* 画像がない時のための予備の線 */
-    background: url('../images/snake_line.png') repeat-y center top;
-    background-size: contain; 
+    width: 100px; /* ★蛇の画像の太さに合わせて調整してください */
+    z-index: 1; /* 最背面 */
+    display: flex;
+    justify-content: center;
+    overflow: hidden; /* はみ出し防止 */
 }
-/* 画像を使う場合 */
+
+/* 蛇の画像本体 */
 .snake-img-bg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* または contain */
-    opacity: 0.8;
-}
-/* ※画像がないときに点線を出す場合（テスト用） */
-.snake-line:empty {
-    border-left: 2px dashed #ccc;
-    width: 0;
+    width: auto;
+    height: 100%; /* 親要素に合わせて縦に伸ばす */
+    object-fit: cover; /* 枠に合わせてトリミング */
+    opacity: 0.9;
 }
 
 
 /* アイテム配置の基本 */
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
 .timeline-item {
     position: relative;
     width: 45%; /* 半分より少し狭く */
     margin-bottom: 60px;
-    z-index: 10;
-    transition: transform 0.3s;
+    z-index: 10; /* 蛇より前面 */
     cursor: pointer;
 }
-.timeline-item:hover {
-    transform: translateY(-5px);
-}
 
-/* 奇数番目（左側） */
+/* 奇数番目（左側配置） */
 .timeline-item:nth-child(odd) {
-    margin-left: 0;
-    margin-right: auto;
-    text-align: right; /* 文字を中央寄せにしたい */
+    margin-right: auto; /* 左寄せ */
+    padding-right: 30px; /* 中央との隙間 */
+    text-align: right; /* テキスト右揃え */
 }
-/* 偶数番目（右側） */
+
+/* 偶数番目（右側配置） */
 .timeline-item:nth-child(even) {
-    margin-left: auto;
-    margin-right: 0;
-    text-align: left;
+    margin-left: auto; /* 右寄せ */
+    padding-left: 30px; /* 中央との隙間 */
+    text-align: left; /* テキスト左揃え */
 }
 
 
-/* カードのデザイン（吹き出し風） */
+/* カードのデザイン */
 .timeline-card {
     background: white;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    display: inline-block; /* 中身に合わせて伸縮 */
-    text-align: left; /* カードの中身は左揃え */
-    width: 100%;
-    max-width: 400px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    display: block;
+    text-align: left; /* カードの中身は常に左揃えに戻す */
     position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.timeline-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.15);
 }
 
-/* 蛇と繋ぐ線（ドット） */
+/* 蛇と繋ぐ点（ドット） */
 .timeline-card::after {
     content: '';
     position: absolute;
-    top: 20px;
-    width: 15px; height: 15px;
-    background: #333;
+    top: 30px; /* ドットの縦位置 */
+    width: 18px; height: 18px;
+    background: #333; /* ドットの色（蛇の色に合わせると良い） */
     border-radius: 50%;
-    border: 3px solid #fff;
-    box-shadow: 0 0 0 2px #333;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+    z-index: 1;
 }
-/* 左配置のときのドット位置 */
+
+/* 左配置のときのドット位置（右側に出す） */
 .timeline-item:nth-child(odd) .timeline-card::after {
-    right: -13.5%; /* 位置調整 */
+    right: -39px; /* 位置調整（padding-rightの値 + α） */
 }
-/* 右配置のときのドット位置 */
+
+/* 右配置のときのドット位置（左側に出す） */
 .timeline-item:nth-child(even) .timeline-card::after {
-    left: -13.5%;
+    left: -39px; /* 位置調整（padding-leftの値 + α） */
 }
 
 
 /* スマホ対応（1列にする） */
 @media (max-width: 768px) {
-    .snake-line { left: 20px; transform: none; }
-    .timeline-item { width: 100%; padding-left: 50px; text-align: left !important; }
-    .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { margin: 0 0 40px 0; }
-    .timeline-card::after { left: -38px !important; right: auto !important; }
+    /* 蛇を左端に寄せる */
+    .snake-line {
+        left: 30px;
+        transform: none;
+        width: 60px; /* 少し細く */
+    }
+    /* アイテムを右側に寄せる */
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px; /* 蛇の分だけ空ける */
+        padding-right: 0;
+        margin-bottom: 40px;
+        text-align: left !important;
+    }
+    /* ドットの位置をすべて左側に統一 */
+    .timeline-card::after {
+        left: -48px !important;
+        right: auto !important;
+    }
+}
+
+
+/* =========================================
+   12. モーダル (Popup)
+   ========================================= */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-container {
+    background: white;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 12px;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    transform: translateY(30px);
+    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.modal-overlay.active .modal-container {
+    transform: translateY(0);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 20px; right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 10;
+}
+
+.modal-close-btn:hover {
+    color: #333;
+}
+
+.modal-inner {
+    display: flex;
+    gap: 30px;
+}
+.modal-image {
+    flex: 0 0 250px;
+}
+.modal-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.modal-text {
+    flex: 1;
+}
+.modal-date {
+    display: block;
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.modal-title {
+    font-size: 1.8rem;
+    margin: 0 0 20px 0;
+    line-height: 1.3;
+}
+.modal-desc {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px;
+}
+.modal-links {
+    display: flex;
+    gap: 15px;
+}
+.modal-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: opacity 0.3s;
+}
+.modal-btn:hover {
+    opacity: 0.8;
+}
+.modal-btn-secondary {
+    background: #999;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .modal-inner {
+        flex-direction: column;
+    }
+    .modal-image {
+        flex: auto; width: 100%;
+    }
+    .modal-container {
+        padding: 30px 20px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
 }
