@@ -791,3 +791,136 @@ body, html {
         overflow-y: auto;
     }
 }
+
+/* -------------------------------------------
+   CONTACTページ
+------------------------------------------- */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* フォームを少し広く */
+    gap: 60px;
+    align-items: flex-start;
+    margin-top: 40px;
+}
+
+/* --- フォームスタイル --- */
+.contact-form-area {
+    background: #fff;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.required {
+    color: #ff0000;
+    margin-left: 5px;
+    font-size: 0.8rem;
+}
+
+/* 入力フィールドのデザイン */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #f9f9f9;
+    transition: 0.3s;
+    box-sizing: border-box; /* パディングを含めた幅にする */
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #333;
+    background: #fff;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+}
+
+/* 送信ボタン（中央寄せ & 幅広） */
+.form-btn-area {
+    text-align: center;
+    margin-top: 40px;
+}
+.btn-submit {
+    min-width: 200px;
+    cursor: pointer;
+    background: #333;
+    color: white;
+    border: none;
+}
+.btn-submit:hover {
+    background: #555;
+    color: white;
+}
+
+/* --- 情報・アクセスエリア --- */
+.contact-info-area {
+    background: #f7f9fb;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.info-box {
+    margin-bottom: 30px;
+}
+
+.info-box h3 {
+    font-size: 1.2rem;
+    margin: 0 0 15px 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.info-box p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.contact-mail {
+    font-weight: 700;
+    color: #0056b3;
+}
+
+.contact-sns a {
+    font-size: 1.5rem;
+    color: #333;
+    margin-right: 15px;
+    transition: opacity 0.3s;
+}
+.contact-sns a:hover {
+    opacity: 0.7;
+}
+
+/* 地図 */
+.map-container {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr; /* 1列にする */
+        gap: 40px;
+    }
+    .contact-info-area {
+        order: -1; /* スマホでは地図・情報を先に表示したい場合は -1、後なら削除 */
+    }
+}
