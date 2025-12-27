@@ -426,7 +426,7 @@ input:focus, select:focus, textarea:focus {
 .footer-content {
     display: flex;
     justify-content: space-between; /* 左右に配置 */
-    align-items: center; /* 上下中央揃え */
+    align-items: flex-start; /* 上下中央揃え */
     margin-bottom: 50px;
     flex-wrap: wrap;
 }
