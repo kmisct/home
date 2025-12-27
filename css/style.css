@@ -878,86 +878,103 @@ textarea:focus {
 }
 
 /* =========================================
-   13. Footer (元のデザイン復旧版)
+   13. Footer (完全復旧：横並びリンク版)
    ========================================= */
 .site-footer {
-    background: #000; /* 背景は黒 */
-    color: #aaa;      /* 文字はグレー */
+    background: #111; /* 背景：濃い黒 */
+    color: #aaa;      /* 文字：グレー */
     padding: 60px 0 30px;
     font-size: 0.9rem;
 }
 
 .footer-content {
     display: flex;
-    justify-content: space-between; /* 左のロゴ群と右のナビを離す */
-    align-items: flex-start;
+    justify-content: space-between; /* 左右に配置 */
+    align-items: center; /* 上下中央揃え */
     margin-bottom: 50px;
-    flex-wrap: wrap; /* スマホで折り返す */
+    flex-wrap: wrap;
 }
 
-/* 左側エリア（ロゴ・SNS） */
+/* --- 左側：ロゴとSNS --- */
 .footer-left {
-    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .footer-logo {
     color: white;
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 10px;
-    letter-spacing: 0.05em;
+    letter-spacing: 2px;
 }
 
 .footer-desc {
-    font-size: 0.85rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    font-size: 0.8rem;
     color: #888;
+    line-height: 1.5;
 }
 
+.social-links {
+    margin-top: 5px;
+}
 .social-links a {
-    color: #ccc;
-    font-size: 1.4rem;
+    color: white;
+    font-size: 1.2rem;
     margin-right: 20px;
-    transition: color 0.3s;
+    transition: opacity 0.3s;
     text-decoration: none;
 }
 .social-links a:hover {
-    color: white;
+    opacity: 0.7;
 }
 
-/* 右側エリア（ナビゲーション） */
+/* --- 右側：ナビゲーション（ここを横並びに直しました） --- */
 .footer-nav ul {
-    list-style: none; /* 「・」を消す */
+    list-style: none;
     padding: 0;
     margin: 0;
-    text-align: right;
-}
-
-.footer-nav li {
-    margin-bottom: 12px;
+    display: flex; /* ★ここで横並びにする */
+    gap: 30px;     /* リンク同士の間隔 */
 }
 
 .footer-nav a {
     color: #aaa;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    font-weight: 700; /* 太字でスタイリッシュに */
     transition: color 0.3s;
-    font-weight: 500;
+    text-transform: uppercase; /* 英語を大文字に */
 }
+
 .footer-nav a:hover {
     color: white;
-    text-decoration: underline;
 }
 
 /* コピーライト */
 .copyright {
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     border-top: 1px solid #333;
     padding-top: 30px;
     color: #666;
     font-family: 'Montserrat', sans-serif;
+}
+
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
+    
+    /* スマホのときはリンクを縦に戻すか、折り返して表示 */
+    .footer-nav ul {
+        flex-direction: column; /* スマホでは縦並びが見やすい */
+        gap: 15px;
+    }
 }
 
 
