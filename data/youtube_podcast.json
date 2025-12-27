@@ -1,46 +1,42 @@
 [
     {
-        "id": "youtube",
-        "title": "YouTubeチャンネル",
-        "date": "KMI SCT Movie",
-        "desc": "研究者インタビュー、イベントのアーカイブ動画などを配信しています。チャンネル登録で最新動画をチェック！",
-        "image": "images/home/IMG_0906.jpg", 
-        "link1_text": "YouTubeを見る",
-        "link1_url": "https://www.youtube.com/@kmi_sct",
-        "link2_text": "アーカイブ一覧",
-        "link2_url": "youtube_podcast.html"
+        "type": "YOUTUBE",
+        "id": "WtVKsGY20mw",
+        "category": "ROUND_TABLE",
+        "date": "2022.12.01",
+        "title": "The Known Unknowns of the Universe",
+        "desc": "ヘルシンキ大学のDeanna Hooper博士をゲストに迎え、ダークマターとダークエネルギーについて語り合いました。"
     },
     {
-        "id": "podcast",
-        "title": "KMIサイエンス雑談",
-        "date": "Podcast Audio",
-        "desc": "移動中や作業用BGMに。研究者の裏話や日常の出来事を、ラジオ感覚でゆるくお届けする音声コンテンツです。",
-        "image": "images/home/IMG_2346.png", 
-        "link1_text": "Spotifyで聴く",
-        "link1_url": "#",
-        "link2_text": "",
-        "link2_url": "youtube_podcast.html"
+        "type": "PODCAST",
+        "url": "#",
+        "image": "images/home/IMG_2346.png",
+        "date": "2025.01.15",
+        "title": "#05 研究者のカバンの中身チェック！",
+        "desc": "物理学者は普段何を持ち歩いている？意外なアイテムが出てきました。"
     },
     {
-        "id": "darkcandy",
-        "title": "Dark Candy Webマガジン",
-        "date": "Web Article",
-        "desc": "「暗黒物質（ダークマター）」のように、見えないけれどそこにある魅力を探る、KMIのWebマガジン。",
-        "image": "images/home/1712279552111-DhLgWuQjWq.jpg", 
-        "link1_text": "記事を読む",
-        "link1_url": "#",
-        "link2_text": "",
-        "link2_url": "youtube_podcast.html"
+        "type": "YOUTUBE",
+        "id": "05ePpR5KNxM",
+        "category": "ROUND_TABLE",
+        "date": "2024.10.09",
+        "title": "科学コミュニケーターと楽しむノーベル賞2025",
+        "desc": "日本科学未来館から、ノーベル化学賞発表の瞬間をライブ配信でお届けしました。"
     },
     {
-        "id": "pocket",
-        "title": "ポケットに物理を",
-        "date": "Project & Goods",
-        "desc": "日常のふとした瞬間に物理を感じる。物理法則が書かれたオリジナル付箋やグッズを展開しています。",
-        "image": "images/home/IMG_0906.jpg", 
-        "link1_text": "グッズ詳細",
-        "link1_url": "#",
-        "link2_text": "",
-        "link2_url": "youtube_podcast.html"
+        "type": "YOUTUBE",
+        "id": "pKLfTAPCs4A",
+        "category": "KMI_FILM",
+        "date": "2020.04.30",
+        "title": "KMI Film 日本語版",
+        "desc": "名古屋大学素粒子宇宙起源研究所（KMI）の紹介ムービーです。"
+    },
+    {
+        "type": "PODCAST",
+        "url": "#",
+        "image": "images/home/IMG_0906.jpg",
+        "date": "2024.12.20",
+        "title": "#04 ブラックホールの撮影秘話",
+        "desc": "あの画像はどうやって撮られたの？電波望遠鏡の裏側について語ります。"
     }
 ]
