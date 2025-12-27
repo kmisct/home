@@ -924,3 +924,74 @@ textarea:focus {
         order: -1; /* スマホでは地図・情報を先に表示したい場合は -1、後なら削除 */
     }
 }
+
+/* -------------------------------------------
+   Footer（KMIバナー対応版）
+------------------------------------------- */
+.site-footer {
+    background-color: #333; /* 背景色（濃いグレー） */
+    color: white;
+    padding: 40px 0 20px;
+    text-align: center;
+}
+
+/* 上部のリンク集 */
+.footer-top-links {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* リンク同士の間隔 */
+}
+
+.footer-top-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: opacity 0.3s;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.footer-top-links a:hover {
+    opacity: 0.7;
+}
+
+/* KMI ロゴバナーエリア */
+.footer-kmi-banner {
+    margin-bottom: 30px;
+}
+
+.footer-kmi-banner a {
+    display: inline-block;
+    transition: opacity 0.3s;
+}
+.footer-kmi-banner a:hover {
+    opacity: 0.8;
+}
+
+.footer-kmi-banner img {
+    max-width: 100%;
+    height: auto;
+    /* 画像の高さ調整（必要に応じて変更してください） */
+    max-height: 60px; 
+}
+
+/* コピーライト */
+.copyright {
+    border-top: 1px solid #555; /* 上にうっすら線を入れる */
+    padding-top: 20px;
+    font-size: 0.75rem;
+    color: #aaa;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .footer-top-links {
+        flex-direction: column; /* 縦並びにする */
+        gap: 15px;
+    }
+    .footer-kmi-banner img {
+        max-height: 40px; /* スマホではロゴを少し小さく */
+    }
+}
