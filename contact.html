@@ -36,31 +36,34 @@
             <div class="contact-wrapper js-fade-up">
                 
                 <div class="contact-form-area">
-                    <form action="#" method="post" class="contact-form">
+                    
+                    <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+                    <form action="https://docs.google.com/forms/d/e/1FAIpQLScS25-fcX82IrEYq7OlIuMSgbyfL43qeK2lKbs6kJpsLe4XzQ/formResponse" method="post" target="hidden_iframe" class="contact-form" onsubmit="alert('送信しました。お問い合わせありがとうございます。');">
+                        
                         <div class="form-group">
                             <label for="name">お名前 <span class="required">*</span></label>
-                            <input type="text" id="name" name="name" placeholder="名古屋 太郎" required>
+                            <input type="text" id="name" name="entry.1651586222" placeholder="名古屋 太郎" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="email">メールアドレス <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                            <input type="email" id="email" name="entry.131341277" placeholder="email@example.com" required>
                         </div>
 
                         <div class="form-group">
                             <label for="subject">件名</label>
-                            <select id="subject" name="subject">
-                                <option value="">選択してください</option>
-                                <option value="event">イベントについて</option>
-                                <option value="workshop">出張授業・ワークショップ依頼</option>
-                                <option value="collaboration">コラボレーションのご提案</option>
-                                <option value="other">その他のお問い合わせ</option>
+                            <select id="subject" name="entry.983742812">
+                                <option value="イベントについて">イベントについて</option>
+                                <option value="出張授業・実験教室">出張授業・実験教室</option>
+                                <option value="コラボレーションのご提案">コラボレーションのご提案</option>
+                                <option value="その他">その他</option>
                             </select>
                         </div>
 
                         <div class="form-group">
                             <label for="message">お問い合わせ内容 <span class="required">*</span></label>
-                            <textarea id="message" name="message" rows="6" placeholder="お問い合わせ内容をご記入ください" required></textarea>
+                            <textarea id="message" name="entry.744819535" rows="6" placeholder="お問い合わせ内容をご記入ください" required></textarea>
                         </div>
 
                         <div class="form-btn-area">
