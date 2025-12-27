@@ -399,16 +399,18 @@ body, html {
     }
 }
 
-/* アーカイブリスト内のリンクスタイル */
-.archive-link {
-    color: #333; /* 通常のテキストと同じ黒色 */
-    text-decoration: none; /* 初期状態は下線なし */
+/* アーカイブリスト内のリンクスタイル（最終版） */
+.archive-link,
+.archive-link:visited,
+.archive-link:hover,
+.archive-link:active {
+    color: #333;           /* 常に黒色（紫防止） */
+    text-decoration: underline; /* 最初から下線を引く */
+    text-underline-offset: 3px; /* 下線と文字の間に少し隙間を空けて見やすく */
     transition: opacity 0.3s;
-    border-bottom: 1px solid transparent;
 }
 
 .archive-link:hover {
-    color: #333; /* ホバーしても色は変えない */
-    border-bottom: 1px solid #333; /* 黒い下線を引く */
-    opacity: 0.7; /* 少し薄くしてクリックできる感を出す */
+    opacity: 0.6;          /* ホバー時に薄くする */
+    color: #333;           /* 色は変えない */
 }

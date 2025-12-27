@@ -11,7 +11,7 @@ async function loadEventsArchive() {
         // 1. データを年ごとにグループ化
         const eventsByYear = {};
         
-        // 日付順（新しい順）のソート（期間表記対応）
+        // 日付順（新しい順）のソート
         data.sort((a, b) => {
             const dateA = new Date(a.date.substring(0, 10)); 
             const dateB = new Date(b.date.substring(0, 10));
@@ -47,14 +47,13 @@ async function loadEventsArchive() {
                     badgeColor = '#27ae60'; 
                 }
 
-                // 日付の表示調整（"2025." をカット）
+                // 日付の表示調整
                 const displayDate = item.date.substring(5);
 
-                // ★修正点：URLがあればリンク化する処理
+                // ★修正点：アイコンを削除し、文字だけのリンクにする
                 let titleHtml = item.title;
                 if (item.url && item.url !== "") {
-                    // リンクがある場合はaタグで囲む（target="_blank"はお好みで外してもOK）
-                    titleHtml = `<a href="${item.url}" class="archive-link" target="_blank">${item.title} <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8em; margin-left: 5px; opacity: 0.6;"></i></a>`;
+                    titleHtml = `<a href="${item.url}" class="archive-link" target="_blank">${item.title}</a>`;
                 }
 
                 return `
