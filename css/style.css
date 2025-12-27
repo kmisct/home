@@ -414,19 +414,19 @@ input:focus, select:focus, textarea:focus {
 
 
 /* =========================================
-   13. Footer (完全復旧：横並びリンク版)
+   13. Footer (KMIロゴ＆リンク付き版)
    ========================================= */
 .site-footer {
-    background: #111; /* 背景：濃い黒 */
-    color: #aaa;      /* 文字：グレー */
+    background: #111;
+    color: #aaa;
     padding: 60px 0 30px;
     font-size: 0.9rem;
 }
 
 .footer-content {
     display: flex;
-    justify-content: space-between; /* 左右に配置 */
-    align-items: flex-start; /* 上下中央揃え */
+    justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 50px;
     flex-wrap: wrap;
 }
@@ -439,6 +439,7 @@ input:focus, select:focus, textarea:focus {
 }
 .footer-logo {
     color: white; font-size: 1.5rem; font-weight: 700; letter-spacing: 2px;
+    line-height: 1;
 }
 .footer-desc {
     font-size: 0.8rem; color: #888; line-height: 1.5;
@@ -449,54 +450,66 @@ input:focus, select:focus, textarea:focus {
 }
 .social-links a:hover { opacity: 0.7; }
 
-/* --- 右側：ナビゲーション（横並び） --- */
+/* --- 右側：ナビゲーション --- */
 .footer-nav ul {
     list-style: none; padding: 0; margin: 0;
-    display: flex; /* 横並び */
-    gap: 30px;     /* 間隔 */
+    display: flex; gap: 30px;
 }
 .footer-nav a {
     color: #aaa; text-decoration: none; font-size: 0.9rem; font-weight: 700;
-    transition: color 0.3s; text-transform: uppercase;
+    transition: color 0.3s; text-transform: uppercase; padding-top: 5px;
 }
 .footer-nav a:hover { color: white; }
 
-/* --- ★ここから下が追加・変更部分 --- */
 
-/* KMI公式サイトへのリンク */
+/* --- KMI公式サイトへのリンク（ロゴ付き） --- */
 .footer-kmi-link {
     text-align: center;
-    border-top: 1px solid #333; /* 区切り線をここに移動 */
-    padding-top: 30px;          /* 線との余白 */
-    margin-bottom: 15px;        /* コピーライトとの余白 */
+    border-top: 1px solid #333; /* 区切り線 */
+    padding-top: 30px;
+    margin-bottom: 15px;
 }
 
-.footer-kmi-link a {
-    color: #ddd;                /* 白に近いグレー */
-    font-size: 1.1rem;          /* 少し大きく */
-    font-family: 'Times New Roman', serif; /* 公式感が出るよう明朝体(セリフ体)にする */
-    text-decoration: none;
+/* リンク全体（画像＋テキスト）のコンテナ */
+.kmi-link-container {
+    display: inline-flex; /* 横並びにする */
+    align-items: center;  /* 上下中央揃え */
+    text-decoration: none; /* デフォルトの下線を消す */
+    color: #ddd;
     transition: opacity 0.3s;
+}
+
+.kmi-link-container:hover {
+    opacity: 0.7;
+}
+/* ホバー時にテキスト部分だけに下線をつける */
+.kmi-link-container:hover .kmi-footer-text {
+    text-decoration: underline;
+}
+
+/* ロゴ画像のスタイル */
+.kmi-footer-logo-img {
+    height: 45px; /* ロゴの高さ（お好みで調整してください） */
+    width: auto;  /* 幅は自動 */
+    margin-right: 20px; /* テキストとの間の余白 */
+}
+
+/* テキスト部分のスタイル */
+.kmi-footer-text {
+    font-size: 1.1rem;
+    font-family: 'Times New Roman', serif; /* 明朝体で権威感を出す */
     letter-spacing: 0.02em;
 }
 
-.footer-kmi-link a:hover {
-    opacity: 0.7;
-    text-decoration: underline; /* ホバー時に下線 */
-}
 
-/* コピーライト（線を消して調整） */
+/* コピーライト */
 .copyright {
-    text-align: center;
-    font-size: 0.75rem;
-    border-top: none; /* 線を削除（上にあるリンク部分に移したため） */
-    padding-top: 0;
-    color: #666;
-    font-family: 'Montserrat', sans-serif;
+    text-align: center; font-size: 0.75rem; border-top: none;
+    padding-top: 0; color: #666; font-family: 'Montserrat', sans-serif;
 }
 
 
-/* スマホ対応 */
+/* フッターのスマホ対応 */
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
@@ -510,11 +523,21 @@ input:focus, select:focus, textarea:focus {
     .footer-nav a {
         padding-top: 0;
     }
-    /* スマホではKMIリンクの文字サイズを少し調整 */
-    .footer-kmi-link a {
-        font-size: 0.95rem;
-        display: block; /* 折り返しやすくする */
+
+    /* スマホでのKMIリンク調整 */
+    .kmi-link-container {
+        flex-direction: column; /* スマホでは縦並びにする */
+        gap: 15px;
+    }
+    .kmi-footer-logo-img {
+        margin-right: 0;
+        height: 55px; /* スマホでは少しロゴを大きく */
+    }
+    .kmi-footer-text {
+        font-size: 1rem;
         line-height: 1.4;
+        text-align: center;
+        display: block;
     }
 }
 
