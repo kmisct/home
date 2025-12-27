@@ -558,7 +558,7 @@ body, html {
     bottom: 0; /* 上から下まで突き通す */
     left: 50%;
     transform: translateX(-50%);
-    width: 100px; /* ★蛇の画像の太さに合わせて調整してください */
+    width: 50px; /* ★蛇の画像の太さに合わせて調整してください */
     z-index: 1; /* 最背面 */
     display: flex;
     justify-content: center;
