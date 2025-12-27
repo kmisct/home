@@ -11,12 +11,11 @@ async function loadEventsArchive() {
         // 1. データを年ごとにグループ化
         const eventsByYear = {};
         
-        // ★修正点：日付の並び替えロジックを強化
-        // "2025.10.04-05" のような文字列から、先頭の "2025.10.04" だけを取り出して比較する
+        // 日付順（新しい順）のソート（期間表記対応）
         data.sort((a, b) => {
-            const dateA = new Date(a.date.substring(0, 10)); // 先頭10文字だけ見る
+            const dateA = new Date(a.date.substring(0, 10)); 
             const dateB = new Date(b.date.substring(0, 10));
-            return dateB - dateA; // 新しい順
+            return dateB - dateA;
         });
 
         data.forEach(item => {
@@ -40,7 +39,7 @@ async function loadEventsArchive() {
             const iconRotation = index === 0 ? 'transform: rotate(180deg);' : '';
 
             const listItems = events.map(item => {
-                // カテゴリごとの色分け設定
+                // カテゴリごとの色分け
                 let badgeColor = '#0056b3'; 
                 if (item.category === 'TALK' || item.category === 'CAFE') {
                     badgeColor = '#e67e22'; 
@@ -48,15 +47,21 @@ async function loadEventsArchive() {
                     badgeColor = '#27ae60'; 
                 }
 
-                // ★修正点：表示用の日付処理
-                // "2025.10.04-05" → "10.04-05" となるように、5文字目以降をすべて表示する
+                // 日付の表示調整（"2025." をカット）
                 const displayDate = item.date.substring(5);
+
+                // ★修正点：URLがあればリンク化する処理
+                let titleHtml = item.title;
+                if (item.url && item.url !== "") {
+                    // リンクがある場合はaタグで囲む（target="_blank"はお好みで外してもOK）
+                    titleHtml = `<a href="${item.url}" class="archive-link" target="_blank">${item.title} <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8em; margin-left: 5px; opacity: 0.6;"></i></a>`;
+                }
 
                 return `
                     <li>
                         <span class="archive-date">${displayDate}</span>
                         <span class="news-badge" style="background-color: ${badgeColor};">${item.category}</span>
-                        <span class="archive-title">${item.title}</span>
+                        <span class="archive-title">${titleHtml}</span>
                     </li>
                 `;
             }).join('');
