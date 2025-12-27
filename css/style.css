@@ -215,40 +215,7 @@ body, html {
 
 
 /* =========================================
-   6. Footer & Mobile
-   ========================================= */
-.site-footer { background: #111; color: #aaa; padding: 60px 0 30px; }
-.footer-content { display: flex; justify-content: space-between; margin-bottom: 50px; }
-.footer-logo { color: white; font-size: 1.5rem; font-weight: bold; margin-bottom: 15px; letter-spacing: 2px; }
-.social-links { margin-top: 20px; }
-.social-links a { color: white; font-size: 1.5rem; margin-right: 20px; transition: opacity 0.3s; }
-.social-links a:hover { opacity: 0.7; }
-.footer-nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 20px; }
-.footer-nav a { color: #aaa; text-decoration: none; transition: color 0.3s; }
-.footer-nav a:hover { color: white; }
-.copyright { text-align: center; font-size: 0.8rem; border-top: 1px solid #333; padding-top: 30px; }
-
-/* スマホ対応 */
-@media (max-width: 768px) {
-    .hero-message h1 { font-size: 2.5rem; }
-    .about-grid, .media-wrapper, .update-wrapper, .rep-content { flex-direction: column; grid-template-columns: 1fr; }
-    .nav-list { display: none; }
-    .menu-toggle { display: block; color: white; font-size: 1.5rem; }
-    .footer-content, .footer-nav ul { flex-direction: column; gap: 40px; }
-    .rep-image { flex: auto; width: 100%; max-width: 400px; margin: 0 auto; }
-    .page-hero { height: 200px; }
-    .page-hero h1 { font-size: 1.8rem; }
-    .members-grid { grid-template-columns: 1fr !important; }
-}
-
-/* タブレットなどでメンバーリストを2列にする */
-@media (max-width: 1024px) {
-    .members-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
-}
-
-
-/* =========================================
-   7. 下層ページ共通 (Members, About等)
+   6. 下層ページ共通 (Members, About等)
    ========================================= */
 .page-hero {
     width: 100%; height: 300px;
@@ -263,7 +230,7 @@ body, html {
 
 
 /* =========================================
-   8. MEMBERSページ専用デザイン
+   7. MEMBERSページ専用デザイン
    ========================================= */
 
 /* --- 代表挨拶エリア --- */
@@ -313,9 +280,14 @@ body, html {
 .member-role { font-size: 0.8rem; color: #0056b3; font-weight: bold; margin: 0 0 8px 0; }
 .member-comment { font-size: 0.85rem; color: #666; line-height: 1.5; }
 
+/* タブレットなどでメンバーリストを2列にする */
+@media (max-width: 1024px) {
+    .members-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+}
+
 
 /* =========================================
-   9. EVENTSページ & アーカイブ用スタイル
+   8. EVENTSページ & アーカイブ用スタイル
    ========================================= */
 
 /* アーカイブ全体のコンテナ */
@@ -429,7 +401,7 @@ body, html {
 
 
 /* =========================================
-   10. HOME: 最新の活動（カード形式）
+   9. HOME: 最新の活動（カード形式）
    ========================================= */
 
 /* グリッドレイアウト（3列） */
@@ -514,7 +486,7 @@ body, html {
 
 
 /* =========================================
-   11. MEDIA ARCHIVE (Snake Timeline & Filter)
+   10. MEDIA ARCHIVE (Snake Timeline & Filter)
    ========================================= */
 
 /* フィルターボタン */
@@ -542,37 +514,35 @@ body, html {
     border-color: #333;
 }
 
-/* 蛇のタイムライン (Archive Timeline) 決定版 */
+/* 蛇のタイムライン */
 .timeline-wrapper {
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
     padding: 40px 0;
-    min-height: 500px; /* アイテムがなくても蛇が表示されるように高さを確保 */
+    min-height: 500px;
 }
 
 /* 中央の蛇（紐）エリア */
 .snake-line {
     position: absolute;
     top: 0;
-    bottom: 0; /* 上から下まで突き通す */
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px; /* ★蛇の画像の太さに合わせて調整してください */
-    z-index: 1; /* 最背面 */
+    width: 50px; /* 蛇の太さ */
+    z-index: 1;
     display: flex;
     justify-content: center;
-    overflow: hidden; /* はみ出し防止 */
+    overflow: hidden;
 }
 
-/* 蛇の画像本体 */
 .snake-img-bg {
     width: auto;
-    height: 100%; /* 親要素に合わせて縦に伸ばす */
-    object-fit: cover; /* 枠に合わせてトリミング */
+    height: 100%;
+    object-fit: cover;
     opacity: 0.9;
 }
-
 
 /* アイテム配置の基本 */
 .timeline-container {
@@ -583,26 +553,25 @@ body, html {
 
 .timeline-item {
     position: relative;
-    width: 45%; /* 半分より少し狭く */
+    width: 45%;
     margin-bottom: 60px;
-    z-index: 10; /* 蛇より前面 */
+    z-index: 10;
     cursor: pointer;
 }
 
 /* 奇数番目（左側配置） */
 .timeline-item:nth-child(odd) {
-    margin-right: auto; /* 左寄せ */
-    padding-right: 30px; /* 中央との隙間 */
-    text-align: right; /* テキスト右揃え */
+    margin-right: auto;
+    padding-right: 30px;
+    text-align: right;
 }
 
 /* 偶数番目（右側配置） */
 .timeline-item:nth-child(even) {
-    margin-left: auto; /* 右寄せ */
-    padding-left: 30px; /* 中央との隙間 */
-    text-align: left; /* テキスト左揃え */
+    margin-left: auto;
+    padding-left: 30px;
+    text-align: left;
 }
-
 
 /* カードのデザイン */
 .timeline-card {
@@ -611,7 +580,7 @@ body, html {
     border-radius: 12px;
     box-shadow: 0 5px 25px rgba(0,0,0,0.1);
     display: block;
-    text-align: left; /* カードの中身は常に左揃えに戻す */
+    text-align: left;
     position: relative;
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -624,9 +593,9 @@ body, html {
 .timeline-card::after {
     content: '';
     position: absolute;
-    top: 30px; /* ドットの縦位置 */
+    top: 30px;
     width: 18px; height: 18px;
-    background: #333; /* ドットの色（蛇の色に合わせると良い） */
+    background: #333;
     border-radius: 50%;
     border: 4px solid #fff;
     box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
@@ -635,32 +604,28 @@ body, html {
 
 /* 左配置のときのドット位置（右側に出す） */
 .timeline-item:nth-child(odd) .timeline-card::after {
-    right: -39px; /* 位置調整（padding-rightの値 + α） */
+    right: -39px;
 }
 
 /* 右配置のときのドット位置（左側に出す） */
 .timeline-item:nth-child(even) .timeline-card::after {
-    left: -39px; /* 位置調整（padding-leftの値 + α） */
+    left: -39px;
 }
-
 
 /* スマホ対応（1列にする） */
 @media (max-width: 768px) {
-    /* 蛇を左端に寄せる */
     .snake-line {
         left: 30px;
         transform: none;
-        width: 60px; /* 少し細く */
+        width: 60px;
     }
-    /* アイテムを右側に寄せる */
     .timeline-item {
         width: 100%;
-        padding-left: 70px; /* 蛇の分だけ空ける */
+        padding-left: 70px;
         padding-right: 0;
         margin-bottom: 40px;
         text-align: left !important;
     }
-    /* ドットの位置をすべて左側に統一 */
     .timeline-card::after {
         left: -48px !important;
         right: auto !important;
@@ -669,7 +634,7 @@ body, html {
 
 
 /* =========================================
-   12. モーダル (Popup)
+   11. モーダル (Popup)
    ========================================= */
 .modal-overlay {
     position: fixed;
@@ -792,12 +757,13 @@ body, html {
     }
 }
 
-/* -------------------------------------------
-   CONTACTページ
-------------------------------------------- */
+
+/* =========================================
+   12. CONTACTページ
+   ========================================= */
 .contact-wrapper {
     display: grid;
-    grid-template-columns: 1.5fr 1fr; /* フォームを少し広く */
+    grid-template-columns: 1.5fr 1fr;
     gap: 60px;
     align-items: flex-start;
     margin-top: 40px;
@@ -825,7 +791,7 @@ body, html {
     font-size: 0.8rem;
 }
 
-/* 入力フィールドのデザイン */
+/* 入力フィールド */
 input[type="text"],
 input[type="email"],
 select,
@@ -838,7 +804,7 @@ textarea {
     font-family: inherit;
     background: #f9f9f9;
     transition: 0.3s;
-    box-sizing: border-box; /* パディングを含めた幅にする */
+    box-sizing: border-box;
 }
 
 input:focus,
@@ -850,7 +816,7 @@ textarea:focus {
     box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
 }
 
-/* 送信ボタン（中央寄せ & 幅広） */
+/* 送信ボタン */
 .form-btn-area {
     text-align: center;
     margin-top: 40px;
@@ -877,14 +843,12 @@ textarea:focus {
 .info-box {
     margin-bottom: 30px;
 }
-
 .info-box h3 {
     font-size: 1.2rem;
     margin: 0 0 15px 0;
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
 }
-
 .info-box p {
     font-size: 0.95rem;
     line-height: 1.8;
@@ -895,7 +859,6 @@ textarea:focus {
     font-weight: 700;
     color: #0056b3;
 }
-
 .contact-sns a {
     font-size: 1.5rem;
     color: #333;
@@ -917,17 +880,18 @@ textarea:focus {
 /* スマホ対応 */
 @media (max-width: 768px) {
     .contact-wrapper {
-        grid-template-columns: 1fr; /* 1列にする */
+        grid-template-columns: 1fr;
         gap: 40px;
     }
     .contact-info-area {
-        order: -1; /* スマホでは地図・情報を先に表示したい場合は -1、後なら削除 */
+        order: -1;
     }
 }
 
-/* -------------------------------------------
-   Footer（KMIバナー対応版）
-------------------------------------------- */
+
+/* =========================================
+   13. Footer & Mobile (KMIバナー対応版)
+   ========================================= */
 .site-footer {
     background-color: #333; /* 背景色（濃いグレー） */
     color: white;
@@ -972,7 +936,7 @@ textarea:focus {
 .footer-kmi-banner img {
     max-width: 100%;
     height: auto;
-    /* 画像の高さ調整（必要に応じて変更してください） */
+    /* 画像の高さ調整 */
     max-height: 60px; 
 }
 
@@ -985,13 +949,23 @@ textarea:focus {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* スマホ対応 */
+/* Footer & Common スマホ対応 */
 @media (max-width: 768px) {
+    .hero-message h1 { font-size: 2.5rem; }
+    .about-grid, .media-wrapper, .update-wrapper, .rep-content { flex-direction: column; grid-template-columns: 1fr; }
+    .nav-list { display: none; }
+    .menu-toggle { display: block; color: white; font-size: 1.5rem; }
+    
     .footer-top-links {
-        flex-direction: column; /* 縦並びにする */
+        flex-direction: column;
         gap: 15px;
     }
     .footer-kmi-banner img {
-        max-height: 40px; /* スマホではロゴを少し小さく */
+        max-height: 40px;
     }
+    
+    .rep-image { flex: auto; width: 100%; max-width: 400px; margin: 0 auto; }
+    .page-hero { height: 200px; }
+    .page-hero h1 { font-size: 1.8rem; }
+    .members-grid { grid-template-columns: 1fr !important; }
 }
