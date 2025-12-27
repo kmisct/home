@@ -36,24 +36,16 @@
             <div class="contact-wrapper js-fade-up">
                 
                 <div class="contact-form-area">
-                    
-                    <iframe name="hidden_iframe" style="display:none;"></iframe>
-
-                    <form action="https://docs.google.com/forms/d/e/1FAIpQLScS25-fcX82IrEYq7OlIuMSgbyfL43qeK2lKbs6kJpsLe4XzQ/formResponse" method="post" target="hidden_iframe" class="contact-form" onsubmit="alert('送信しました。お問い合わせありがとうございます。');">
+                    <form id="mail-form" class="contact-form">
                         
                         <div class="form-group">
-                            <label for="name">お名前 <span class="required">*</span></label>
-                            <input type="text" id="name" name="entry.1651586222" placeholder="名古屋 太郎" required>
+                            <label for="name">お名前</label>
+                            <input type="text" id="name" name="name" placeholder="名古屋 太郎" required>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="email">メールアドレス <span class="required">*</span></label>
-                            <input type="email" id="email" name="entry.131341277" placeholder="email@example.com" required>
-                        </div>
-
                         <div class="form-group">
                             <label for="subject">件名</label>
-                            <select id="subject" name="entry.983742812">
+                            <select id="subject" name="subject">
                                 <option value="イベントについて">イベントについて</option>
                                 <option value="実験教室・ワークショップの依頼">実験教室・ワークショップの依頼</option>
                                 <option value="コラボレーションのご提案">コラボレーションのご提案</option>
@@ -62,14 +54,20 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="message">お問い合わせ内容 <span class="required">*</span></label>
-                            <textarea id="message" name="entry.744819535" rows="6" placeholder="お問い合わせ内容をご記入ください" required></textarea>
+                            <label for="message">お問い合わせ内容</label>
+                            <textarea id="message" name="message" rows="8" placeholder="お問い合わせ内容をご記入ください" required></textarea>
                         </div>
 
                         <div class="form-btn-area">
-                            <button type="submit" class="btn-more btn-submit">送 信</button>
+                            <button type="button" class="btn-more btn-submit" onclick="sendMail()">メーラーを起動して送信</button>
                         </div>
                     </form>
+
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 20px; text-align: center; line-height: 1.6;">
+                        ※ボタンを押すと、お使いのメールソフトが起動します。<br>
+                        文字化け等でうまく起動しない場合は、直接以下のメールアドレスまでご連絡ください。<br>
+                        <strong>contact@example.com</strong>
+                    </p>
                 </div>
 
                 <div class="contact-info-area">
@@ -79,20 +77,19 @@
                             <strong>KMI Science Communication Team</strong><br>
                             名古屋大学 素粒子宇宙起源研究所 (KMI)<br>
                             〒464-8602 愛知県名古屋市千種区不老町<br>
-                            ES総合館
+                            ES総合館 6階
                         </p>
                         <p class="contact-mail">
-                            <i class="fa-regular fa-envelope"></i> team.kmisc@gmail.com
+                            <i class="fa-regular fa-envelope"></i> contact@example.com
                         </p>
                         <p class="contact-sns">
-                            <a href="https://x.com/kmi_sct" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                            <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://twitter.com/your_account" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
                             <a href="https://www.youtube.com/@kmi_sct" target="_blank"><i class="fa-brands fa-youtube"></i></a>
                         </p>
                     </div>
 
                     <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.597576286266!2d136.9652753!3d35.1541451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037aae75455555%3A0x6331908350849f2a!2z5ZCN5Y-k5bGL5aSn5a2mIEVT57eQ5ZCI6aGj!5e0!3m2!1sja!2sjp!4v1703670000000!5m2!1sja!2sjp" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.503460835928!2d136.96328907576577!3d35.168972872756885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037a5b3a4f6d89%3A0x6b4c8c8b4b4b4b4b!2z5ZCN5Y-k5bGL5aSn5a2mIEVz57eP5ZCI6aSo!5e0!3m2!1sja!2sjp!4v1703673000000!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
 
@@ -103,6 +100,40 @@
 
     <div id="footer-placeholder"></div>
     <script src="js/include.js"></script>
+
+    <script>
+        function sendMail() {
+            // ----------------------------------------------------
+            // ★ここにあなたの受信したいメールアドレスを入れてください
+            const to = "team.kmisc@gmail.com"; 
+            // ----------------------------------------------------
+            
+            // 入力内容を取得
+            const name = document.getElementById('name').value;
+            const subjectVal = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // 未入力チェック（簡易）
+            if(!name || !message){
+                alert('お名前とお問い合わせ内容を入力してください。');
+                return;
+            }
+            
+            // 件名と本文を作成（日本語をURL用にエンコード）
+            const subject = encodeURIComponent("【HPよりお問い合わせ】" + subjectVal + " (" + name + "様)");
+            
+            const bodyText = 
+                "■お名前：\n" + name + "\n\n" +
+                "■お問い合わせ内容：\n" + message + "\n\n" +
+                "--------------------------------------------------\n" +
+                "※このメールはWebサイトのフォームから起動されました。";
+            
+            const body = encodeURIComponent(bodyText);
+            
+            // メーラーを起動 (mailtoリンクへ移動)
+            window.location.href = "mailto:" + to + "?subject=" + subject + "&body=" + body;
+        }
+    </script>
 
 </body>
 </html>
