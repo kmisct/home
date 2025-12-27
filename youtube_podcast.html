@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube & Podcast - KMI Science Communication Team</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <div class="page-hero">
+        <div class="page-hero-inner js-fade-up">
+            <h1>MEDIA</h1>
+            <p>YouTube & Podcast アーカイブ</p>
+        </div>
+    </div>
+
+    <section class="content-section">
+        <div class="container">
+            
+            <div class="members-area js-fade-up">
+                <div class="section-header">
+                    <span class="subtitle">WATCH & LISTEN</span>
+                    <h2>KMI メディアアーカイブ</h2>
+                    <p class="section-desc" style="margin-top: 15px; color: #666;">
+                        研究者の熱いトークを「動画」で見るか、「音声」で聴くか。<br>
+                        お好みのスタイルで科学の世界をお楽しみください。
+                    </p>
+                </div>
+
+                <div class="filter-buttons text-center mb-40" style="margin-bottom: 40px;">
+                    <button class="filter-btn active" data-filter="all">ALL</button>
+                    <button class="filter-btn" data-filter="YOUTUBE"><i class="fa-brands fa-youtube"></i> YouTube</button>
+                    <button class="filter-btn" data-filter="PODCAST"><i class="fa-solid fa-podcast"></i> Podcast</button>
+                </div>
+
+                <div id="media-grid" class="members-grid"></div>
+
+            </div>
+
+            <div class="text-center mt-50 js-fade-up" style="margin-top: 80px;">
+                <p style="margin-bottom: 20px;">
+                    最新の配信をチェックしよう！
+                </p>
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <a href="https://www.youtube.com/@kmi_sct" target="_blank" class="btn-more">
+                        <i class="fa-brands fa-youtube"></i> YouTube
+                    </a>
+                    <a href="#" target="_blank" class="btn-more btn-white" style="border: 1px solid #ddd; background: #f9f9f9; color: #333;">
+                        <i class="fa-solid fa-podcast"></i> Podcast
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/include.js"></script>
+    <script src="js/youtube_podcast.js"></script> </body>
+</html>

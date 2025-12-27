@@ -1,0 +1,46 @@
+[
+    {
+        "id": "youtube",
+        "title": "YouTubeチャンネル",
+        "date": "KMI SCT Movie",
+        "desc": "研究者インタビュー、イベントのアーカイブ動画などを配信しています。チャンネル登録で最新動画をチェック！",
+        "image": "images/home/IMG_0906.jpg", 
+        "link1_text": "YouTubeを見る",
+        "link1_url": "https://www.youtube.com/@kmi_sct",
+        "link2_text": "アーカイブ一覧",
+        "link2_url": "youtube.html"
+    },
+    {
+        "id": "podcast",
+        "title": "KMIサイエンス雑談",
+        "date": "Podcast Audio",
+        "desc": "移動中や作業用BGMに。研究者の裏話や日常の出来事を、ラジオ感覚でゆるくお届けする音声コンテンツです。",
+        "image": "images/home/IMG_2346.png", 
+        "link1_text": "Spotifyで聴く",
+        "link1_url": "#",
+        "link2_text": "",
+        "link2_url": ""
+    },
+    {
+        "id": "darkcandy",
+        "title": "Dark Candy Webマガジン",
+        "date": "Web Article",
+        "desc": "「暗黒物質（ダークマター）」のように、見えないけれどそこにある魅力を探る、KMIのWebマガジン。",
+        "image": "images/home/1712279552111-DhLgWuQjWq.jpg", 
+        "link1_text": "記事を読む",
+        "link1_url": "#",
+        "link2_text": "",
+        "link2_url": ""
+    },
+    {
+        "id": "pocket",
+        "title": "ポケットに物理を",
+        "date": "Project & Goods",
+        "desc": "日常のふとした瞬間に物理を感じる。物理法則が書かれたオリジナル付箋やグッズを展開しています。",
+        "image": "images/home/IMG_0906.jpg", 
+        "link1_text": "グッズ詳細",
+        "link1_url": "#",
+        "link2_text": "",
+        "link2_url": ""
+    }
+]
