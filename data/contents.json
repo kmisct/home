@@ -1,0 +1,44 @@
+[
+    {
+        "category": "YOUTUBE",
+        "title": "【KMI】研究室紹介ビデオ Vol.1",
+        "desc": "KMIの研究室にお邪魔して、普段の様子を撮影してきました。",
+        "image": "images/home/IMG_0906.jpg",
+        "url": "https://www.youtube.com/watch?v=xxxxx"
+    },
+    {
+        "category": "YOUTUBE",
+        "title": "素粒子宇宙円卓会議 アーカイブ",
+        "desc": "第4回の配信アーカイブです。ブラックホールについて語りました。",
+        "image": "images/home/IMG_2346.png",
+        "url": "https://www.youtube.com/watch?v=xxxxx"
+    },
+    {
+        "category": "PODCAST",
+        "title": "#01 研究者って普段何食べてるの？",
+        "desc": "意外と普通？それとも変わってる？研究者の食生活に迫ります。",
+        "image": "images/home/IMG_0906.jpg",
+        "url": "https://spotify.com/..."
+    },
+    {
+        "category": "DARKCANDY",
+        "title": "一般相対性理論を超える重力理論!?",
+        "desc": "アインシュタインの理論を超えるかもしれない、最新の重力理論について解説します。",
+        "image": "images/home/1712279552111-DhLgWuQjWq.jpg",
+        "url": "#"
+    },
+    {
+        "category": "POCKET",
+        "title": "「ポケットに物理を」付箋ワークショップ",
+        "desc": "計算式が書かれた付箋を使って、身の回りの現象を物理で記述してみよう。",
+        "image": "images/home/IMG_0906.jpg",
+        "url": "#"
+    },
+    {
+        "category": "POCKET",
+        "title": "オリジナルグッズ紹介",
+        "desc": "クリアファイルやステッカーなど、KMIオリジナルグッズの紹介です。",
+        "image": "images/home/IMG_2346.png",
+        "url": "#"
+    }
+]
