@@ -29,6 +29,7 @@ body, html {
    ========================================= */
 .swiper { width: 100%; height: 100vh; }
 .swiper-slide { background-size: cover; background-position: center; }
+
 /* 画像パス */
 .slide1 { background-image: url('../images/home/IMG_0906.jpg'); }
 .slide2 { background-image: url('../images/home/IMG_2346.png'); }
@@ -125,7 +126,7 @@ body, html {
 
 
 /* =========================================
-   5. セクション別デザイン (Home)
+   5. セクション別デザイン (Home) & News
    ========================================= */
 
 /* About */
@@ -143,7 +144,29 @@ body, html {
 .update-date { font-weight: 700; font-size: 0.9rem; color: #0056b3; width: 120px; flex-shrink: 0; }
 .update-text { font-size: 0.95rem; color: #333; }
 
-/* News */
+/* News Link Styles (黒・下線) */
+.news-link,
+.news-link:visited,
+.news-link:hover,
+.news-link:active {
+    color: #333;                /* 常に黒色 */
+    text-decoration: underline;      /* 最初から下線 */
+    text-underline-offset: 3px;      /* 下線の位置調整 */
+    transition: opacity 0.3s;
+    display: inline-block;           /* 崩れ防止 */
+}
+
+.news-link:hover {
+    opacity: 0.6;               /* ホバー時に薄く */
+    color: #333;                /* 色は変えない */
+}
+
+.news-no-link {
+    color: #333;
+    text-decoration: none;
+}
+
+/* News Grid (Old Style) */
 .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
 .news-card a {
     text-decoration: none; color: #333; display: block; background: white;
@@ -383,23 +406,7 @@ body, html {
     font-weight: 500;
 }
 
-/* スマホ対応 */
-@media (max-width: 600px) {
-    .archive-list li {
-        align-items: flex-start;
-    }
-    .archive-date {
-        font-size: 0.9rem;
-        margin-top: 2px;
-    }
-    .archive-title {
-        width: 100%;
-        margin-top: 5px;
-        display: block;
-    }
-}
-
-/* アーカイブリスト内のリンクスタイル（最終版） */
+/* アーカイブリスト内のリンクスタイル (News Linkと同じく黒・下線) */
 .archive-link,
 .archive-link:visited,
 .archive-link:hover,
@@ -415,29 +422,18 @@ body, html {
     color: #333;           /* 色は変えない */
 }
 
-/* -------------------------------------------
-   NEWSリスト（リンクデザイン統一）
-------------------------------------------- */
-
-/* リンクがある場合のスタイル（黒・下線・紫防止） */
-.news-link,
-.news-link:visited,
-.news-link:hover,
-.news-link:active {
-    color: #333;                /* 常に黒色 */
-    text-decoration: underline;      /* 最初から下線 */
-    text-underline-offset: 3px;      /* 下線の位置調整 */
-    transition: opacity 0.3s;
-    display: inline-block;           /* 崩れ防止 */
-}
-
-.news-link:hover {
-    opacity: 0.6;               /* ホバー時に薄く */
-    color: #333;                /* 色は変えない */
-}
-
-/* リンクがない場合のスタイル */
-.news-no-link {
-    color: #333;
-    text-decoration: none;
+/* スマホ対応 */
+@media (max-width: 600px) {
+    .archive-list li {
+        align-items: flex-start;
+    }
+    .archive-date {
+        font-size: 0.9rem;
+        margin-top: 2px;
+    }
+    .archive-title {
+        width: 100%;
+        margin-top: 5px;
+        display: block;
+    }
 }
