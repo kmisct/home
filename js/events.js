@@ -41,7 +41,7 @@ async function loadEventsArchive() {
             const listItems = events.map(item => {
                 // カテゴリごとの色分け
                 let badgeColor = '#0056b3'; 
-                if (item.category === 'TALK' || item.category === 'CAFE') {
+                if (item.category === 'CAFE') {
                     badgeColor = '#e67e22'; 
                 } else if (item.category === 'BOOTH') {
                     badgeColor = '#27ae60'; 
