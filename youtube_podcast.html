@@ -16,52 +16,51 @@
 
     <div class="page-hero">
         <div class="page-hero-inner js-fade-up">
-            <h1>MEDIA</h1>
-            <p>YouTube & Podcast アーカイブ</p>
+            <h1>MEDIA ARCHIVE</h1>
+            <p>YouTube & Podcast</p>
         </div>
     </div>
 
-    <section class="content-section">
+    <section class="content-section" style="background: #f9f9f9;">
         <div class="container">
             
-            <div class="members-area js-fade-up">
-                <div class="section-header">
-                    <span class="subtitle">WATCH & LISTEN</span>
-                    <h2>KMI メディアアーカイブ</h2>
-                    <p class="section-desc" style="margin-top: 15px; color: #666;">
-                        研究者の熱いトークを「動画」で見るか、「音声」で聴くか。<br>
-                        お好みのスタイルで科学の世界をお楽しみください。
-                    </p>
-                </div>
-
-                <div class="filter-buttons text-center mb-40" style="margin-bottom: 40px;">
-                    <button class="filter-btn active" data-filter="all">ALL</button>
-                    <button class="filter-btn" data-filter="YOUTUBE"><i class="fa-brands fa-youtube"></i> YouTube</button>
-                    <button class="filter-btn" data-filter="PODCAST"><i class="fa-solid fa-podcast"></i> Podcast</button>
-                </div>
-
-                <div id="media-grid" class="members-grid"></div>
-
+            <div class="section-header text-center js-fade-up">
+                <span class="subtitle">HISTORY OF CONTENTS</span>
+                <h2>アーカイブ・タイムライン</h2>
+                <p class="section-desc" style="margin-top: 15px; color: #666;">
+                    これまでの配信を時系列で振り返ります。<br>
+                    気になるタイトルをクリックして詳細をご覧ください。
+                </p>
             </div>
 
-            <div class="text-center mt-50 js-fade-up" style="margin-top: 80px;">
-                <p style="margin-bottom: 20px;">
-                    最新の配信をチェックしよう！
-                </p>
-                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                    <a href="https://www.youtube.com/@kmi_sct" target="_blank" class="btn-more">
-                        <i class="fa-brands fa-youtube"></i> YouTube
-                    </a>
-                    <a href="#" target="_blank" class="btn-more btn-white" style="border: 1px solid #ddd; background: #f9f9f9; color: #333;">
-                        <i class="fa-solid fa-podcast"></i> Podcast
-                    </a>
+            <div class="filter-buttons text-center mb-40 js-fade-up" style="margin-bottom: 60px;">
+                <button class="filter-btn active" data-filter="all">ALL</button>
+                <button class="filter-btn" data-filter="YOUTUBE"><i class="fa-brands fa-youtube"></i> YouTube</button>
+                <button class="filter-btn" data-filter="PODCAST"><i class="fa-solid fa-podcast"></i> Podcast</button>
+            </div>
+
+            <div class="timeline-wrapper">
+                <div class="snake-line">
+                    <img src="images/snake_line.png" alt="" class="snake-img-bg">
                 </div>
+
+                <div id="media-timeline" class="timeline-container"></div>
             </div>
 
         </div>
     </section>
 
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-container">
+            <button id="modal-close-btn" class="modal-close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-content" class="modal-content"></div>
+        </div>
+    </div>
+
     <div id="footer-placeholder"></div>
     <script src="js/include.js"></script>
-    <script src="js/youtube_podcast.js"></script> </body>
+    <script src="js/youtube_podcast.js"></script>
+</body>
 </html>

@@ -521,3 +521,107 @@ color: #333;
 grid-template-columns: 1fr;
 }
 }
+
+/* -------------------------------------------
+   蛇のタイムライン (Archive Timeline)
+------------------------------------------- */
+.timeline-wrapper {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* 中央の蛇（紐） */
+.snake-line {
+    position: absolute;
+    top: 0; bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 60px; /* 蛇の太さ */
+    z-index: 0;
+    /* 画像がない時のための予備の線 */
+    background: url('../images/snake_line.png') repeat-y center top;
+    background-size: contain; 
+}
+/* 画像を使う場合 */
+.snake-img-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* または contain */
+    opacity: 0.8;
+}
+/* ※画像がないときに点線を出す場合（テスト用） */
+.snake-line:empty {
+    border-left: 2px dashed #ccc;
+    width: 0;
+}
+
+
+/* アイテム配置の基本 */
+.timeline-item {
+    position: relative;
+    width: 45%; /* 半分より少し狭く */
+    margin-bottom: 60px;
+    z-index: 10;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+.timeline-item:hover {
+    transform: translateY(-5px);
+}
+
+/* 奇数番目（左側） */
+.timeline-item:nth-child(odd) {
+    margin-left: 0;
+    margin-right: auto;
+    text-align: right; /* 文字を中央寄せにしたい */
+}
+/* 偶数番目（右側） */
+.timeline-item:nth-child(even) {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: left;
+}
+
+
+/* カードのデザイン（吹き出し風） */
+.timeline-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: inline-block; /* 中身に合わせて伸縮 */
+    text-align: left; /* カードの中身は左揃え */
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+}
+
+/* 蛇と繋ぐ線（ドット） */
+.timeline-card::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 15px; height: 15px;
+    background: #333;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #333;
+}
+/* 左配置のときのドット位置 */
+.timeline-item:nth-child(odd) .timeline-card::after {
+    right: -13.5%; /* 位置調整 */
+}
+/* 右配置のときのドット位置 */
+.timeline-item:nth-child(even) .timeline-card::after {
+    left: -13.5%;
+}
+
+
+/* スマホ対応（1列にする） */
+@media (max-width: 768px) {
+    .snake-line { left: 20px; transform: none; }
+    .timeline-item { width: 100%; padding-left: 50px; text-align: left !important; }
+    .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { margin: 0 0 40px 0; }
+    .timeline-card::after { left: -38px !important; right: auto !important; }
+}
