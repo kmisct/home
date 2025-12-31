@@ -622,3 +622,63 @@ input:focus, select:focus, textarea:focus {
     color: #666;
     font-size: 0.9rem;
 }
+
+/* =========================================
+   15. 記事詳細ページ用 (Article)
+   ========================================= */
+
+/* 記事内の画像ボックス（2枚並びなど） */
+.article-img-box {
+    margin-bottom: 50px;
+}
+.article-img-box img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.article-img-box p {
+    font-size: 0.8rem;
+    color: #666;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* 記事内の見出し調整 */
+.article-content h3 {
+    font-size: 1.5rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* ポイント解説の枠（グレーの背景） */
+.article-point-box {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.article-point-box h4 {
+    color: #0056b3;
+    margin-top: 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* メンバー募集の枠（青い枠） */
+.recruit-box {
+    border: 2px solid #0056b3;
+    padding: 40px;
+    border-radius: 12px;
+    margin-top: 60px;
+    text-align: center;
+    background-color: white;
+}
+.recruit-box h3 {
+    color: #0056b3;
+    margin-top: 0;
+    font-size: 1.4rem;
+}
