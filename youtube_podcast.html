@@ -16,51 +16,33 @@
 
     <div class="page-hero">
         <div class="page-hero-inner js-fade-up">
-            <h1>MEDIA ARCHIVE</h1>
-            <p>YouTube & Podcast</p>
+            <h1>MEDIA</h1>
+            <p>動画・音声コンテンツ</p>
         </div>
     </div>
 
-    <section class="content-section" style="background: #f9f9f9;">
+    <section class="content-section">
         <div class="container">
             
-            <div class="section-header text-center js-fade-up">
-                <span class="subtitle">HISTORY OF CONTENTS</span>
-                <h2>アーカイブ・タイムライン</h2>
-                <p class="section-desc" style="margin-top: 15px; color: #666;">
-                    これまでの配信を時系列で振り返ります。<br>
-                    気になるタイトルをクリックして詳細をご覧ください。
-                </p>
-            </div>
-
-            <div class="filter-buttons text-center mb-40 js-fade-up" style="margin-bottom: 60px;">
-                <button class="filter-btn active" data-filter="all">ALL</button>
-                <button class="filter-btn" data-filter="YOUTUBE"><i class="fa-brands fa-youtube"></i> YouTube</button>
-                <button class="filter-btn" data-filter="PODCAST"><i class="fa-solid fa-podcast"></i> Podcast</button>
+            <div class="section-header text-center">
+                <span class="subtitle">YOUTUBE & PODCAST</span>
+                <h2>メディアアーカイブ</h2>
             </div>
 
             <div class="timeline-wrapper">
                 <div class="snake-line">
-                    <img src="images/youtube_podcast/snake.png" alt="" class="snake-img-bg">
+                    <img src="images/youtube_podcast/snake.png" alt="Snake Line" class="snake-img-bg">
                 </div>
 
-                <div id="media-timeline" class="timeline-container"></div>
+                <div id="js-media-timeline" class="timeline-container">
+                    </div>
             </div>
-
-        </div>
+            </div> 
     </section>
 
-    <div id="modal-overlay" class="modal-overlay">
-        <div class="modal-container">
-            <button id="modal-close-btn" class="modal-close-btn">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div id="modal-content" class="modal-content"></div>
-        </div>
-    </div>
-
     <div id="footer-placeholder"></div>
+
     <script src="js/include.js"></script>
-    <script src="js/youtube_podcast.js"></script>
-</body>
+    <script src="js/script.js"></script>
+    </body>
 </html>
