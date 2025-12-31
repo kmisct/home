@@ -811,3 +811,106 @@ input:focus, select:focus, textarea:focus {
 .page-hero-about {
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
 }
+
+/* =========================================
+   18. Media Circle Layout (円形蛇中心レイアウト)
+   ========================================= */
+
+/* 全体のラッパー */
+.media-circle-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* 上揃え */
+    gap: 40px;
+    margin-top: 60px;
+    position: relative;
+}
+
+/* 中央の蛇画像エリア */
+.media-center-image {
+    flex: 0 0 400px; /* 幅を400pxに固定（調整可能） */
+    text-align: center;
+    position: sticky; /* スクロールしても追従させる（お好みで） */
+    top: 100px; /* 上からの位置 */
+    z-index: 1;
+}
+.media-center-image img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15)); /* 影をつけて浮かび上がらせる */
+    animation: floatSnake 6s ease-in-out infinite; /* ふわふわ動かすアニメーション */
+}
+
+/* ふわふわアニメーションの定義 */
+@keyframes floatSnake {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+
+/* 左右のリストエリア */
+.media-side-list {
+    flex: 1; /* 残りのスペースを使う */
+    z-index: 2; /* 蛇より手前に表示 */
+}
+
+.media-side-list h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #0056b3;
+    font-weight: 700;
+}
+
+/* カードを縦に積むスタック */
+.media-card-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* カード間の隙間 */
+}
+
+/* (ダミー用スタイル：後で削除OK) */
+.media-card-dummy {
+    background: #f0f0f0;
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    border: 2px dashed #ccc;
+    color: #888;
+}
+
+
+/* --- スマホ対応 --- */
+@media (max-width: 1024px) {
+    .media-center-image {
+        flex: 0 0 300px; /* タブレットでは少し小さく */
+    }
+}
+
+@media (max-width: 768px) {
+    .media-circle-wrapper {
+        flex-direction: column; /* 縦並びにする */
+        align-items: center;
+        gap: 60px;
+    }
+
+    /* 順番を入れ替える：蛇を一番上へ */
+    .media-center-image {
+        order: 1;
+        flex: auto;
+        width: 80%; /* スマホでの幅 */
+        max-width: 350px;
+        position: static; /* stickyを解除 */
+        margin-bottom: 20px;
+    }
+
+    .media-left {
+        order: 2; /* 左リストを2番目へ */
+        width: 100%;
+    }
+
+    .media-right {
+        order: 3; /* 右リストを3番目へ */
+        width: 100%;
+    }
+}
