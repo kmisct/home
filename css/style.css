@@ -400,35 +400,37 @@ body, html {
     margin: 0 auto;
     padding: 40px 0;
     min-height: 800px; /* 画像が見えるように高さを確保 */
+    overflow: hidden; /* 念のため、はみ出しを防止 */
 }
 
 /* ヘビの画像の設定 */
 .snake-line {
     position: absolute;
     top: 0;
-    bottom: 0;
+    /* bottom: 0;  <-- これは削除（高さは画像に合わせるため） */
     left: 50%;
     transform: translateX(-50%); /* 画面中央に配置 */
-    width: 100px; /* 画像の太さに合わせて調整（必要なら広げる） */
-    z-index: 1; /* 動画カードより後ろにする */
+    width: 800px; /* ★変更点1：画像が収まるように幅を広げる */
+    max-width: 90%; /* 画面からはみ出さないように制限 */
+    z-index: 1;
     display: flex;
     justify-content: center;
-    overflow: hidden; /* はみ出し防止 */
+    align-items: flex-start; /* 上揃えにする */
 }
 
 .snake-img-bg {
-    width: auto;
-    height: 100%; /* 親要素の高さに合わせて伸びる */
-    object-fit: cover; /* 比率を保ってトリミング */
-    opacity: 0.8; /* 少し薄くして文字を見やすく */
+    width: 100%; /* ★変更点2：枠の幅に合わせて画像を表示 */
+    height: auto; /* ★変更点3：高さは自動調整して比率を維持 */
+    /* object-fit: cover; <-- これは削除 */
+    opacity: 0.8;
 }
 
 /* スマホ対応 */
 @media (max-width: 768px) {
     .snake-line {
-        left: 30px; /* スマホでは左端に寄せる */
-        transform: none;
-        width: 60px;
+        /* スマホでも中央に全体を表示する場合 */
+        width: 100%;
+        max-width: 100%;
     }
 }
 
