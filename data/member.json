@@ -78,20 +78,6 @@
             "image": "images/home/IMG_0906.jpg",
             "affil": "名古屋大学 理学部 B2",
             "comment": "将来、素粒子の理論研究をしたいと思ってます!KMISCTの活動を通じて、多くの人に素粒子について興味が持ってくれるような活動ができるようファイトします!"
-        },
-        {
-            "name": "竹内 希",
-            "en": "Nozomi Takeuchi 2022.4-",
-            "image": "images/home/IMG_0906.jpg",
-            "affil": "名古屋大学 <a href='https://www.kmi.nagoya-u.ac.jp/' target='_blank'>KMI事務室</a>",
-            "comment": "サイエンスコミュニケーションの仕事ができたらいいな、と勉強中。情報を体系化し、やわらかい言葉やビジュアルで表現することに一定のしつこさを持ちます。もともとは農学専攻なので素粒子物理学は楽しい未知の世界。"
-        },
-        {
-            "name": "高橋 将太",
-            "en": "Shota Takahashi 2023.1-",
-            "image": "images/home/IMG_0906.jpg",
-            "affil": "名古屋大学 <a href='https://www.kmi.nagoya-u.ac.jp/' target='_blank'>KMI広報室</a> 特任助教",
-            "comment": "地域の皆さんに基礎科学の面白さをおすそわけ。「知らなかったから選べなかった」をなくすため、\"素粒子のお兄さん\"として、親しみやすく科学を届けていきたいと思っています。"
         }
     ],
     "advisors": [
@@ -108,6 +94,20 @@
             "image": "images/home/IMG_0906.jpg",
             "affil": "名古屋大学大学院 理学研究科 <a href='https://www.astro-th.phys.nagoya-u.ac.jp/c-lab/' target='_blank'>宇宙論研究室</a> 准教授",
             "comment": "すばる望遠鏡を始めとする世界最大級の望遠鏡を使って、暗黒物質・暗黒エネルギーといった宇宙の暗黒成分の謎に挑んでいます。"
+        },
+                {
+            "name": "竹内 希",
+            "en": "Nozomi Takeuchi 2022.4-",
+            "image": "images/home/IMG_0906.jpg",
+            "affil": "名古屋大学 <a href='https://www.kmi.nagoya-u.ac.jp/' target='_blank'>KMI事務室</a>",
+            "comment": "サイエンスコミュニケーションの仕事ができたらいいな、と勉強中。情報を体系化し、やわらかい言葉やビジュアルで表現することに一定のしつこさを持ちます。もともとは農学専攻なので素粒子物理学は楽しい未知の世界。"
+        },
+        {
+            "name": "高橋 将太",
+            "en": "Shota Takahashi 2023.1-",
+            "image": "images/home/IMG_0906.jpg",
+            "affil": "名古屋大学 <a href='https://www.kmi.nagoya-u.ac.jp/' target='_blank'>KMI広報室</a> 特任助教",
+            "comment": "地域の皆さんに基礎科学の面白さをおすそわけ。「知らなかったから選べなかった」をなくすため、\"素粒子のお兄さん\"として、親しみやすく科学を届けていきたいと思っています。"
         }
     ],
     "alumni": [
