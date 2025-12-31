@@ -201,6 +201,7 @@ body, html {
 .page-hero {
     width: 100%; height: 300px;
     background-color: #111;
+    /* デフォルト画像 (あとでページ別に上書きされます) */
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
     background-size: cover; background-position: center;
     display: flex; align-items: center; justify-content: center;
@@ -211,40 +212,132 @@ body, html {
 
 
 /* =========================================
-   7. MEMBERSページ専用デザイン
+   7. MEMBERSページ専用デザイン (改修版)
    ========================================= */
-.rep-area { margin-bottom: 120px; }
-.rep-content { display: flex; align-items: flex-start; gap: 50px; }
-.rep-image { flex: 0 0 320px; max-width: 100%; }
-.rep-image img { width: 100%; border-radius: 4px; box-shadow: 15px 15px 0px rgba(0,0,0,0.08); }
-.rep-text { flex: 1; }
-.rep-text h3 {
-    font-size: 1.6rem; margin: 0 0 10px 0;
-    border-bottom: 1px solid #ddd; padding-bottom: 15px;
-    display: flex; align-items: baseline; gap: 15px;
-}
-.rep-en { font-size: 0.9rem; color: #888; font-weight: 400; }
-.rep-affil { font-weight: bold; color: #0056b3; margin-bottom: 20px; }
-.rep-affil a { color: #0056b3; text-decoration: underline; cursor: pointer; transition: opacity 0.3s; }
-.rep-affil a:hover { opacity: 0.7; }
-.rep-message { line-height: 1.9; color: #555; text-align: justify; }
 
-.members-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.member-card { text-align: left; }
-.member-img {
-    width: 100%; aspect-ratio: 1 / 1; overflow: hidden;
-    border-radius: 8px; margin-bottom: 15px; background-color: #f0f0f0;
-}
-.member-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-.member-card:hover .member-img img { transform: scale(1.05); }
-.member-info h4 { font-size: 1.1rem; margin: 0 0 5px 0; font-weight: 700; }
-.member-en { display: block; font-size: 0.75rem; color: #999; font-weight: 400; margin-bottom: 5px; }
-.member-role { font-size: 0.8rem; color: #0056b3; font-weight: bold; margin: 0 0 8px 0; }
-.member-comment { font-size: 0.85rem; color: #666; line-height: 1.5; }
+/* --- 共通の文字デザイン（これを全員に使います） --- */
 
-/* タブレットなどでメンバーリストを2列にする */
+/* 名前 (日本語) */
+.member-name {
+    font-size: 1.2rem;
+    margin: 0 0 5px 0;
+    font-weight: 700;
+    line-height: 1.4;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+/* 名前 (英語・日付) */
+.member-en {
+    font-size: 0.8rem;
+    color: #888;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* 所属 (unified class) */
+.member-affil {
+    font-size: 0.9rem;
+    color: #0056b3; /* 青色 */
+    font-weight: bold;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+.member-affil a {
+    color: #0056b3;
+    text-decoration: underline;
+    transition: opacity 0.3s;
+}
+.member-affil a:hover {
+    opacity: 0.7;
+}
+
+/* コメント文章 */
+.member-comment {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+
+/* --- レイアウト A：代表用（写真と文字を横並び） --- */
+.rep-area {
+    margin-bottom: 100px; /* 下のメンバーとの間隔 */
+}
+.rep-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px; /* 写真と文字の隙間 */
+}
+.rep-layout .member-img {
+    flex: 0 0 320px; /* 写真の幅固定 */
+    max-width: 100%;
+    margin-bottom: 0;
+}
+/* 代表の名前だけ少し大きくする */
+.rep-layout .member-name {
+    font-size: 1.6rem; 
+}
+
+
+/* --- レイアウト B：メンバー用（グリッド・縦積み） --- */
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+.member-card {
+    background: #fff;
+    height: 100%;
+}
+/* メンバーカード内の画像設定 */
+.member-card .member-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.member-card img, .rep-layout img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+    border-radius: 8px;
+}
+.member-card:hover img, .rep-layout:hover img {
+    transform: scale(1.05);
+}
+
+/* メンバーの名前は下線なしでコンパクトに */
+.member-card .member-name {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 5px;
+    display: block; /* 縦並び */
+}
+.member-card .member-en {
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+/* --- スマホ対応 --- */
 @media (max-width: 1024px) {
-    .members-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    .members-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+    /* スマホでは代表も縦並びにする */
+    .rep-layout { flex-direction: column; }
+    .rep-layout .member-img { flex: auto; width: 100%; max-width: 100%; }
+    .members-grid { grid-template-columns: 1fr; }
 }
 
 
@@ -583,7 +676,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* =========================================
-   14. PRIVACY POLICYページ用
+   15. PRIVACY POLICYページ用
    ========================================= */
 .policy-wrapper {
     max-width: 800px; /* 文章が横に広がりすぎないように制限 */
@@ -624,7 +717,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* =========================================
-   15. 記事詳細ページ用 (Article)
+   16. 記事詳細ページ用 (Article)
    ========================================= */
 
 /* 記事内の画像ボックス（2枚並びなど） */
@@ -681,4 +774,37 @@ input:focus, select:focus, textarea:focus {
     color: #0056b3;
     margin-top: 0;
     font-size: 1.4rem;
+}
+
+
+/* =========================================
+   17. ページヘッダー個別設定 (追加部分)
+   ========================================= */
+/* 写真を変えたいときは、各ページのURLを変更してください。
+   現在はすべて共通画像（IMG_0906.jpg）に設定してあります。
+*/
+
+/* NEWSページ */
+.page-hero-news {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
+}
+
+/* EVENTSページ */
+.page-hero-events {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
+}
+
+/* MEMBERSページ */
+.page-hero-members {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
+}
+
+/* CONTACTページ */
+.page-hero-contact {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
+}
+
+/* ABOUTページ（もしあれば） */
+.page-hero-about {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
 }
