@@ -201,7 +201,6 @@ body, html {
 .page-hero {
     width: 100%; height: 300px;
     background-color: #111;
-    /* デフォルト画像 (あとでページ別に上書きされます) */
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
     background-size: cover; background-position: center;
     display: flex; align-items: center; justify-content: center;
@@ -212,129 +211,56 @@ body, html {
 
 
 /* =========================================
-   7. MEMBERSページ専用デザイン (改修版)
+   7. MEMBERSページ専用デザイン
    ========================================= */
 
-/* --- 共通の文字デザイン（これを全員に使います） --- */
-
-/* 名前 (日本語) */
+/* --- 共通の文字デザイン --- */
 .member-name {
-    font-size: 1.2rem;
-    margin: 0 0 5px 0;
-    font-weight: 700;
-    line-height: 1.4;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
+    font-size: 1.2rem; margin: 0 0 5px 0; font-weight: 700; line-height: 1.4;
+    border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 15px;
+    display: flex; align-items: baseline; gap: 10px;
 }
-
-/* 名前 (英語・日付) */
 .member-en {
-    font-size: 0.8rem;
-    color: #888;
-    font-weight: 400;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem; color: #888; font-weight: 400; font-family: 'Montserrat', sans-serif;
 }
-
-/* 所属 (unified class) */
 .member-affil {
-    font-size: 0.9rem;
-    color: #0056b3; /* 青色 */
-    font-weight: bold;
-    margin-bottom: 15px;
-    line-height: 1.6;
+    font-size: 0.9rem; color: #0056b3; font-weight: bold; margin-bottom: 15px; line-height: 1.6;
 }
 .member-affil a {
-    color: #0056b3;
-    text-decoration: underline;
-    transition: opacity 0.3s;
+    color: #0056b3; text-decoration: underline; transition: opacity 0.3s;
 }
-.member-affil a:hover {
-    opacity: 0.7;
-}
-
-/* コメント文章 */
+.member-affil a:hover { opacity: 0.7; }
 .member-comment {
-    font-size: 0.95rem;
-    color: #444;
-    line-height: 1.8;
-    text-align: justify;
+    font-size: 0.95rem; color: #444; line-height: 1.8; text-align: justify;
 }
 
+/* --- レイアウト A：代表用 --- */
+.rep-area { margin-bottom: 100px; }
+.rep-layout { display: flex; align-items: flex-start; gap: 50px; }
+.rep-layout .member-img { flex: 0 0 320px; max-width: 100%; margin-bottom: 0; }
+.rep-layout .member-name { font-size: 1.6rem; }
 
-/* --- レイアウト A：代表用（写真と文字を横並び） --- */
-.rep-area {
-    margin-bottom: 100px; /* 下のメンバーとの間隔 */
-}
-.rep-layout {
-    display: flex;
-    align-items: flex-start;
-    gap: 50px; /* 写真と文字の隙間 */
-}
-.rep-layout .member-img {
-    flex: 0 0 320px; /* 写真の幅固定 */
-    max-width: 100%;
-    margin-bottom: 0;
-}
-/* 代表の名前だけ少し大きくする */
-.rep-layout .member-name {
-    font-size: 1.6rem; 
-}
-
-
-/* --- レイアウト B：メンバー用（グリッド・縦積み） --- */
-.members-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
-.member-card {
-    background: #fff;
-    height: 100%;
-}
-/* メンバーカード内の画像設定 */
+/* --- レイアウト B：メンバー用 --- */
+.members-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.member-card { background: #fff; height: 100%; }
 .member-card .member-img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    background-color: #f0f0f0;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 100%; aspect-ratio: 1 / 1; overflow: hidden; border-radius: 8px;
+    margin-bottom: 20px; background-color: #f0f0f0; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 .member-card img, .rep-layout img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-    border-radius: 8px;
+    width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; border-radius: 8px;
 }
-.member-card:hover img, .rep-layout:hover img {
-    transform: scale(1.05);
-}
+.member-card:hover img, .rep-layout:hover img { transform: scale(1.05); }
 
-/* メンバーの名前は下線なしでコンパクトに */
+/* メンバーの名前は下線なし */
 .member-card .member-name {
-    border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 5px;
-    display: block; /* 縦並び */
+    border-bottom: none; padding-bottom: 0; margin-bottom: 5px; display: block;
 }
-.member-card .member-en {
-    display: block;
-    margin-bottom: 10px;
-}
+.member-card .member-en { display: block; margin-bottom: 10px; }
 
-
-/* --- スマホ対応 --- */
-@media (max-width: 1024px) {
-    .members-grid { grid-template-columns: repeat(2, 1fr); }
-}
+/* スマホ対応 */
+@media (max-width: 1024px) { .members-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 768px) {
-    /* スマホでは代表も縦並びにする */
     .rep-layout { flex-direction: column; }
     .rep-layout .member-img { flex: auto; width: 100%; max-width: 100%; }
     .members-grid { grid-template-columns: 1fr; }
@@ -392,47 +318,9 @@ body, html {
 
 
 /* =========================================
-   10. MEDIA ARCHIVE (Snake Timeline)
+   10. MEDIA ARCHIVE (以前の蛇ラインは削除済)
    ========================================= */
-.timeline-wrapper {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 40px 0;
-    min-height: 800px; /* 画像が見えるように高さを確保 */
-    overflow: hidden; /* 念のため、はみ出しを防止 */
-}
-
-/* ヘビの画像の設定 */
-.snake-line {
-    position: absolute;
-    top: 0;
-    /* bottom: 0;  <-- これは削除（高さは画像に合わせるため） */
-    left: 50%;
-    transform: translateX(-50%); /* 画面中央に配置 */
-    width: 800px; /* ★変更点1：画像が収まるように幅を広げる */
-    max-width: 90%; /* 画面からはみ出さないように制限 */
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* 上揃えにする */
-}
-
-.snake-img-bg {
-    width: 100%; /* ★変更点2：枠の幅に合わせて画像を表示 */
-    height: auto; /* ★変更点3：高さは自動調整して比率を維持 */
-    /* object-fit: cover; <-- これは削除 */
-    opacity: 0.8;
-}
-
-/* スマホ対応 */
-@media (max-width: 768px) {
-    .snake-line {
-        /* スマホでも中央に全体を表示する場合 */
-        width: 100%;
-        max-width: 100%;
-    }
-}
+/* このセクションは 18. Media Circle Layout に置き換わりました */
 
 
 /* =========================================
@@ -828,11 +716,14 @@ input:focus, select:focus, textarea:focus {
 
 /* 中央の蛇画像エリア */
 .media-center-image {
-    flex: 0 0 400px; /* 幅を400pxに固定（調整可能） */
+    flex: 0 0 350px; /* 少し小さめに調整 */
     text-align: center;
-    position: sticky; /* スクロールしても追従させる（お好みで） */
-    top: 100px; /* 上からの位置 */
+    
+    /* ▼ 画面のスクロールに合わせてついてくる設定 */
+    position: sticky;
+    top: 150px; /* 画面の上から150pxの位置で固定 */
     z-index: 1;
+    align-self: flex-start; /* これがないとstickyが効かないことがあります */
 }
 .media-center-image img {
     width: 100%;
@@ -862,11 +753,34 @@ input:focus, select:focus, textarea:focus {
     font-weight: 700;
 }
 
-/* カードを縦に積むスタック */
+/* カードを縦に積むスタック（スクロール対応版） */
 .media-card-stack {
     display: flex;
     flex-direction: column;
-    gap: 30px; /* カード間の隙間 */
+    gap: 20px; /* 隙間を少し詰める */
+    
+    /* ▼▼▼ ここがポイント ▼▼▼ */
+    max-height: 600px; /* 高さを制限（蛇の画像の大きさに合わせる） */
+    overflow-y: auto;  /* 縦スクロールを有効にする */
+    padding-right: 10px; /* スクロールバーとの隙間 */
+    padding-bottom: 10px;
+    /* ▲▲▲ ここまで ▲▲▲ */
+}
+
+/* スクロールバーのデザイン（Webkit系ブラウザ用：Chrome, Safariなど） */
+.media-card-stack::-webkit-scrollbar {
+    width: 8px;
+}
+.media-card-stack::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+.media-card-stack::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+.media-card-stack::-webkit-scrollbar-thumb:hover {
+    background: #0056b3; /* ホバー時に青くする */
 }
 
 /* (ダミー用スタイル：後で削除OK) */
