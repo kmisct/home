@@ -1,15 +1,40 @@
 // 共通パーツを読み込む関数
 async function loadPart(id, url) {
+    // 階層の調整（articleフォルダなら ../ をつける）
+    const rootPath = window.rootPath || ''; 
+    const fetchUrl = rootPath + url;
+
     try {
-        const response = await fetch(url);
+        const response = await fetch(fetchUrl);
         if (response.ok) {
             const text = await response.text();
-            document.getElementById(id).innerHTML = text;
+            const element = document.getElementById(id);
+            element.innerHTML = text;
+
+            // ★ここが新機能：読み込んだHTML内のリンク(href, src)を自動修正する
+            if (rootPath !== '') {
+                // リンク (aタグ)
+                element.querySelectorAll('a').forEach(el => {
+                    const href = el.getAttribute('href');
+                    // 外部サイト(http)やページ内リンク(#)以外なら ../ をつける
+                    if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('//')) {
+                        el.setAttribute('href', rootPath + href);
+                    }
+                });
+                // 画像 (imgタグ)
+                element.querySelectorAll('img').forEach(el => {
+                    const src = el.getAttribute('src');
+                    if (src && !src.startsWith('http') && !src.startsWith('//')) {
+                        el.setAttribute('src', rootPath + src);
+                    }
+                });
+            }
+
         } else {
-            console.error(`Failed to load ${url}: ${response.status}`);
+            console.error(`Failed to load ${fetchUrl}: ${response.status}`);
         }
     } catch (error) {
-        console.error(`Error loading ${url}:`, error);
+        console.error(`Error loading ${fetchUrl}:`, error);
     }
 }
 
@@ -43,7 +68,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     if (menuToggle && navList) {
         menuToggle.addEventListener('click', () => {
-            navList.classList.toggle('is-open');
+            navList.classList.toggle('is-open'); // クラス名はCSSに合わせて is-open か active にしてください
+            // (元のCSSでは .nav-list.active だった場合はここを 'active' に変更してください)
         });
     }
 });
