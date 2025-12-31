@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
     // データファイルのパス (名前を変えた場合はここも修正)
-    const jsonPath = 'data/members.json';
+    const jsonPath = 'data/member.json';
 
     try {
         const response = await fetch(jsonPath);
