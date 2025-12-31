@@ -1,50 +1,38 @@
-[
-    {
-        "type": "YOUTUBE",
-        "id": "WtVKsGY20mw",
-        "category": "ROUND_TABLE",
-        "date": "2022.12.01",
-        "title": "The Known Unknowns of the Universe",
-        "desc": "ヘルシンキ大学のDeanna Hooper博士をゲストに迎え、ダークマターとダークエネルギーについて語り合いました。（英語配信）"
-    },
-    {
-        "type": "PODCAST",
-        "url": "#",
-        "image": "images/home/IMG_2346.png",
-        "date": "2025.01.15",
-        "title": "#05 研究者のカバンの中身チェック！",
-        "desc": "物理学者は普段何を持ち歩いている？研究ノートから謎の部品まで、意外なアイテムが出てきました。"
-    },
-    {
-        "type": "YOUTUBE",
-        "id": "05ePpR5KNxM",
-        "category": "ROUND_TABLE",
-        "date": "2024.10.09",
-        "title": "科学コミュニケーターと楽しむノーベル賞2025",
-        "desc": "日本科学未来館から、ノーベル化学賞発表の瞬間をライブ配信でお届けしました。解説と共に受賞内容を振り返ります。"
-    },
-    {
-        "type": "PODCAST",
-        "url": "#",
-        "image": "images/home/IMG_0906.jpg",
-        "date": "2024.12.20",
-        "title": "#04 ブラックホールの撮影秘話",
-        "desc": "あのドーナツ型の画像はどうやって撮られたの？電波望遠鏡の裏側や、データ解析の苦労話について語ります。"
-    },
-    {
-        "type": "YOUTUBE",
-        "id": "pKLfTAPCs4A",
-        "category": "KMI_FILM",
-        "date": "2020.04.30",
-        "title": "KMI Film 日本語版",
-        "desc": "名古屋大学素粒子宇宙起源研究所（KMI）の紹介ムービーです。研究所の設立目的や、現在行われている主要なプロジェクトについて映像で紹介します。"
-    },
-    {
-        "type": "YOUTUBE",
-        "id": "tyAlWVbUd6Y",
-        "category": "ROUND_TABLE",
-        "date": "2022.09.12",
-        "title": "サイエンスコミュニケーション、なに？なぜ？だれ？",
-        "desc": "九州大学のBrown Bag Seminarにて、サイエンスコミュニケーションの意義について議論しました。"
-    }
-]
+{
+    "youtube": [
+        {
+            "title": "素粒子宇宙円卓会議Vol15：西原翼さん",
+            "url": "https://youtube.com/playlist?list=PLrXBejW44mCg1yrF3V1Bjl_YlO3rbCKg-&si=Av_1jrSK0vo6jm0i", 
+            "caption": "ブラックホールの見え方をレンズで再現する!?"
+        },
+        {
+            "title": "素粒子宇宙円卓会議Vol14：中矢大輝さん",
+            "url": "https://youtube.com/playlist?list=PLrXBejW44mCg21ZM6VRsSAIlRrStWxMrI&si=UNXvEdAIfmW6juk-",
+            "caption": "癌のメカニズムを物理的に解明したい"
+        },
+        {
+            "title": "素粒子宇宙円卓会議Vol13：井上優貴さん",
+            "url": "https://youtube.com/playlist?list=PLrXBejW44mChFaKcssOvh5MkySYmMv3gz&si=RsOWVlDLtSX53Clg",
+            "caption": "癌井上さんは重力波物理学、実験的宇宙論をご専門とされており、中央研究院やLIGO重力波望遠鏡にてご活躍されています"
+        },
+        {
+            "title": "素粒子宇宙円卓会議Vol12：名古屋大学総長",
+            "url": "https://youtube.com/playlist?list=PLrXBejW44mCi8GtjkvzmosfI1oaHGi6uE&si=WwJNfVYnNFXNdi4x",
+            "caption": "名古屋大学総長が求める研究のアリカタとは…？"
+        }
+    ],
+    "podcast": [
+        {
+            "title": "第1回：宇宙の始まりについて語ろう",
+            "date": "2024.02.10",
+            "url": "http://spotify.com/...",
+            "tag": "Spotify"
+        },
+        {
+            "title": "第2回：素粒子物理学の最前線",
+            "date": "2024.03.05",
+            "url": "https://apple.com/...",
+            "tag": "Apple Podcast"
+        }
+    ]
+}
