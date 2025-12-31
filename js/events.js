@@ -102,10 +102,11 @@ function renderArchiveList(data, container) {
 
             const displayDate = item.date.substring(5);
             
-            // アーカイブのリンク処理
             let titleHtml = item.title;
             if (item.url && item.url !== "" && item.url !== "#") {
-                titleHtml = `<a href="${item.url}" class="archive-link" target="_blank">${item.title}</a>`;
+                const isExternal = item.url.startsWith('http');
+                const target = isExternal ? '_blank' : '_self';
+                titleHtml = `<a href="${item.url}" class="archive-link" target="${target}">${item.title}</a>`;
             }
 
             return `
