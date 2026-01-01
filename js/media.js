@@ -38,14 +38,14 @@ function switchMedia(type) {
     const leftList = list.slice(0, halfIndex);
     const rightList = list.slice(halfIndex);
 
-    // リストの描画
-    renderMediaCard(leftList, leftContainer, type);
-    renderMediaCard(rightList, rightContainer, type);
+    // リストの描画（開始番号 'startIndex' を渡すのが重要！）
+    renderMediaCard(leftList, leftContainer, type, 0);
+    renderMediaCard(rightList, rightContainer, type, halfIndex);
 }
 
 
-// ▼ カード生成（クリックでモーダルを開く）
-function renderMediaCard(list, container, type) {
+// ▼ カード生成（クリックでモーダルを開く：背番号方式）
+function renderMediaCard(list, container, type, startIndex) {
     let html = '';
     
     // アイコン（カード上の装飾用）
@@ -53,14 +53,16 @@ function renderMediaCard(list, container, type) {
     if (type === 'youtube') iconClass = 'fa-youtube';
     if (type === 'podcast') iconClass = 'fa-microphone';
 
-    list.forEach(item => {
-        const imagePath = item.image ? item.image : 'images/home/IMG_0906.jpg';
+    list.forEach((item, index) => {
+        // 通し番号（背番号）を計算
+        // 左列なら 0, 1, 2... 右列なら 6, 7, 8... となるようにする
+        const globalIndex = startIndex + index;
         
-        // データを文字にしてモーダルへ渡す準備
-        const itemData = encodeURIComponent(JSON.stringify(item));
+        const imagePath = item.image ? item.image : 'images/home/IMG_0906.jpg';
 
+        // onclickには「タイプ」と「番号」だけを渡すので、データが重くても壊れません
         html += `
-            <div class="media-card-link" onclick="openMediaModal('${itemData}')">
+            <div class="media-card-link" onclick="openMediaModal('${type}', ${globalIndex})">
                 <div class="media-card-img-wrap">
                     <img src="${imagePath}" alt="${item.title}">
                     <div class="media-card-icon">
@@ -77,9 +79,12 @@ function renderMediaCard(list, container, type) {
     container.innerHTML = html;
 }
 
-// ▼ モーダルを開く
-function openMediaModal(itemData) {
-    const item = JSON.parse(decodeURIComponent(itemData));
+// ▼ モーダルを開く（背番号からデータを検索）
+function openMediaModal(type, index) {
+    // データを番号で取得
+    const item = allMediaData[type][index];
+    if (!item) return;
+
     const modal = document.getElementById('media-modal');
     
     // 画像とテキストをセット
@@ -93,7 +98,7 @@ function openMediaModal(itemData) {
 
     if (item.links && item.links.length > 0) {
         item.links.forEach(link => {
-            // ボタンの色分け
+            // ボタンの色分け判定
             let btnClass = 'btn-default';
             const nameLower = link.name.toLowerCase();
             if (nameLower.includes('spotify')) btnClass = 'btn-spotify';
@@ -111,7 +116,7 @@ function openMediaModal(itemData) {
             linksArea.insertAdjacentHTML('beforeend', btnHtml);
         });
     } else {
-        linksArea.innerHTML = '<p style="text-align:center; color:#999;">リンクはありません</p>';
+        linksArea.innerHTML = '<p style="text-align:center; color:#999; font-size:0.9rem;">リンクはありません</p>';
     }
 
     // 表示
