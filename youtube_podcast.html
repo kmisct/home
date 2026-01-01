@@ -66,6 +66,30 @@
 
     <div id="footer-placeholder"></div>
 
+    <div id="media-modal" class="modal-overlay">
+        <div class="modal-container">
+            <button class="modal-close-btn" onclick="closeMediaModal()"><i class="fa-solid fa-times"></i></button>
+            
+            <div class="media-modal-content">
+                <div class="media-modal-header">
+                    <div class="media-modal-img-wrap">
+                        <img id="modal-img" src="" alt="">
+                    </div>
+                    <div class="media-modal-title-area">
+                        <h3 id="modal-title">タイトル</h3>
+                    </div>
+                </div>
+                
+                <div class="media-modal-body">
+                    <p id="modal-caption">ここに説明文が入ります。</p>
+                    
+                    <div id="modal-links-area" class="media-modal-links">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/include.js"></script>
     <script src="js/script.js"></script>
     <script src="js/media.js"></script>

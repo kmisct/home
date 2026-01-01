@@ -2,107 +2,141 @@
     "youtube": [
         {
             "title": "Vol15：西原翼さん",
-            "url": "https://youtube.com/playlist?list=PLrXBejW44mCg1yrF3V1Bjl_YlO3rbCKg-&si=Av_1jrSK0vo6jm0i", 
             "caption": "ブラックホールの見え方をレンズで再現する!?",
-            "image": "images/home/IMG_0906.jpg"
+            "image": "images/home/IMG_0906.jpg",
+            "links": [
+                { "name": "YouTubeで見る", "url": "https://youtube.com/playlist?list=PLrXBejW44mCg1yrF3V1Bjl_YlO3rbCKg-&si=Av_1jrSK0vo6jm0i", "icon": "fa-youtube" }
+            ]
         },
         {
             "title": "Vol14：中矢大輝さん",
-            "url": "https://youtube.com/playlist?list=PLrXBejW44mCg21ZM6VRsSAIlRrStWxMrI&si=UNXvEdAIfmW6juk-",
             "caption": "癌のメカニズムを物理的に解明したい",
-            "image": "images/home/IMG_0906.jpg"
+            "image": "images/home/IMG_0906.jpg",
+            "links": [
+                { "name": "YouTubeで見る", "url": "https://youtube.com/playlist?list=PLrXBejW44mCg21ZM6VRsSAIlRrStWxMrI&si=UNXvEdAIfmW6juk-", "icon": "fa-youtube" }
+            ]
         },
         {
             "title": "Vol13：井上優貴さん",
-            "url": "https://youtube.com/playlist?list=PLrXBejW44mChFaKcssOvh5MkySYmMv3gz&si=RsOWVlDLtSX53Clg",
             "caption": "癌井上さんは重力波物理学、実験的宇宙論をご専門とされており、中央研究院やLIGO重力波望遠鏡にてご活躍されています",
-            "image": "images/home/IMG_0906.jpg"
+            "image": "images/home/IMG_0906.jpg",
+            "links": [
+                { "name": "YouTubeで見る", "url": "https://youtube.com/playlist?list=PLrXBejW44mChFaKcssOvh5MkySYmMv3gz&si=RsOWVlDLtSX53Clg", "icon": "fa-youtube" }
+            ]
         },
         {
             "title": "Vol12：名古屋大学総長",
-            "url": "https://youtube.com/playlist?list=PLrXBejW44mCi8GtjkvzmosfI1oaHGi6uE&si=WwJNfVYnNFXNdi4x",
             "caption": "名古屋大学総長が求める研究のアリカタとは…？",
-            "image": "images/home/IMG_0906.jpg"
+            "image": "images/home/IMG_0906.jpg",
+            "links": [
+                { "name": "YouTubeで見る", "url": "https://youtube.com/playlist?list=PLrXBejW44mCi8GtjkvzmosfI1oaHGi6uE&si=WwJNfVYnNFXNdi4x", "icon": "fa-youtube" }
+            ]
         }
     ],
     "podcast": [
-         {
+        {
             "title": "Vol12：名古屋大学総長",
-            "url": "https://open.spotify.com/episode/0YwSpTejikJOJlHsp3zxMA?si=01220f7a386747aa",
             "caption": "名古屋大学総長が求める研究のアリカタとは…？",
-            "image": "images/home/IMG_0906.jpg"
+            "image": "images/home/IMG_0906.jpg",
+            "links": [
+                { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/0YwSpTejikJOJlHsp3zxMA?si=01220f7a386747aa", "icon": "fa-spotify" }
+            ]
         },
-         {
+        {
             "title": "Vol11：名古屋大学総長",
-            "url": "https://open.spotify.com/episode/0vd56iIMsKf1HDA2bGF8oA?si=82a9978ab3fc477f",
             "caption": "名古屋大学総長が求める研究のアリカタとは…？",
-            "image": "images/home/IMG_0906.jpg"
+            "image": "images/home/IMG_0906.jpg",
+            "links": [
+                { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/0vd56iIMsKf1HDA2bGF8oA?si=82a9978ab3fc477f", "icon": "fa-spotify" }
+            ]
         },
-         {
+        {
             "title": "Vol10：名古屋大学総長",
-            "url": "https://open.spotify.com/episode/3w9hKaBsbl14vTp8LebXpX?si=2e1f5ed65e9f4a17",
             "caption": "名古屋大学総長が求める研究のアリカタとは…？",
-            "image": "images/home/IMG_0906.jpg"
+            "image": "images/home/IMG_0906.jpg",
+            "links": [
+                { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/3w9hKaBsbl14vTp8LebXpX?si=2e1f5ed65e9f4a17", "icon": "fa-spotify" }
+            ]
         },
-         {
+        {
             "title": "Vol9：名古屋大学総長",
-            "url": "https://open.spotify.com/episode/7khQKA8nprcJISSiW5drv9?si=79c5e772fe1c4e5c",
             "caption": "名古屋大学総長が求める研究のアリカタとは…？",
-            "image": "images/home/IMG_0906.jpg"
+            "image": "images/home/IMG_0906.jpg",
+            "links": [
+                { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/7khQKA8nprcJISSiW5drv9?si=79c5e772fe1c4e5c", "icon": "fa-spotify" }
+            ]
         },
-         {
+        {
             "title": "Vol8：名古屋大学総長",
-            "url": "https://open.spotify.com/episode/3f6Jru3QuAHsUwxuP76oJu?si=cf9952919bfe4105",
             "caption": "名古屋大学総長が求める研究のアリカタとは…？",
-            "image": "images/home/IMG_0906.jpg"
+            "image": "images/home/IMG_0906.jpg",
+            "links": [
+                { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/3f6Jru3QuAHsUwxuP76oJu?si=cf9952919bfe4105", "icon": "fa-spotify" }
+            ]
         },
-         {
+        {
             "title": "Vol7：名古屋大学総長",
-            "url": "https://open.spotify.com/episode/5pdmkNRYCO1tGbC6zgLyM1?si=736a16a5c865468e",
             "caption": "名古屋大学総長が求める研究のアリカタとは…？",
-            "image": "images/home/IMG_0906.jpg"
+            "image": "images/home/IMG_0906.jpg",
+            "links": [
+                { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/5pdmkNRYCO1tGbC6zgLyM1?si=736a16a5c865468e", "icon": "fa-spotify" }
+            ]
         },
-         {
+        {
             "title": "Vol6：名古屋大学総長",
-            "url": "https://open.spotify.com/episode/4xiEMvEYaIQNGKpXmuPsIE?si=70e209a12c3c4b43",
             "caption": "名古屋大学総長が求める研究のアリカタとは…？",
-            "image": "images/home/IMG_0906.jpg"
+            "image": "images/home/IMG_0906.jpg",
+            "links": [
+                { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/4xiEMvEYaIQNGKpXmuPsIE?si=70e209a12c3c4b43", "icon": "fa-spotify" }
+            ]
         },
-         {
+        {
             "title": "Vol5：名古屋大学総長",
-            "url": "https://open.spotify.com/episode/7bqT2ENhwbIjgRVt5yKsa5?si=6a4b46343b6c4c84",
             "caption": "名古屋大学総長が求める研究のアリカタとは…？",
-            "image": "images/home/IMG_0906.jpg"
+            "image": "images/home/IMG_0906.jpg",
+            "links": [
+                { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/7bqT2ENhwbIjgRVt5yKsa5?si=6a4b46343b6c4c84", "icon": "fa-spotify" }
+            ]
         },
-         {
+        {
             "title": "Vol4後編：名古屋大学総長",
-            "url": "https://open.spotify.com/episode/5K25IuRIJFvaNW8F8zyoUG?si=3dcb8ba2bff04226",
             "caption": "名古屋大学総長が求める研究のアリカタとは…？",
-            "image": "images/home/IMG_0906.jpg"
+            "image": "images/home/IMG_0906.jpg",
+            "links": [
+                { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/5K25IuRIJFvaNW8F8zyoUG?si=3dcb8ba2bff04226", "icon": "fa-spotify" }
+            ]
         },
-         {
+        {
             "title": "Vol4前編：名古屋大学総長",
-            "url": "https://open.spotify.com/episode/66j1GCfU1a2kYC71lpcDsA?si=afc3905b002143d2",
             "caption": "名古屋大学総長が求める研究のアリカタとは…？",
-            "image": "images/home/IMG_0906.jpg"
+            "image": "images/home/IMG_0906.jpg",
+            "links": [
+                { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/66j1GCfU1a2kYC71lpcDsA?si=afc3905b002143d2", "icon": "fa-spotify" }
+            ]
         },
-         {
+        {
             "title": "Vol3：名古屋大学総長",
-            "url": "https://open.spotify.com/episode/6fSPOtNvjXUZKfM9APEycz?si=0bf5880225ff4c35",
             "caption": "名古屋大学総長が求める研究のアリカタとは…？",
-            "image": "images/home/IMG_0906.jpg"
+            "image": "images/home/IMG_0906.jpg",
+            "links": [
+                { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/6fSPOtNvjXUZKfM9APEycz?si=0bf5880225ff4c35", "icon": "fa-spotify" }
+            ]
         },
-         {
+        {
             "title": "Vol2：名古屋大学総長",
-            "url": "https://open.spotify.com/episode/7fTdOu2M86vSMMoLwzORmb?si=93bbc66666994d6f",
             "caption": "名古屋大学総長が求める研究のアリカタとは…？",
-            "image": "images/home/IMG_0906.jpg"
+            "image": "images/home/IMG_0906.jpg",
+            "links": [
+                { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/7fTdOu2M86vSMMoLwzORmb?si=93bbc66666994d6f", "icon": "fa-spotify" }
+            ]
         },
-         {
+        {
             "title": "Vol1：名古屋大学総長",
-            "url": "https://open.spotify.com/episode/5xJmrFGQqNsYr4PqT5FoB1?si=47bbb4883e2e486c",
             "caption": "名古屋大学総長が求める研究のアリカタとは…？",
-            "image": "images/home/IMG_0906.jpg"
+            "image": "images/home/IMG_0906.jpg",
+            "links": [
+                { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/5xJmrFGQqNsYr4PqT5FoB1?si=47bbb4883e2e486c", "icon": "fa-spotify" }
+            ]
         }
     ]
 }
