@@ -41,13 +41,13 @@ function switchMedia(type) {
     const leftList = list.slice(0, halfIndex);
     const rightList = list.slice(halfIndex);
 
-    // 表示（どちらも共通のカード生成関数を使います）
+    // 表示
     renderMediaCard(leftList, leftContainer, type);
     renderMediaCard(rightList, rightContainer, type);
 }
 
 
-// ▼ 共通カード生成関数
+// ▼ 共通カード生成関数（ここが新しくなっています！）
 function renderMediaCard(list, container, type) {
     let html = '';
     
