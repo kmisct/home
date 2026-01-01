@@ -882,3 +882,80 @@ input:focus, select:focus, textarea:focus {
     border-color: #c4302b;
     box-shadow: 0 5px 15px rgba(196, 48, 43, 0.3);
 }
+
+
+/* =========================================
+   20. Common Media Card Design (共通カード)
+   ========================================= */
+.media-card-link {
+    display: block;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 30px; /* カード間の隙間 */
+}
+
+.media-card-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* 画像エリア */
+.media-card-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 180px; /* 画像の高さ固定 */
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+.media-card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.media-card-link:hover .media-card-img-wrap img {
+    transform: scale(1.05);
+}
+
+/* 画像の上のアイコン（右下） */
+.media-card-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+/* テキストエリア */
+.media-card-body {
+    padding: 20px;
+}
+
+.media-card-body h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+    color: #0056b3; /* タイトル色 */
+}
+
+.media-card-body p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+}

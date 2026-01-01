@@ -1,4 +1,4 @@
-let allMediaData = null; // データをここに保存しておく
+let allMediaData = null;
 
 document.addEventListener('DOMContentLoaded', async () => {
     const jsonPath = 'data/media.json';
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const response = await fetch(jsonPath);
         allMediaData = await response.json();
 
-        // 最初はPodcastを表示（ここを 'youtube' にすればYouTubeが初期表示）
+        // 初期表示 (Podcast)
         switchMedia('podcast');
 
     } catch (error) {
@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-// ▼ 切り替え関数（HTMLのボタンから呼ばれます）
 function switchMedia(type) {
     if (!allMediaData) return;
 
@@ -23,11 +22,11 @@ function switchMedia(type) {
     const rightContainer = document.getElementById('js-media-list-right');
     const titleElement = document.getElementById('js-media-title');
     
-    // 1. ボタンの見た目を切り替え
+    // ボタンの見た目切り替え
     document.querySelectorAll('.media-switch-btn').forEach(btn => btn.classList.remove('active'));
     document.getElementById(`btn-${type}`).classList.add('active');
 
-    // 2. データを取得して左右に振り分け
+    // データ取得
     let list = [];
     if (type === 'podcast') {
         list = allMediaData.podcast;
@@ -37,59 +36,42 @@ function switchMedia(type) {
         titleElement.textContent = "YouTube Archive";
     }
 
-    // リストを半分で分割
+    // 左右に振り分け
     const halfIndex = Math.ceil(list.length / 2);
     const leftList = list.slice(0, halfIndex);
     const rightList = list.slice(halfIndex);
 
-    // 3. 画面に表示
-    if (type === 'podcast') {
-        renderPodcast(leftList, leftContainer);
-        renderPodcast(rightList, rightContainer);
-    } else {
-        renderYoutube(leftList, leftContainer);
-        renderYoutube(rightList, rightContainer);
-    }
+    // 表示（どちらも共通のカード生成関数を使います）
+    renderMediaCard(leftList, leftContainer, type);
+    renderMediaCard(rightList, rightContainer, type);
 }
 
 
-// ▼ YouTubeカード生成
-function renderYoutube(list, container) {
+// ▼ 共通カード生成関数
+function renderMediaCard(list, container, type) {
     let html = '';
-    list.forEach(item => {
-        html += `
-            <div class="media-item" style="margin-bottom: 40px;">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/${item.videoId}" 
-                        title="YouTube video player" frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <h3 style="font-size: 1rem; margin: 10px 0 5px; font-weight: bold;">${item.title}</h3>
-                <p class="video-caption" style="text-align: left; margin-top: 0;">
-                    ${item.date} <br> ${item.caption}
-                </p>
-            </div>
-        `;
-    });
-    container.innerHTML = html;
-}
+    
+    // アイコンの出し分け
+    let iconClass = 'fa-arrow-up-right-from-square';
+    if (type === 'youtube') iconClass = 'fa-youtube';
+    if (type === 'podcast') iconClass = 'fa-microphone';
 
-// ▼ Podcastカード生成
-function renderPodcast(list, container) {
-    let html = '';
     list.forEach(item => {
+        // 画像が設定されていない場合のデフォルト画像
+        const imagePath = item.image ? item.image : 'images/home/IMG_0906.jpg';
+
         html += `
-            <a href="${item.url}" target="_blank" class="article-item">
-                <div style="flex: 1;">
-                    <div style="display:flex; align-items:center; margin-bottom:5px;">
-                        <span class="article-tag" style="background:${item.tag === 'Spotify' ? '#1DB954' : '#999'}">${item.tag}</span>
-                        <span style="font-size: 0.8rem; color: #888;">${item.date}</span>
+            <a href="${item.url}" target="_blank" class="media-card-link">
+                <div class="media-card-img-wrap">
+                    <img src="${imagePath}" alt="${item.title}">
+                    <div class="media-card-icon">
+                        <i class="fa-brands ${iconClass}"></i>
                     </div>
-                    <span class="article-title">${item.title}</span>
                 </div>
-                <i class="fa-solid fa-circle-play" style="font-size: 1.5rem; color: #ccc; margin-left: 15px;"></i>
+                <div class="media-card-body">
+                    <h3>${item.title}</h3>
+                    <p>${item.caption}</p>
+                </div>
             </a>
         `;
     });
