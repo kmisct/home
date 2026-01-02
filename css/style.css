@@ -1016,3 +1016,113 @@ input:focus, select:focus, textarea:focus {
         text-align: center;
     }
 }
+
+/* =========================================
+   22. Survey & Collaboration Section (アンケート & 協力)
+   ========================================= */
+.survey-section {
+    max-width: 800px;
+    margin: 100px auto 0; /* 上に少し間隔を空ける */
+    text-align: center;
+    border-top: 1px solid #eee; /* 上に薄い区切り線 */
+    padding-top: 60px;
+}
+
+/* アンケートの文字 */
+.survey-text {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    font-weight: 500;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* アンケートボタン（黒丸ボタン） */
+.btn-survey {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 12px 60px; /* 横長に */
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    margin-bottom: 60px; /* 下のカードとの隙間 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.btn-survey:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* 協力クレジット（横並びカード） */
+.collab-card {
+    display: flex;
+    align-items: flex-start; /* 上揃え */
+    text-align: left; /* 中身は左揃え */
+    gap: 25px;
+    /* 背景を少し付けて区別する場合（お好みで削除可） */
+    /* background: #f9f9f9; padding: 30px; border-radius: 12px; */
+}
+
+/* ロゴ画像エリア */
+.collab-img {
+    flex: 0 0 100px; /* 幅100px固定 */
+    width: 100px;
+    height: 100px;
+}
+.collab-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 正方形にトリミング */
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* テキストエリア */
+.collab-content {
+    flex: 1;
+}
+
+.collab-label {
+    font-size: 0.8rem;
+    color: #888;
+    margin: 0 0 5px 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+.collab-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: #333;
+    line-height: 1.4;
+}
+/* リンクの色（青） */
+.collab-title a, .collab-desc a {
+    color: #0056b3;
+    text-decoration: none;
+}
+.collab-title a:hover, .collab-desc a:hover {
+    text-decoration: underline;
+}
+
+.collab-desc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin: 0;
+    color: #444;
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+    .collab-card {
+        flex-direction: column; /* 縦並びに */
+        align-items: center;
+        text-align: center;
+    }
+    .collab-img {
+        margin-bottom: 10px;
+    }
+}
