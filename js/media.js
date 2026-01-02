@@ -38,13 +38,13 @@ function switchMedia(type) {
     const leftList = list.slice(0, halfIndex);
     const rightList = list.slice(halfIndex);
 
-    // リストの描画（開始番号 'startIndex' を渡すのが重要！）
+    // リストの描画
     renderMediaCard(leftList, leftContainer, type, 0);
     renderMediaCard(rightList, rightContainer, type, halfIndex);
 }
 
 
-// ▼ カード生成（クリックでモーダルを開く：背番号方式）
+// ▼ カード生成（説明文を削除し、タイトルのみにしました）
 function renderMediaCard(list, container, type, startIndex) {
     let html = '';
     
@@ -55,12 +55,10 @@ function renderMediaCard(list, container, type, startIndex) {
 
     list.forEach((item, index) => {
         // 通し番号（背番号）を計算
-        // 左列なら 0, 1, 2... 右列なら 6, 7, 8... となるようにする
         const globalIndex = startIndex + index;
         
         const imagePath = item.image ? item.image : 'images/home/IMG_0906.jpg';
 
-        // onclickには「タイプ」と「番号」だけを渡すので、データが重くても壊れません
         html += `
             <div class="media-card-link" onclick="openMediaModal('${type}', ${globalIndex})">
                 <div class="media-card-img-wrap">
@@ -71,15 +69,14 @@ function renderMediaCard(list, container, type, startIndex) {
                 </div>
                 <div class="media-card-body">
                     <h3>${item.title}</h3>
-                    <p>${item.caption}</p>
-                </div>
+                    </div>
             </div>
         `;
     });
     container.innerHTML = html;
 }
 
-// ▼ モーダルを開く（背番号からデータを検索）
+// ▼ モーダルを開く（ここは変わらず説明文を表示します）
 function openMediaModal(type, index) {
     // データを番号で取得
     const item = allMediaData[type][index];
@@ -90,7 +87,7 @@ function openMediaModal(type, index) {
     // 画像とテキストをセット
     document.getElementById('modal-img').src = item.image ? item.image : 'images/home/IMG_0906.jpg';
     document.getElementById('modal-title').textContent = item.title;
-    document.getElementById('modal-caption').textContent = item.caption;
+    document.getElementById('modal-caption').textContent = item.caption; // ★モーダルには説明文が出ます
 
     // リンクボタンを生成
     const linksArea = document.getElementById('modal-links-area');
