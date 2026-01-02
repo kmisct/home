@@ -834,10 +834,10 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
 }
 
-/* spotify用の色変え（お好みで） */
-#btn-spotify.active {
-    background: #1DB954; /* 緑系 */
-    border-color: #1DB954;
+/* Podcast用の色変え（お好みで） */
+#btn-podcast.active {
+    background: #6f42c1; /* 紫系 */
+    border-color: #6f42c1;
     box-shadow: 0 5px 15px rgba(111, 66, 193, 0.3);
 }
 
