@@ -666,7 +666,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* =========================================
-   18. Media Circle Layout (円形蛇中心レイアウト)
+   18. Media Circle Layout (円形蛇中心レイアウト) - スクロールバー削除版
    ========================================= */
 
 /* 全体のラッパー */
@@ -677,121 +677,73 @@ input:focus, select:focus, textarea:focus {
     gap: 40px;
     margin-top: 60px;
     position: relative;
+    /* 高さが中身に合わせて伸びるようになります */
 }
 
-/* 中央の蛇画像エリア */
+/* 中央の蛇画像エリア（スクロールに合わせてついてくる設定） */
 .media-center-image {
-    flex: 0 0 350px; /* 少し小さめに調整 */
+    flex: 0 0 350px;
     text-align: center;
     
     /* ▼ 画面のスクロールに合わせてついてくる設定 */
     position: sticky;
     top: 150px; /* 画面の上から150pxの位置で固定 */
     z-index: 1;
-    align-self: flex-start; /* これがないとstickyが効かないことがあります */
+    align-self: flex-start;
 }
 .media-center-image img {
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15)); /* 影をつけて浮かび上がらせる */
-    animation: floatSnake 6s ease-in-out infinite; /* ふわふわ動かすアニメーション */
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+    animation: floatSnake 6s ease-in-out infinite;
 }
 
-/* ふわふわアニメーションの定義 */
 @keyframes floatSnake {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-15px); }
 }
 
-
 /* 左右のリストエリア */
 .media-side-list {
-    flex: 1; /* 残りのスペースを使う */
-    z-index: 2; /* 蛇より手前に表示 */
+    flex: 1;
+    z-index: 2;
 }
 
 .media-side-list h3 {
-    text-align: center;
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    color: #0056b3;
-    font-weight: 700;
+    text-align: center; font-size: 1.5rem; margin-bottom: 30px; color: #0056b3; font-weight: 700;
 }
 
-/* カードを縦に積むスタック（スクロール対応版） */
+/* ★★★ ここを修正！スクロールバーを削除 ★★★ */
 .media-card-stack {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* 隙間を少し詰める */
+    gap: 20px;
     
-    /* ▼▼▼ ここがポイント ▼▼▼ */
-    max-height: 600px; /* 高さを制限（蛇の画像の大きさに合わせる） */
-    overflow-y: auto;  /* 縦スクロールを有効にする */
-    padding-right: 10px; /* スクロールバーとの隙間 */
+    /* 高さ制限とスクロール設定を削除しました */
+    height: auto;
+    overflow: visible; 
     padding-bottom: 10px;
-    /* ▲▲▲ ここまで ▲▲▲ */
 }
-
-/* スクロールバーのデザイン（Webkit系ブラウザ用：Chrome, Safariなど） */
-.media-card-stack::-webkit-scrollbar {
-    width: 8px;
-}
-.media-card-stack::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
-}
-.media-card-stack::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 4px;
-}
-.media-card-stack::-webkit-scrollbar-thumb:hover {
-    background: #0056b3; /* ホバー時に青くする */
-}
-
-/* (ダミー用スタイル：後で削除OK) */
-.media-card-dummy {
-    background: #f0f0f0;
-    padding: 30px;
-    text-align: center;
-    border-radius: 12px;
-    border: 2px dashed #ccc;
-    color: #888;
-}
-
 
 /* --- スマホ対応 --- */
 @media (max-width: 1024px) {
-    .media-center-image {
-        flex: 0 0 300px; /* タブレットでは少し小さく */
-    }
+    .media-center-image { flex: 0 0 300px; }
 }
 
 @media (max-width: 768px) {
     .media-circle-wrapper {
-        flex-direction: column; /* 縦並びにする */
+        flex-direction: column;
         align-items: center;
         gap: 60px;
     }
-
-    /* 順番を入れ替える：蛇を一番上へ */
     .media-center-image {
         order: 1;
-        flex: auto;
-        width: 80%; /* スマホでの幅 */
-        max-width: 350px;
-        position: static; /* stickyを解除 */
+        flex: auto; width: 80%; max-width: 350px;
+        position: static; /* スマホではついてこなくて良い */
         margin-bottom: 20px;
     }
-
-    .media-left {
-        order: 2; /* 左リストを2番目へ */
-        width: 100%;
-    }
-
-    .media-right {
-        order: 3; /* 右リストを3番目へ */
-        width: 100%;
-    }
+    .media-left { order: 2; width: 100%; }
+    .media-right { order: 3; width: 100%; }
 }
 
 /* =========================================
