@@ -98,7 +98,7 @@
             ]
         },
         {
-            "title": "Vol4：Space, cosmos, universe！高エネ物理で解き明かせ後編",
+            "title": "Vol4：Space, cosmos, universe!高エネ物理で解き明かせ後編",
             "caption": "名古屋大学総長が求める研究のアリカタとは…？",
             "image": "images/home/IMG_0906.jpg",
             "links": [
@@ -106,7 +106,7 @@
             ]
         },
         {
-            "title": "Vol4：Space, cosmos, universe！高エネ物理で解き明かせ前編",
+            "title": "Vol4：Space, cosmos, universe!高エネ物理で解き明かせ前編",
             "caption": "名古屋大学総長が求める研究のアリカタとは…？",
             "image": "images/home/IMG_0906.jpg",
             "links": [
@@ -115,7 +115,7 @@
         },
         {
             "title": "Vol3：「本当の」重力理論を目指して",
-            "caption": "名古屋大学総長が求める研究のアリカタとは…？",
+            "caption": "3回目となった今回は、野尻伸一（のじりしんいち）さん（KMI 教授, 写真右端）をお招きし、お話を伺いました。野尻さんの研究テーマは、修正重力理論。現存のアインシュタインの重力理論ではうまく説明できていない問題を解決するため、アインシュタインの重力理論からのずれを調べます。そして、その裏に隠された「本当の」重力理論の手がかりを得ようと、研究していらっしゃいます。こうして宇宙の膨張や歴史の解明に取り組む野尻さんが、研究者生活を赤裸々に語ってくださいました。「Dark Candy」と合わせて読んでいただくと、トークをよりお楽しみいただけます。",
             "image": "images/home/IMG_0906.jpg",
             "links": [
                 { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/6fSPOtNvjXUZKfM9APEycz?si=0bf5880225ff4c35", "icon": "fa-spotify" }
@@ -123,7 +123,7 @@
         },
         {
             "title": "Vol2：異なる視点から暗黒物質を探索",
-            "caption": "名古屋大学総長が求める研究のアリカタとは…？",
+            "caption": "番組趣旨を語った第1回に続き、初めて研究者ゲストを迎える今回は、風間慎吾（かざましんご）さん (KMI・宇宙地球環境研究所 准教授 / 写真中段右) と（奥村暁）おくむらあきら）さん (KMI・宇宙地球環境研究所 講師 / 写真下段右) をお招きし、オンラインでお話を伺いました。暗黒物質の正体に異なる角度から迫るお二人の、ポジティブでクリエイティブな研究&研究者ライフを、たっぷり1時間のポッドキャストでお聴きください。",
             "image": "images/home/IMG_0906.jpg",
             "links": [
                 { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/7fTdOu2M86vSMMoLwzORmb?si=93bbc66666994d6f", "icon": "fa-spotify" }
@@ -131,10 +131,12 @@
         },
         {
             "title": "Vol1：新企画、始まりました",
-            "caption": "名古屋大学総長が求める研究のアリカタとは…？",
+            "caption": "名古屋大学研究フロントラインさんとコラボし、今月から新しいポッドキャスト企画「素粒子宇宙円卓会議」を立ち上げました。「KMIの研究者と、KMIサイエンスコミュニケーションチームと名大研究フロントラインが台本なしに交流し、どのような相互作用が生まれるのか」という切り口で配信していきます。初回である今回は、この企画がはじまった経緯や、私たちKMISCTのご紹介をしました。",
             "image": "images/home/IMG_0906.jpg",
             "links": [
-                { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/5xJmrFGQqNsYr4PqT5FoB1?si=47bbb4883e2e486c", "icon": "fa-spotify" }
+                { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/5xJmrFGQqNsYr4PqT5FoB1?si=47bbb4883e2e486c", "icon": "fa-spotify" },
+                { "name": "noteを読む", "url": "https://note.com/nagoya_ura/n/n97dca1fb5bed", "icon": "fa-note" }
+
             ]
         }
     ]
