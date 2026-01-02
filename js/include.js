@@ -11,7 +11,6 @@ async function loadPart(id, url) {
             const element = document.getElementById(id);
             element.innerHTML = text;
 
-            // ▼▼▼ 追加機能：ロゴをホームへのリンクにする ▼▼▼
             // ヘッダーを読み込んだ時だけ実行
             if (id === 'header-placeholder') {
                 const logo = element.querySelector('.logo');
@@ -23,7 +22,6 @@ async function loadPart(id, url) {
                     });
                 }
             }
-            // ▲▲▲ 追加ここまで ▲▲▲
 
             // 読み込んだHTML内のリンク(href, src)を自動修正する
             if (rootPath !== '') {
