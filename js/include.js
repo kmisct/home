@@ -11,13 +11,12 @@ async function loadPart(id, url) {
             const element = document.getElementById(id);
             element.innerHTML = text;
 
-            // ヘッダーを読み込んだ時だけ実行
+            // ▼▼▼ ロゴをホームへのリンクにする機能 ▼▼▼
             if (id === 'header-placeholder') {
                 const logo = element.querySelector('.logo');
                 if (logo) {
-                    logo.style.cursor = 'pointer'; // マウスを手の形にする
+                    logo.style.cursor = 'pointer'; // マウスカーソルを手の形に
                     logo.addEventListener('click', () => {
-                        // 階層を考慮してindex.htmlへ移動
                         window.location.href = rootPath + 'index.html';
                     });
                 }
@@ -70,7 +69,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }, { rootMargin: '0px 0px -15% 0px' });
     
-    // 監視対象の要素を取得
+    // 監視対象の要素を取得（読み込んだヘッダー内のクラスも含む）
     const fadeElements = document.querySelectorAll('.js-fade-up, .js-fade-down');
     fadeElements.forEach(el => observer.observe(el));
 
@@ -81,8 +80,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (menuToggle && navList) {
         menuToggle.addEventListener('click', () => {
             // CSSに合わせてクラス名を切り替え
-            navList.classList.toggle('active'); 
-            // ※もしCSSが .is-open なら 'is-open' に変更してください
+            // もしCSSが .is-open なら 'is-open' のままでOK
+            // もしCSSが .active なら 'active' に書き換えてください
+            navList.classList.toggle('is-open'); 
         });
     }
 });
