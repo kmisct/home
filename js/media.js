@@ -76,7 +76,7 @@ function renderMediaCard(list, container, type, startIndex) {
     container.innerHTML = html;
 }
 
-// ▼ モーダルを開く（シンプルボタン版）
+// ▼ モーダルを開く（カラーボタン＆個別名称版）
 function openMediaModal(type, index) {
     const item = allMediaData[type][index];
     if (!item) return;
@@ -88,25 +88,36 @@ function openMediaModal(type, index) {
     document.getElementById('modal-title').textContent = item.title;
     document.getElementById('modal-caption').textContent = item.caption; 
 
-    // リンクボタンを生成（シンプルな黒ボタン）
+    // リンクボタンを生成
     const linksArea = document.querySelector('.media-modal-links-simple');
     linksArea.innerHTML = ''; 
 
     if (item.links && item.links.length > 0) {
         item.links.forEach(link => {
-            let btnText = link.name;
+            // 色とアイコンの判定ロジック
+            let btnClass = 'btn-default';
+            let iconClass = 'fa-arrow-up-right-from-square'; // デフォルトアイコン
+
             const nameLower = link.name.toLowerCase();
             
-            // ボタンのテキストを統一感のあるものに
-            if (nameLower.includes('spotify') || nameLower.includes('apple') || nameLower.includes('youtube') || nameLower.includes('anchor')) {
-                btnText = 'ポッドキャスト';
+            if (nameLower.includes('spotify')) {
+                btnClass = 'btn-spotify';
+                iconClass = 'fa-spotify';
+            } else if (nameLower.includes('apple')) {
+                btnClass = 'btn-apple';
+                iconClass = 'fa-podcast';
+            } else if (nameLower.includes('youtube')) {
+                btnClass = 'btn-youtube';
+                iconClass = 'fa-youtube';
             } else if (nameLower.includes('note')) {
-                btnText = 'NOTE';
+                btnClass = 'btn-note';
+                iconClass = 'fa-note-sticky';
             }
 
+            // アイコン＋元の名前（link.name）でボタンを作成
             const btnHtml = `
-                <a href="${link.url}" target="_blank" class="modal-link-btn-simple">
-                    ${btnText}
+                <a href="${link.url}" target="_blank" class="modal-link-btn-simple ${btnClass}">
+                    <i class="fa-brands ${iconClass}"></i> ${link.name}
                 </a>
             `;
             linksArea.insertAdjacentHTML('beforeend', btnHtml);
@@ -115,15 +126,3 @@ function openMediaModal(type, index) {
 
     modal.classList.add('active');
 }
-
-// ▼ モーダルを閉じる
-function closeMediaModal() {
-    document.getElementById('media-modal').classList.remove('active');
-}
-
-// 背景クリックで閉じる
-document.getElementById('media-modal').addEventListener('click', function(e) {
-    if (e.target === this) {
-        closeMediaModal();
-    }
-});
