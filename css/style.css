@@ -55,7 +55,7 @@ body, html {
    ※画像を変えたい時はここを編集してください
    ========================================= */
 
-/* 共通設定 */
+/* 共通設定（下層ページ用ヘッダー） */
 .page-hero {
     width: 100%; height: 300px;
     background-color: #111;
@@ -238,13 +238,7 @@ body, html {
 
 
 /* =========================================
-   6. 下層ページ共通 (Members, About等)
-   ========================================= */
-/* ※ヘッダー画像の個別設定は、ファイルの上の方（セクション2の下）に移動しました */
-
-
-/* =========================================
-   7. MEMBERSページ専用デザイン
+   6. MEMBERSページ専用デザイン
    ========================================= */
 
 /* --- 共通の文字デザイン --- */
@@ -301,7 +295,7 @@ body, html {
 
 
 /* =========================================
-   8. EVENTSページ & アーカイブ用スタイル
+   7. EVENTSページ & アーカイブ用スタイル
    ========================================= */
 .archive-container { max-width: 900px; margin: 0 auto; }
 .archive-year-group { margin-bottom: 20px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; }
@@ -328,7 +322,7 @@ body, html {
 
 
 /* =========================================
-   9. HOME: 最新の活動（カード形式）
+   8. HOME: 最新の活動（カード形式）
    ========================================= */
 #latest-events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; width: 100%; }
 .latest-card {
@@ -351,7 +345,7 @@ body, html {
 
 
 /* =========================================
-   12. CONTACTページ
+   9. CONTACTページ
    ========================================= */
 .contact-wrapper { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; align-items: flex-start; margin-top: 40px; }
 .contact-form-area { background: #fff; }
@@ -384,7 +378,7 @@ input:focus, select:focus, textarea:focus {
 
 
 /* =========================================
-   13. Footer (KMIロゴ＆リンク付き版)
+   10. Footer (KMIロゴ＆リンク付き版)
    ========================================= */
 .site-footer {
     background: #111;
@@ -531,7 +525,7 @@ input:focus, select:focus, textarea:focus {
 
 
 /* =========================================
-   14. 全ページ共通スマホ用調整 (まとめ)
+   11. 全ページ共通スマホ用調整 (まとめ)
    ========================================= */
 @media (max-width: 768px) {
     .hero-message h1 { font-size: 2.5rem; }
@@ -553,7 +547,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* =========================================
-   15. PRIVACY POLICYページ用
+   12. PRIVACY POLICYページ用
    ========================================= */
 .policy-wrapper {
     max-width: 800px; /* 文章が横に広がりすぎないように制限 */
@@ -594,7 +588,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* =========================================
-   16. 記事詳細ページ用 (Article)
+   13. 記事詳細ページ用 (Article)
    ========================================= */
 
 /* 記事内の画像ボックス（2枚並びなど） */
@@ -655,7 +649,7 @@ input:focus, select:focus, textarea:focus {
 
 
 /* =========================================
-   18. Media Circle Layout (円形蛇中心レイアウト) - スクロールバー削除版
+   18. Media Circle Layout (円形蛇中心レイアウト)
    ========================================= */
 
 /* 全体のラッパー */
@@ -999,7 +993,6 @@ input:focus, select:focus, textarea:focus {
 
 /* ★各サービスの色設定（復活！） */
 .btn-spotify { background-color: #1DB954; }
-.btn-apple { background-color: #872EC4; }
 .btn-youtube { background-color: #FF0000; }
 .btn-note { background-color: #2cb696; }
 .btn-default { background-color: #333; }
