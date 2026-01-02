@@ -58,6 +58,12 @@
                 </div>
 
             </div>
+            
+            <div class="text-center mt-50 js-fade-up" style="margin-top: 80px;">
+                <a href="https://www.youtube.com/@KMINagoyaU" target="_blank" class="btn-more">
+                    Channel Top <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
 
         </div> 
     </section>
@@ -70,23 +76,21 @@
 
     <div id="media-modal" class="modal-overlay">
         <div class="modal-container">
-            <button class="modal-close-btn" onclick="closeMediaModal()"><i class="fa-solid fa-times"></i></button>
+            <div class="media-modal-header">
+                <div class="media-modal-title-area">
+                    <h3 id="modal-title">タイトル</h3>
+                </div>
+                <button class="modal-close-btn" onclick="closeMediaModal()"><i class="fa-solid fa-times"></i></button>
+            </div>
             
-            <div class="media-modal-content">
-                <div class="media-modal-header">
-                    <div class="media-modal-img-wrap">
-                        <img id="modal-img" src="" alt="">
-                    </div>
-                    <div class="media-modal-title-area">
-                        <h3 id="modal-title">タイトル</h3>
-                    </div>
+            <div class="media-modal-body">
+                <div class="media-modal-img-full">
+                    <img id="modal-img" src="" alt="">
                 </div>
                 
-                <div class="media-modal-body">
-                    <p id="modal-caption">ここに説明文が入ります。</p>
-                    
-                    <div id="modal-links-area" class="media-modal-links">
-                        </div>
+                <p id="modal-caption">ここに説明文が入ります。</p>
+                
+                <div class="media-modal-links-simple">
                 </div>
             </div>
         </div>

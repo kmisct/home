@@ -19,17 +19,15 @@ function switchMedia(type) {
     const leftContainer = document.getElementById('js-media-list-left');
     const rightContainer = document.getElementById('js-media-list-right');
     const titleElement = document.getElementById('js-media-title');
-    const descElement = document.getElementById('js-media-desc'); // ★説明文の場所を取得
+    const descElement = document.getElementById('js-media-desc');
     
     // スイッチボタンの見た目切り替え
     document.querySelectorAll('.media-switch-btn').forEach(btn => btn.classList.remove('active'));
     const activeBtn = document.getElementById(`btn-${type}`);
     if (activeBtn) activeBtn.classList.add('active');
 
-    // ▼▼▼ データの切り替え ▼▼▼
+    // データの切り替え
     let list = [];
-    
-    // リストデータの取得
     if (type === 'round1') {
         list = allMediaData.round1; 
         titleElement.textContent = "Round 1";
@@ -38,13 +36,12 @@ function switchMedia(type) {
         titleElement.textContent = "Round 2";
     }
 
-    // ★説明文の切り替え（ここを追加！）
+    // 説明文の切り替え
     if (allMediaData.descriptions && allMediaData.descriptions[type]) {
         descElement.innerHTML = allMediaData.descriptions[type];
     } else {
-        descElement.innerHTML = ""; // データがない場合は空にする
+        descElement.innerHTML = "";
     }
-    // ▲▲▲ ここまで ▲▲▲
 
     // 左右に振り分け
     const halfIndex = Math.ceil(list.length / 2);
@@ -79,7 +76,7 @@ function renderMediaCard(list, container, type, startIndex) {
     container.innerHTML = html;
 }
 
-// ▼ モーダルを開く
+// ▼ モーダルを開く（シンプルボタン版）
 function openMediaModal(type, index) {
     const item = allMediaData[type][index];
     if (!item) return;
@@ -91,31 +88,29 @@ function openMediaModal(type, index) {
     document.getElementById('modal-title').textContent = item.title;
     document.getElementById('modal-caption').textContent = item.caption; 
 
-    // リンクボタンを生成
-    const linksArea = document.getElementById('modal-links-area');
+    // リンクボタンを生成（シンプルな黒ボタン）
+    const linksArea = document.querySelector('.media-modal-links-simple');
     linksArea.innerHTML = ''; 
 
     if (item.links && item.links.length > 0) {
         item.links.forEach(link => {
-            let btnClass = 'btn-default';
+            let btnText = link.name;
             const nameLower = link.name.toLowerCase();
             
-            if (nameLower.includes('spotify')) btnClass = 'btn-spotify';
-            if (nameLower.includes('apple')) btnClass = 'btn-apple';
-            if (nameLower.includes('youtube')) btnClass = 'btn-youtube';
-            if (nameLower.includes('note')) btnClass = 'btn-note';
-
-            const icon = link.icon ? link.icon : 'fa-arrow-up-right-from-square';
+            // ボタンのテキストを統一感のあるものに
+            if (nameLower.includes('spotify') || nameLower.includes('apple') || nameLower.includes('youtube') || nameLower.includes('anchor')) {
+                btnText = 'ポッドキャスト';
+            } else if (nameLower.includes('note')) {
+                btnText = 'NOTE';
+            }
 
             const btnHtml = `
-                <a href="${link.url}" target="_blank" class="modal-link-btn ${btnClass}">
-                    <i class="fa-brands ${icon}"></i> ${link.name}
+                <a href="${link.url}" target="_blank" class="modal-link-btn-simple">
+                    ${btnText}
                 </a>
             `;
             linksArea.insertAdjacentHTML('beforeend', btnHtml);
         });
-    } else {
-        linksArea.innerHTML = '<p style="text-align:center; color:#999; font-size:0.9rem;">リンクはありません</p>';
     }
 
     modal.classList.add('active');
