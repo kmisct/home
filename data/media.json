@@ -26,7 +26,7 @@
             "caption": "装いを新たに始まった『素粒子宇宙円卓会議 Round 2』。 記念すべき最初のゲストは台湾国立中央大 物理学科准教授の井上優貴（いのうえゆうき）さんです。井上さんの研究テーマは、LIGOを始めとした重力波干渉計においてコアとも言えるミラーの開発。重力物理学の最前線を支える技術のちょっぴりディープな話から、井上さんが力を入れているアウトリーチ活動、台湾での暮らしにいたるまで、根掘り葉掘り聞いちゃいました。今回は3部構成で配信します!",
             "image": "images/home/IMG_0906.jpg",
             "links": [
-                { "name": "YouTubeで見る", "url": "https://youtube.com/playlist?list=PLrXBejW44mChFaKcssOvh5MkySYmMv3gz&si=RsOWVlDLtSX53Clg", "icon": "fa-youtube" },
+                { "name": "YouTubeで見る", "url": "https://youtube.com/playlist?list=PLrXBejW44mChFaKcssOvh5MkySYmMv3gz&si=RsOWVlDLtSX53Clg", "icon": "fa-youtube" }
             ]
         }
     ],
