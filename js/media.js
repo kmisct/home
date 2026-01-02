@@ -76,7 +76,7 @@ function renderMediaCard(list, container, type, startIndex) {
     container.innerHTML = html;
 }
 
-// ▼ モーダルを開く（カラーボタン＆個別名称版）
+// ▼ モーダルを開く（修正版：Noteアイコン対応）
 function openMediaModal(type, index) {
     const item = allMediaData[type][index];
     if (!item) return;
@@ -94,30 +94,34 @@ function openMediaModal(type, index) {
 
     if (item.links && item.links.length > 0) {
         item.links.forEach(link => {
-            // 色とアイコンの判定ロジック
             let btnClass = 'btn-default';
-            let iconClass = 'fa-arrow-up-right-from-square'; // デフォルトアイコン
-
+            let iconHtml = ''; // アイコン用HTML入れ物
+            
             const nameLower = link.name.toLowerCase();
             
             if (nameLower.includes('spotify')) {
                 btnClass = 'btn-spotify';
-                iconClass = 'fa-spotify';
+                // ブランドアイコンは fa-brands
+                iconHtml = '<i class="fa-brands fa-spotify"></i>';
             } else if (nameLower.includes('apple')) {
                 btnClass = 'btn-apple';
-                iconClass = 'fa-podcast';
+                iconHtml = '<i class="fa-solid fa-podcast"></i>';
             } else if (nameLower.includes('youtube')) {
                 btnClass = 'btn-youtube';
-                iconClass = 'fa-youtube';
+                iconHtml = '<i class="fa-brands fa-youtube"></i>';
             } else if (nameLower.includes('note')) {
                 btnClass = 'btn-note';
-                iconClass = 'fa-note-sticky';
+                // ★Noteの場合はアイコンなし（空文字）にする
+                iconHtml = ''; 
+            } else {
+                // その他は外部リンクアイコン
+                iconHtml = '<i class="fa-solid fa-arrow-up-right-from-square"></i>';
             }
 
-            // アイコン＋元の名前（link.name）でボタンを作成
+            // ボタン生成（アイコン + 文字）
             const btnHtml = `
                 <a href="${link.url}" target="_blank" class="modal-link-btn-simple ${btnClass}">
-                    <i class="fa-brands ${iconClass}"></i> ${link.name}
+                    ${iconHtml} ${link.name}
                 </a>
             `;
             linksArea.insertAdjacentHTML('beforeend', btnHtml);
@@ -126,3 +130,20 @@ function openMediaModal(type, index) {
 
     modal.classList.add('active');
 }
+
+// ▼ モーダルを閉じる（確実に動作するようにwindowオブジェクトに紐付け）
+function closeMediaModal() {
+    const modal = document.getElementById('media-modal');
+    if(modal) {
+        modal.classList.remove('active');
+    }
+}
+// グローバルスコープにも確保（念のため）
+window.closeMediaModal = closeMediaModal;
+
+// 背景クリックで閉じる
+document.getElementById('media-modal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeMediaModal();
+    }
+});
