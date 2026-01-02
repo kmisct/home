@@ -11,7 +11,21 @@ async function loadPart(id, url) {
             const element = document.getElementById(id);
             element.innerHTML = text;
 
-            // ★ここが新機能：読み込んだHTML内のリンク(href, src)を自動修正する
+            // ▼▼▼ 追加機能：ロゴをホームへのリンクにする ▼▼▼
+            // ヘッダーを読み込んだ時だけ実行
+            if (id === 'header-placeholder') {
+                const logo = element.querySelector('.logo');
+                if (logo) {
+                    logo.style.cursor = 'pointer'; // マウスを手の形にする
+                    logo.addEventListener('click', () => {
+                        // 階層を考慮してindex.htmlへ移動
+                        window.location.href = rootPath + 'index.html';
+                    });
+                }
+            }
+            // ▲▲▲ 追加ここまで ▲▲▲
+
+            // 読み込んだHTML内のリンク(href, src)を自動修正する
             if (rootPath !== '') {
                 // リンク (aタグ)
                 element.querySelectorAll('a').forEach(el => {
@@ -58,7 +72,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }, { rootMargin: '0px 0px -15% 0px' });
     
-    // 監視対象の要素を取得（読み込んだヘッダー内のクラスも含む）
+    // 監視対象の要素を取得
     const fadeElements = document.querySelectorAll('.js-fade-up, .js-fade-down');
     fadeElements.forEach(el => observer.observe(el));
 
@@ -68,8 +82,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     if (menuToggle && navList) {
         menuToggle.addEventListener('click', () => {
-            navList.classList.toggle('is-open'); // クラス名はCSSに合わせて is-open か active にしてください
-            // (元のCSSでは .nav-list.active だった場合はここを 'active' に変更してください)
+            // CSSに合わせてクラス名を切り替え
+            navList.classList.toggle('active'); 
+            // ※もしCSSが .is-open なら 'is-open' に変更してください
         });
     }
 });
