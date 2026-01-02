@@ -51,6 +51,48 @@ body, html {
 
 
 /* =========================================
+   【設定変更エリア】各ページヘッダー画像
+   ※画像を変えたい時はここを編集してください
+   ========================================= */
+
+/* 共通設定 */
+.page-hero {
+    width: 100%; height: 300px;
+    background-color: #111;
+    /* デフォルト画像 */
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; color: white; margin-bottom: 0;
+}
+.page-hero h1 { font-size: 2.5rem; font-weight: 700; margin: 0; letter-spacing: 0.1em; }
+.page-hero p { font-size: 1rem; opacity: 0.8; margin-top: 10px; font-family: 'Noto Sans JP', sans-serif; }
+
+/* ▼ 個別ページ設定（必要な場合はURLを書き換えてください） ▼ */
+
+/* NEWSページ */
+.page-hero-news {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
+}
+/* EVENTSページ */
+.page-hero-events {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
+}
+/* MEMBERSページ */
+.page-hero-members {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
+}
+/* CONTACTページ */
+.page-hero-contact {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
+}
+/* ABOUTページ */
+.page-hero-about {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
+}
+
+
+/* =========================================
    3. ヘッダー & ナビゲーション
    ========================================= */
 .page-header {
@@ -198,16 +240,7 @@ body, html {
 /* =========================================
    6. 下層ページ共通 (Members, About等)
    ========================================= */
-.page-hero {
-    width: 100%; height: 300px;
-    background-color: #111;
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
-    background-size: cover; background-position: center;
-    display: flex; align-items: center; justify-content: center;
-    text-align: center; color: white; margin-bottom: 0;
-}
-.page-hero h1 { font-size: 2.5rem; font-weight: 700; margin: 0; letter-spacing: 0.1em; }
-.page-hero p { font-size: 1rem; opacity: 0.8; margin-top: 10px; font-family: 'Noto Sans JP', sans-serif; }
+/* ※ヘッダー画像の個別設定は、ファイルの上の方（セクション2の下）に移動しました */
 
 
 /* =========================================
@@ -315,18 +348,6 @@ body, html {
 @media (max-width: 768px) {
     #latest-events-grid { grid-template-columns: 1fr; }
 }
-
-
-/* =========================================
-   10. MEDIA ARCHIVE (以前の蛇ラインは削除済)
-   ========================================= */
-/* このセクションは 18. Media Circle Layout に置き換わりました */
-
-
-/* =========================================
-   11. モーダル (Popup)
-   ========================================= */
-/* このセクションは 21. Media Modal に置き換わりました */
 
 
 /* =========================================
@@ -632,38 +653,6 @@ input:focus, select:focus, textarea:focus {
     font-size: 1.4rem;
 }
 
-
-/* =========================================
-   17. ページヘッダー個別設定 (追加部分)
-   ========================================= */
-/* 写真を変えたいときは、各ページのURLを変更してください。
-   現在はすべて共通画像（IMG_0906.jpg）に設定してあります。
-*/
-
-/* NEWSページ */
-.page-hero-news {
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
-}
-
-/* EVENTSページ */
-.page-hero-events {
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
-}
-
-/* MEMBERSページ */
-.page-hero-members {
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
-}
-
-/* CONTACTページ */
-.page-hero-contact {
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
-}
-
-/* ABOUTページ（もしあれば） */
-.page-hero-about {
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/home/IMG_0906.jpg');
-}
 
 /* =========================================
    18. Media Circle Layout (円形蛇中心レイアウト) - スクロールバー削除版
