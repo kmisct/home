@@ -1,5 +1,5 @@
 {
-    "round1": [
+    "round2": [
         {
             "title": "Vol15：西原翼さん",
             "caption": "ブラックホールの見え方をレンズで再現する!?",
@@ -23,23 +23,17 @@
             "links": [
                 { "name": "YouTubeで見る", "url": "https://youtube.com/playlist?list=PLrXBejW44mChFaKcssOvh5MkySYmMv3gz&si=RsOWVlDLtSX53Clg", "icon": "fa-youtube" }
             ]
-        },
-        {
-            "title": "Vol12：名古屋大学総長",
-            "caption": "名古屋大学総長が求める研究のアリカタとは…？",
-            "image": "images/home/IMG_0906.jpg",
-            "links": [
-                { "name": "YouTubeで見る", "url": "https://youtube.com/playlist?list=PLrXBejW44mCi8GtjkvzmosfI1oaHGi6uE&si=WwJNfVYnNFXNdi4x", "icon": "fa-youtube" }
-            ]
         }
     ],
-    "round2": [
+    "round1": [
         {
             "title": "Vol12：名古屋大学総長が求める研究のアリカタとは…？",
             "caption": "名古屋大学総長が求める研究のアリカタとは…？",
             "image": "images/home/IMG_0906.jpg",
             "links": [
-                { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/0YwSpTejikJOJlHsp3zxMA?si=01220f7a386747aa", "icon": "fa-spotify" }
+                { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/0YwSpTejikJOJlHsp3zxMA?si=01220f7a386747aa", "icon": "fa-spotify" },
+                { "name": "YouTubeで見る", "url": "https://youtube.com/playlist?list=PLrXBejW44mCi8GtjkvzmosfI1oaHGi6uE&si=WwJNfVYnNFXNdi4x", "icon": "fa-youtube" }
+
             ]
         },
         {
