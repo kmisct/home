@@ -91,26 +91,20 @@
         },
         {
             "title": "Vol5：初期宇宙の姿、研究者にはどのように'見える'のか？",
-            "caption": "名古屋大学総長が求める研究のアリカタとは…？",
+            "caption": "今回は、市來 淨與（いちき きよとも）さん (KMI准教授) をお招きし、お話を伺いました。市來さんは、初期宇宙から現在の宇宙までの歴史や、未来の宇宙のようすを知るため、宇宙マイクロ波背景放射（CMB）や宇宙磁場、21cm宇宙論などをキーワードに理論研究を進めています。今回は、特にCMBと21cm線について聞きました。また、理論研究と観測研究の違いなど、研究スタイルの話も必聴です!",
             "image": "images/home/IMG_0906.jpg",
             "links": [
                 { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/7bqT2ENhwbIjgRVt5yKsa5?si=6a4b46343b6c4c84", "icon": "fa-spotify" }
             ]
         },
         {
-            "title": "Vol4：Space, cosmos, universe!高エネ物理で解き明かせ後編",
-            "caption": "名古屋大学総長が求める研究のアリカタとは…？",
+            "title": "Vol4：Space, cosmos, universe!高エネ物理で解き明かせ",
+            "caption": "4回目の今回は、中澤 知洋（なかざわ かずひろ）さん（KMI准教授）をお招きし、お話を伺いました。中澤さんの研究テーマは、高エネルギー宇宙物理学。銀河団やブラックホールなどの高エネルギー現象を観測、分析するとともに、新しい観測装置の開発を行っています。自身の専門性を生かしながら、様々なプロジェクトを経験する中で培ったチームで開発を進めるポイントなど、研究の魅力をたくさん語ってくださいました。前編・後編に分けて公開します!!",
             "image": "images/home/IMG_0906.jpg",
             "links": [
-                { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/5K25IuRIJFvaNW8F8zyoUG?si=3dcb8ba2bff04226", "icon": "fa-spotify" }
-            ]
-        },
-        {
-            "title": "Vol4：Space, cosmos, universe!高エネ物理で解き明かせ前編",
-            "caption": "名古屋大学総長が求める研究のアリカタとは…？",
-            "image": "images/home/IMG_0906.jpg",
-            "links": [
-                { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/66j1GCfU1a2kYC71lpcDsA?si=afc3905b002143d2", "icon": "fa-spotify" }
+                { "name": "Spotifyで聴く（前編）", "url": "https://open.spotify.com/episode/66j1GCfU1a2kYC71lpcDsA?si=afc3905b002143d2", "icon": "fa-spotify" },
+                { "name": "Spotifyで聴く（後編）", "url": "https://open.spotify.com/episode/5K25IuRIJFvaNW8F8zyoUG?si=3dcb8ba2bff04226", "icon": "fa-spotify" }
+
             ]
         },
         {
