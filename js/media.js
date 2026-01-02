@@ -19,14 +19,17 @@ function switchMedia(type) {
     const leftContainer = document.getElementById('js-media-list-left');
     const rightContainer = document.getElementById('js-media-list-right');
     const titleElement = document.getElementById('js-media-title');
+    const descElement = document.getElementById('js-media-desc'); // ★説明文の場所を取得
     
     // スイッチボタンの見た目切り替え
     document.querySelectorAll('.media-switch-btn').forEach(btn => btn.classList.remove('active'));
     const activeBtn = document.getElementById(`btn-${type}`);
     if (activeBtn) activeBtn.classList.add('active');
 
-    // データの切り替え
+    // ▼▼▼ データの切り替え ▼▼▼
     let list = [];
+    
+    // リストデータの取得
     if (type === 'round1') {
         list = allMediaData.round1; 
         titleElement.textContent = "Round 1";
@@ -34,6 +37,14 @@ function switchMedia(type) {
         list = allMediaData.round2; 
         titleElement.textContent = "Round 2";
     }
+
+    // ★説明文の切り替え（ここを追加！）
+    if (allMediaData.descriptions && allMediaData.descriptions[type]) {
+        descElement.innerHTML = allMediaData.descriptions[type];
+    } else {
+        descElement.innerHTML = ""; // データがない場合は空にする
+    }
+    // ▲▲▲ ここまで ▲▲▲
 
     // 左右に振り分け
     const halfIndex = Math.ceil(list.length / 2);
@@ -49,8 +60,6 @@ function switchMedia(type) {
 // ▼ カード生成
 function renderMediaCard(list, container, type, startIndex) {
     let html = '';
-    
-    // ★アイコンの設定を削除しました
 
     list.forEach((item, index) => {
         const globalIndex = startIndex + index;
@@ -60,7 +69,7 @@ function renderMediaCard(list, container, type, startIndex) {
             <div class="media-card-link" onclick="openMediaModal('${type}', ${globalIndex})">
                 <div class="media-card-img-wrap">
                     <img src="${imagePath}" alt="${item.title}">
-                    </div>
+                </div>
                 <div class="media-card-body">
                     <h3>${item.title}</h3>
                 </div>
