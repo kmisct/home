@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const response = await fetch(jsonPath);
         allMediaData = await response.json();
         
-        // ★初期表示を 'round1' に変更しました
+        // 初期表示
         switchMedia('round1');
     } catch (error) {
         console.error('Media data loading failed:', error);
@@ -22,11 +22,10 @@ function switchMedia(type) {
     
     // スイッチボタンの見た目切り替え
     document.querySelectorAll('.media-switch-btn').forEach(btn => btn.classList.remove('active'));
-    // ボタンIDも html に合わせて btn-round1 / btn-round2 を探します
     const activeBtn = document.getElementById(`btn-${type}`);
     if (activeBtn) activeBtn.classList.add('active');
 
-    // データの切り替え（JSONのキー "round1", "round2" を読みに行きます）
+    // データの切り替え
     let list = [];
     if (type === 'round1') {
         list = allMediaData.round1; 
@@ -51,9 +50,7 @@ function switchMedia(type) {
 function renderMediaCard(list, container, type, startIndex) {
     let html = '';
     
-    // カードの右下アイコン
-    // ご希望通り Spotify アイコンに統一しています
-    let iconClass = 'fa-spotify'; 
+    // ★アイコンの設定を削除しました
 
     list.forEach((item, index) => {
         const globalIndex = startIndex + index;
@@ -63,13 +60,10 @@ function renderMediaCard(list, container, type, startIndex) {
             <div class="media-card-link" onclick="openMediaModal('${type}', ${globalIndex})">
                 <div class="media-card-img-wrap">
                     <img src="${imagePath}" alt="${item.title}">
-                    <div class="media-card-icon">
-                        <i class="fa-brands ${iconClass}"></i>
                     </div>
-                </div>
                 <div class="media-card-body">
                     <h3>${item.title}</h3>
-                    </div>
+                </div>
             </div>
         `;
     });
@@ -78,7 +72,6 @@ function renderMediaCard(list, container, type, startIndex) {
 
 // ▼ モーダルを開く
 function openMediaModal(type, index) {
-    // type (round1 or round2) と index でデータを探す
     const item = allMediaData[type][index];
     if (!item) return;
 
@@ -87,18 +80,17 @@ function openMediaModal(type, index) {
     // 画像とテキストをセット
     document.getElementById('modal-img').src = item.image ? item.image : 'images/home/IMG_0906.jpg';
     document.getElementById('modal-title').textContent = item.title;
-    document.getElementById('modal-caption').textContent = item.caption; // ここに説明文が入ります
+    document.getElementById('modal-caption').textContent = item.caption; 
 
     // リンクボタンを生成
     const linksArea = document.getElementById('modal-links-area');
-    linksArea.innerHTML = ''; // クリア
+    linksArea.innerHTML = ''; 
 
     if (item.links && item.links.length > 0) {
         item.links.forEach(link => {
             let btnClass = 'btn-default';
             const nameLower = link.name.toLowerCase();
             
-            // リンクごとの色分け
             if (nameLower.includes('spotify')) btnClass = 'btn-spotify';
             if (nameLower.includes('apple')) btnClass = 'btn-apple';
             if (nameLower.includes('youtube')) btnClass = 'btn-youtube';
@@ -117,7 +109,6 @@ function openMediaModal(type, index) {
         linksArea.innerHTML = '<p style="text-align:center; color:#999; font-size:0.9rem;">リンクはありません</p>';
     }
 
-    // モーダル表示
     modal.classList.add('active');
 }
 
