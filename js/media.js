@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const response = await fetch(jsonPath);
         allMediaData = await response.json();
         // 初期表示
-        switchMedia('podcast');
+        switchMedia('spotify');
     } catch (error) {
         console.error('Media data loading failed:', error);
     }
@@ -25,9 +25,9 @@ function switchMedia(type) {
 
     // データの切り替え
     let list = [];
-    if (type === 'podcast') {
-        list = allMediaData.podcast;
-        titleElement.textContent = "Podcast & Radio";
+    if (type === 'spotify') {
+        list = allMediaData.spotify;
+        titleElement.textContent = "Podcast Archive";
     } else {
         list = allMediaData.youtube;
         titleElement.textContent = "YouTube Archive";
@@ -50,9 +50,9 @@ function renderMediaCard(list, container, type, startIndex) {
     
     // アイコン（カード上の装飾用）
     // ★ここが修正ポイント！
-    let iconClass = 'fa-spotify'; // デフォルト（Podcast用）をSpotifyに
+    let iconClass = 'fa-spotify'; // デフォルト（spotify用）をSpotifyに
     if (type === 'youtube') iconClass = 'fa-youtube';
-    if (type === 'podcast') iconClass = 'fa-spotify'; // 明示的に指定
+    if (type === 'spotify') iconClass = 'fa-spotify'; // 明示的に指定
 
     list.forEach((item, index) => {
         // 通し番号（背番号）を計算
