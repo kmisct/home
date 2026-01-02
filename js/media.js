@@ -44,14 +44,15 @@ function switchMedia(type) {
 }
 
 
-// ▼ カード生成（説明文を削除し、タイトルのみにしました）
+// ▼ カード生成（ここを修正しました）
 function renderMediaCard(list, container, type, startIndex) {
     let html = '';
     
     // アイコン（カード上の装飾用）
-    let iconClass = 'fa-file-lines';
+    // ★ここが修正ポイント！
+    let iconClass = 'fa-spotify'; // デフォルト（Podcast用）をSpotifyに
     if (type === 'youtube') iconClass = 'fa-youtube';
-    if (type === 'podcast') iconClass = 'fa-microphone';
+    if (type === 'podcast') iconClass = 'fa-spotify'; // 明示的に指定
 
     list.forEach((item, index) => {
         // 通し番号（背番号）を計算
@@ -69,16 +70,15 @@ function renderMediaCard(list, container, type, startIndex) {
                 </div>
                 <div class="media-card-body">
                     <h3>${item.title}</h3>
-                    </div>
+                </div>
             </div>
         `;
     });
     container.innerHTML = html;
 }
 
-// ▼ モーダルを開く（ここは変わらず説明文を表示します）
+// ▼ モーダルを開く
 function openMediaModal(type, index) {
-    // データを番号で取得
     const item = allMediaData[type][index];
     if (!item) return;
 
@@ -87,15 +87,14 @@ function openMediaModal(type, index) {
     // 画像とテキストをセット
     document.getElementById('modal-img').src = item.image ? item.image : 'images/home/IMG_0906.jpg';
     document.getElementById('modal-title').textContent = item.title;
-    document.getElementById('modal-caption').textContent = item.caption; // ★モーダルには説明文が出ます
+    document.getElementById('modal-caption').textContent = item.caption;
 
     // リンクボタンを生成
     const linksArea = document.getElementById('modal-links-area');
-    linksArea.innerHTML = ''; // クリア
+    linksArea.innerHTML = ''; 
 
     if (item.links && item.links.length > 0) {
         item.links.forEach(link => {
-            // ボタンの色分け判定
             let btnClass = 'btn-default';
             const nameLower = link.name.toLowerCase();
             if (nameLower.includes('spotify')) btnClass = 'btn-spotify';
@@ -116,7 +115,6 @@ function openMediaModal(type, index) {
         linksArea.innerHTML = '<p style="text-align:center; color:#999; font-size:0.9rem;">リンクはありません</p>';
     }
 
-    // 表示
     modal.classList.add('active');
 }
 
