@@ -1,88 +1,115 @@
-// 共通パーツを読み込む関数
-async function loadPart(id, url) {
-    // 階層の調整（articleフォルダなら ../ をつける）
+document.addEventListener("DOMContentLoaded", function() {
+    const headerPlaceholder = document.getElementById("header-placeholder");
+    const footerPlaceholder = document.getElementById("footer-placeholder");
+    
+    // パス調整（下層ページ用）
     const rootPath = window.rootPath || ''; 
-    const fetchUrl = rootPath + url;
 
-    try {
-        const response = await fetch(fetchUrl);
-        if (response.ok) {
-            const text = await response.text();
-            const element = document.getElementById(id);
-            element.innerHTML = text;
+    // ヘッダーのHTML
+    // ★ここに <div class="menu-toggle"></div> が入っていることを確認
+    const headerHTML = `
+    <header class="page-header js-fade-down">
+        <a href="${rootPath}index.html" class="logo">KMI SCT</a>
+        <div class="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="${rootPath}news.html">NEWS</a></li>
+                <li><a href="${rootPath}events.html">EVENTS</a></li>
+                <li><a href="${rootPath}members.html">MEMBERS</a></li>
+                <li><a href="${rootPath}contents.html">CONTENTS</a></li>
+                <li><a href="${rootPath}about.html">ABOUT</a></li>
+                <li><a href="${rootPath}contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    `;
 
-            // ▼▼▼ ロゴをホームへのリンクにする機能 ▼▼▼
-            if (id === 'header-placeholder') {
-                const logo = element.querySelector('.logo');
-                if (logo) {
-                    logo.style.cursor = 'pointer'; // マウスカーソルを手の形に
-                    logo.addEventListener('click', () => {
-                        window.location.href = rootPath + 'index.html';
-                    });
-                }
-            }
+    // フッターのHTML（内容は既存のfooterに準拠）
+    const footerHTML = `
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <a href="${rootPath}index.html" class="footer-logo" style="text-decoration: none;">KMI SCT</a>
+                    <p class="footer-desc">
+                        名古屋大学 素粒子宇宙起源研究所 (KMI)<br>
+                        Science Communication Team
+                    </p>
+                    <div class="social-links">
+                        <a href="https://twitter.com/KMI_NagoyaU" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/kmi_nagoyau/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UC... " target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a href="${rootPath}news.html">NEWS</a></li>
+                        <li><a href="${rootPath}events.html">EVENTS</a></li>
+                        <li><a href="${rootPath}members.html">MEMBERS</a></li>
+                        <li><a href="${rootPath}contents.html">CONTENTS</a></li>
+                        <li><a href="${rootPath}about.html">ABOUT</a></li>
+                        <li><a href="${rootPath}contact.html">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="footer-kmi-link">
+                <a href="https://www.kmi.nagoya-u.ac.jp/" target="_blank" class="kmi-link-container">
+                    <img src="${rootPath}images/logo/kmi_logo.png" alt="KMI Logo" class="kmi-footer-logo-img">
+                    <span class="kmi-footer-text">Kobayashi-Maskawa Institute<br>for the Origin of Particles and the Universe</span>
+                </a>
+            </div>
 
-            // 読み込んだHTML内のリンク(href, src)を自動修正する
-            if (rootPath !== '') {
-                // リンク (aタグ)
-                element.querySelectorAll('a').forEach(el => {
-                    const href = el.getAttribute('href');
-                    // 外部サイト(http)やページ内リンク(#)以外なら ../ をつける
-                    if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('//')) {
-                        el.setAttribute('href', rootPath + href);
-                    }
-                });
-                // 画像 (imgタグ)
-                element.querySelectorAll('img').forEach(el => {
-                    const src = el.getAttribute('src');
-                    if (src && !src.startsWith('http') && !src.startsWith('//')) {
-                        el.setAttribute('src', rootPath + src);
-                    }
-                });
-            }
+            <div class="footer-legal">
+                <a href="${rootPath}privacy.html">Privacy Policy</a>
+            </div>
+            <div class="copyright">
+                &copy; 2024 KMI Science Communication Team.
+            </div>
+        </div>
+    </footer>
+    `;
 
-        } else {
-            console.error(`Failed to load ${fetchUrl}: ${response.status}`);
-        }
-    } catch (error) {
-        console.error(`Error loading ${fetchUrl}:`, error);
+    if(headerPlaceholder) {
+        headerPlaceholder.innerHTML = headerHTML;
+        
+        // ★ハンバーガーメニューの動作スクリプトを追加
+        initMobileMenu();
     }
-}
-
-// ページ読み込み完了後に実行
-document.addEventListener("DOMContentLoaded", async () => {
     
-    // 1. ヘッダーとフッターを並列で読み込む
-    await Promise.all([
-        loadPart("header-placeholder", "parts/header.html"),
-        loadPart("footer-placeholder", "parts/footer.html")
-    ]);
+    if(footerPlaceholder) footerPlaceholder.innerHTML = footerHTML;
+});
 
-    // 2. 読み込みが終わった後に、アニメーションやメニューの動作を設定する
-    
-    // フェードインアニメーション
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-active');
-            }
-        });
-    }, { rootMargin: '0px 0px -15% 0px' });
-    
-    // 監視対象の要素を取得（読み込んだヘッダー内のクラスも含む）
-    const fadeElements = document.querySelectorAll('.js-fade-up, .js-fade-down');
-    fadeElements.forEach(el => observer.observe(el));
-
-    // スマホメニューの開閉
+// ▼▼▼ ハンバーガーメニュー制御関数 ▼▼▼
+function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navList = document.querySelector('.nav-list');
     
     if (menuToggle && navList) {
         menuToggle.addEventListener('click', () => {
-            // CSSに合わせてクラス名を切り替え
-            // もしCSSが .is-open なら 'is-open' のままでOK
-            // もしCSSが .active なら 'active' に書き換えてください
-            navList.classList.toggle('is-open'); 
+            // メニューの出し入れ
+            navList.classList.toggle('active');
+            
+            // アイコンの切り替え (三本線 <-> バツ印)
+            const icon = menuToggle.querySelector('i');
+            if (navList.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // リンクをクリックしたらメニューを閉じる
+        const navLinks = navList.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
         });
     }
-});
+}

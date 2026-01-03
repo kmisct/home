@@ -561,7 +561,7 @@ input:focus, select:focus, textarea:focus {
 
 
 /* =========================================
-   13. レスポンシブ (スマホ調整)
+   13. レスポンシブ (スマホ調整) - ハンバーガーメニュー実装版
    ========================================= */
 @media (max-width: 1024px) { 
     .members-grid { grid-template-columns: repeat(2, 1fr); } 
@@ -569,12 +569,12 @@ input:focus, select:focus, textarea:focus {
 }
 
 @media (max-width: 768px) {
-    /* Base */
+    /* --- Base --- */
     .hero-message h1 { font-size: 2.5rem; }
     .page-hero { height: 200px; }
     .page-hero h1 { font-size: 1.8rem; }
     
-    /* Layout */
+    /* --- Layout --- */
     .about-grid, .media-wrapper, .update-wrapper, .rep-content, .contact-wrapper, .media-circle-wrapper { 
         flex-direction: column; grid-template-columns: 1fr; 
     }
@@ -582,29 +582,64 @@ input:focus, select:focus, textarea:focus {
     .media-left { order: 2; width: 100%; }
     .media-right { order: 3; width: 100%; }
     
-    /* Nav */
-    .nav-list { display: none; }
-    .menu-toggle { display: block; color: white; font-size: 1.5rem; }
+    /* --- Header & Hamburger Menu (ここが重要) --- */
+    .menu-toggle { 
+        display: block; /* ボタンを表示 */
+        color: white; 
+        font-size: 1.8rem; 
+        cursor: pointer; 
+        z-index: 1001; /* メニューより手前に表示 */
+    }
+
+    .nav-list {
+        display: flex; /* 消さずにFlexのまま */
+        position: fixed;
+        top: 0;
+        right: -100%; /* 最初は画面外（右）に隠す */
+        width: 80%;   /* 画面の80%幅 */
+        height: 100vh; /* 画面いっぱいの高さ */
+        background: rgba(0, 0, 0, 0.95); /* 黒背景 */
+        flex-direction: column; /* 縦並び */
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease-in-out; /* スライドのアニメーション */
+        z-index: 1000;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* クラスがついたら画面内へスライド */
+    .nav-list.active {
+        right: 0;
+    }
+
+    .nav-list li {
+        margin: 20px 0; /* メニューの間隔を広げる */
+    }
+
+    .nav-list a {
+        font-size: 1.2rem; /* 文字を大きく */
+    }
     
-    /* Components */
+    /* --- Components --- */
     .members-grid, #latest-events-grid { grid-template-columns: 1fr !important; }
     .rep-layout { flex-direction: column; }
     .rep-layout .member-img { flex: auto; width: 100%; max-width: 100%; }
     .rep-image { flex: auto; width: 100%; max-width: 400px; margin: 0 auto; }
     .contact-info-area { order: -1; }
     
-    /* Archive List */
+    /* --- Archive List --- */
     .archive-list li { align-items: flex-start; }
     .archive-date { font-size: 0.9rem; margin-top: 2px; }
     .archive-title { width: 100%; margin-top: 5px; display: block; }
     
-    /* Card */
+    /* --- Card --- */
     .media-card-img-wrap { flex: 0 0 90px; width: 90px; height: 90px; }
     .media-card-link { min-height: 90px; }
     .media-card-body { padding: 10px 15px; }
     .media-card-body h3 { font-size: 0.9rem; }
     
-    /* Footer */
+    /* --- Footer --- */
     .footer-content { flex-direction: column; align-items: flex-start; gap: 40px; }
     .footer-nav ul { flex-direction: column; gap: 15px; }
     .footer-nav a { padding-top: 0; }
@@ -612,7 +647,7 @@ input:focus, select:focus, textarea:focus {
     .kmi-footer-logo-img { margin-right: 0; height: 55px; }
     .kmi-footer-text { font-size: 1rem; line-height: 1.4; text-align: center; display: block; }
     
-    /* Modal */
+    /* --- Modal --- */
     .modal-container { padding: 25px; width: 90%; }
     .media-modal-title-area h3 { font-size: 1.3rem; }
     .media-modal-body p { font-size: 0.95rem; }
