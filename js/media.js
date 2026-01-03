@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         allMediaData = await response.json();
         
         // 初期表示
-        switchMedia('round1');
+        switchMedia('round2');
     } catch (error) {
         console.error('Media data loading failed:', error);
     }
