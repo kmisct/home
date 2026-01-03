@@ -76,15 +76,26 @@ function renderMediaCard(list, container, type, startIndex) {
     container.innerHTML = html;
 }
 
-// ▼ モーダルを開く（修正版：Noteアイコン対応）
+// ▼ モーダルを開く（画像出し分け ＆ Noteアイコン対応版）
 function openMediaModal(type, index) {
     const item = allMediaData[type][index];
     if (!item) return;
 
     const modal = document.getElementById('media-modal');
     
-    // 画像とテキストをセット
-    document.getElementById('modal-img').src = item.image ? item.image : 'images/home/IMG_0906.jpg';
+    // ▼▼▼ 画像の出し分けロジック（ここが新しい部分！） ▼▼▼
+    // item.modalImage があればそれを使い、なければ item.image を使い、それもなければデフォルト画像を使う
+    let displayImage = 'images/home/IMG_0906.jpg'; // 万が一のデフォルト
+    
+    if (item.modalImage) {
+        displayImage = item.modalImage; // モーダル専用画像があれば優先
+    } else if (item.image) {
+        displayImage = item.image;      // なければリスト用画像を流用
+    }
+    
+    document.getElementById('modal-img').src = displayImage;
+    // ▲▲▲ 出し分けここまで ▲▲▲
+
     document.getElementById('modal-title').textContent = item.title;
     document.getElementById('modal-caption').textContent = item.caption; 
 
@@ -95,13 +106,12 @@ function openMediaModal(type, index) {
     if (item.links && item.links.length > 0) {
         item.links.forEach(link => {
             let btnClass = 'btn-default';
-            let iconHtml = ''; // アイコン用HTML入れ物
+            let iconHtml = ''; 
             
             const nameLower = link.name.toLowerCase();
             
             if (nameLower.includes('spotify')) {
                 btnClass = 'btn-spotify';
-                // ブランドアイコンは fa-brands
                 iconHtml = '<i class="fa-brands fa-spotify"></i>';
             } else if (nameLower.includes('apple')) {
                 btnClass = 'btn-apple';
@@ -111,14 +121,11 @@ function openMediaModal(type, index) {
                 iconHtml = '<i class="fa-brands fa-youtube"></i>';
             } else if (nameLower.includes('note')) {
                 btnClass = 'btn-note';
-                // ★Noteの場合はアイコンなし（空文字）にする
-                iconHtml = ''; 
+                iconHtml = ''; // Noteはアイコンなし
             } else {
-                // その他は外部リンクアイコン
                 iconHtml = '<i class="fa-solid fa-arrow-up-right-from-square"></i>';
             }
 
-            // ボタン生成（アイコン + 文字）
             const btnHtml = `
                 <a href="${link.url}" target="_blank" class="modal-link-btn-simple ${btnClass}">
                     ${iconHtml} ${link.name}
@@ -131,14 +138,14 @@ function openMediaModal(type, index) {
     modal.classList.add('active');
 }
 
-// ▼ モーダルを閉じる（確実に動作するようにwindowオブジェクトに紐付け）
+// ▼ モーダルを閉じる
 function closeMediaModal() {
     const modal = document.getElementById('media-modal');
     if(modal) {
         modal.classList.remove('active');
     }
 }
-// グローバルスコープにも確保（念のため）
+// グローバルスコープにも確保
 window.closeMediaModal = closeMediaModal;
 
 // 背景クリックで閉じる

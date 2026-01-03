@@ -9,6 +9,7 @@
             "title": "Vol15：西原翼さん",
             "caption": "ブラックホールの見え方をレンズで再現する!?",
             "image": "images/home/IMG_0906.jpg",
+            "modalImage": "images/home/IMG_0906.jpg",
             "links": [
                 { "name": "YouTubeで見る", "url": "https://youtube.com/playlist?list=PLrXBejW44mCg1yrF3V1Bjl_YlO3rbCKg-&si=Av_1jrSK0vo6jm0i", "icon": "fa-youtube" }
             ]
@@ -17,6 +18,7 @@
             "title": "Vol14：中矢大輝さん",
             "caption": "癌のメカニズムを物理的に解明したい",
             "image": "images/home/IMG_0906.jpg",
+            "modalImage": "images/home/IMG_0906.jpg",
             "links": [
                 { "name": "YouTubeで見る", "url": "https://youtube.com/playlist?list=PLrXBejW44mCg21ZM6VRsSAIlRrStWxMrI&si=UNXvEdAIfmW6juk-", "icon": "fa-youtube" }
             ]
@@ -25,6 +27,7 @@
             "title": "Vol13：重力波望遠鏡を支える様々な技術とは?!",
             "caption": "装いを新たに始まった『素粒子宇宙円卓会議 Round 2』。 記念すべき最初のゲストは台湾国立中央大 物理学科准教授の井上優貴（いのうえゆうき）さんです。井上さんの研究テーマは、LIGOを始めとした重力波干渉計においてコアとも言えるミラーの開発。重力物理学の最前線を支える技術のちょっぴりディープな話から、井上さんが力を入れているアウトリーチ活動、台湾での暮らしにいたるまで、根掘り葉掘り聞いちゃいました。今回は3部構成で配信します!",
             "image": "images/home/IMG_0906.jpg",
+            "modalImage": "images/home/IMG_0906.jpg",
             "links": [
                 { "name": "YouTubeで見る", "url": "https://youtube.com/playlist?list=PLrXBejW44mChFaKcssOvh5MkySYmMv3gz&si=RsOWVlDLtSX53Clg", "icon": "fa-youtube" }
             ]
@@ -35,6 +38,7 @@
             "title": "Vol12：名古屋大学総長が求める研究のアリカタとは…？",
             "caption": "私たちKMISCTがこのポッドキャスト企画を企画した時に、目標にしていた'12回目'がついに公開となります!その記念すべき12回目のゲストは、名古屋大学総長の杉山直（すぎやまなおし）さん。杉山さんは2022年から名古屋大学の総長をされていますが、それ以前は観測に基づく宇宙論の研究者として活躍してこられました。(参考: 名古屋大学宇宙論研究室)。 今回のポッドキャストでは、宇宙論を取り巻く「観測のビッグプロジェクト化」、また、「名古屋大学全体を支える『総長』を努める心構え」そして「どこでもドアの実現可能性」について、杉山さんの経験も交えたお話を伺いました!!!",
             "image": "images/home/IMG_0906.jpg",
+            "modalImage": "images/home/IMG_0906.jpg",
             "links": [
                 { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/0YwSpTejikJOJlHsp3zxMA?si=01220f7a386747aa", "icon": "fa-spotify" },
                 { "name": "YouTubeで見る", "url": "https://youtube.com/playlist?list=PLrXBejW44mCi8GtjkvzmosfI1oaHGi6uE&si=WwJNfVYnNFXNdi4x", "icon": "fa-youtube" },
@@ -45,6 +49,7 @@
             "title": "Vol11：宇宙線ミューオンで見えるものの姿とは",
             "caption": "KMISCT初の公開収録のゲストは、名古屋大学 理学研究科μ研の森島邦博（もりしまくにひろ）さん。森島さんは「宇宙線イメージング」のプロフェッショナル。ピラミッドをはじめ、宇宙線ミューオンを使ってさまざまなものを透視されてきました。レントゲンのように巨大構造物の内部を透視する技術とは?宇宙線イメージングに魅せられた理由とは?森島さんの研究ライフを学生の目でスキャンしていきます!",
             "image": "images/home/IMG_0906.jpg",
+            "modalImage": "images/home/IMG_0906.jpg",
             "links": [
                 { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/0vd56iIMsKf1HDA2bGF8oA?si=82a9978ab3fc477f", "icon": "fa-spotify" },
                 { "name": "noteを読む", "url": "https://note.com/nagoya_ura/n/n46608cce8fd5", "icon": "fa-note" }
@@ -54,6 +59,7 @@
             "title": "Vol10：なぜ'初期'宇宙解明を目指すのか？",
             "caption": "横山修一郎（よこやましゅういちろう）さん（KMI 助教）をお招きし、お話を伺いました。宇宙誕生直後にあったとされる”インフレーション”の仕組みの解明によって、人間の手にできる究極の理論を目指されている横山さん。そんな横山さんがお話くださる、”初期”宇宙の描像や研究の進め方とは??また、何気ない日常に求めるものとは何なのか?研究者生活だけでなく、家族生活も赤裸々に語ってくださいました!",
             "image": "images/home/IMG_0906.jpg",
+            "modalImage": "images/home/IMG_0906.jpg",
             "links": [
                 { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/3w9hKaBsbl14vTp8LebXpX?si=2e1f5ed65e9f4a17", "icon": "fa-spotify" },
                 { "name": "noteを読む", "url": "https://note.com/nagoya_ura/n/n150e34ec4d8e", "icon": "fa-note" }
@@ -63,6 +69,7 @@
             "title": "Vol9：ニュートリノの飛跡の美しさに魅せられて",
             "caption": "佐藤修（さとうおさむ）さん（未来材料・システム研究所 特任准教授/KMI連携研究者）をお招きし、お話を伺いました。佐藤さんは、主に原子核乾板を用いたニュートリノの研究をされています。元々は地球外生命体への興味から素粒子物理学を研究を始めた佐藤さん。どのようにして現在の研究に至ったのか、また研究者としてのキャリアについてもお話をお聞きしました。",
             "image": "images/home/IMG_0906.jpg",
+            "modalImage": "images/home/IMG_0906.jpg",
             "links": [
                 { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/7khQKA8nprcJISSiW5drv9?si=79c5e772fe1c4e5c", "icon": "fa-spotify" },
                 { "name": "noteを読む", "url": "https://note.com/nagoya_ura/n/n304c581cae0b", "icon": "fa-note" }
@@ -72,6 +79,7 @@
             "title": "Vol8：ヒッグス粒子を見つけた男の飽くなき探究心",
             "caption": "吉原圭亮（よしはらけいすけ）さん（KMI 特任准教授）をお招きし、お話を伺いました。吉原さんは現在、超対称性粒子を探すべく、茨城県のつくば市にある高エネルギー加速研究機構（KEK）で行われているBelle IIベル・ツー実験に参加されています。学生時代にはなんと、あのヒッグス粒子を発見したという経歴を持つ吉原さん。そんな大発見を含めた非常にレアなお話や海外での研究のお話を、吉原さんの研究人生を辿りながら語っていただきました!",
             "image": "images/home/IMG_0906.jpg",
+            "modalImage": "images/home/IMG_0906.jpg",
             "links": [
                 { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/3f6Jru3QuAHsUwxuP76oJu?si=cf9952919bfe4105", "icon": "fa-spotify" },
                 { "name": "noteを読む", "url": "https://note.com/nagoya_ura/n/n0605626425d9", "icon": "fa-note" }
@@ -81,6 +89,7 @@
             "title": "Vol7：素粒子の個性を明らかにせよ!ようこそ、フレーバー物理学の世界へ",
             "caption": "KMISCTのメンバーでもある北原鉄平（きたはらてっぺい）さん（名古屋大学高等研究院/KMI 特任助教）をお招きし、お話を伺いました。北原さんは、フレーバー物理学をはじめとした素粒子理論の研究を行っています。南部先生、小林先生、益川先生が2008年にノーベル物理学賞を受賞するという衝撃的な事実を目の前にして理論物理学にのめりこんでいった北原さん。これまでの研究の経緯紹介に始まり、さらにはフレーバー物理学の内容まで、その魅力を語っていただきました。",
             "image": "images/home/IMG_0906.jpg",
+            "modalImage": "images/home/IMG_0906.jpg",
             "links": [
                 { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/5pdmkNRYCO1tGbC6zgLyM1?si=736a16a5c865468e", "icon": "fa-spotify" },
                 { "name": "noteを読む", "url": "https://note.com/nagoya_ura/n/n8e897823fd9a", "icon": "fa-note" }
@@ -90,6 +99,7 @@
             "title": "Vol6：スパコンで計算する私たちの世界",
             "caption": "金児隆志（かねこたかし）さん（KMI 特任講師、KEK 研究機関講師）をお招きし、お話を伺いました。金児さんは、格子QCDについて、数値シミュレーションを用いて研究されています。名古屋大学には格子QCDについて研究している方が現在はあまりいません。そこで今回は、格子QCDとは何か、数値シミュレーションを用いる理由は何か、という研究内容のお話から、数値シミュレーション分野の将来についてというお話までかなり深掘りしてお伺いしました。後半かなりディープな内容も含まれますので、ぜひ研究者同士の会話の雰囲気も楽しみながらお聴きください。",
             "image": "images/home/IMG_0906.jpg",
+            "modalImage": "images/home/IMG_0906.jpg",
             "links": [
                 { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/4xiEMvEYaIQNGKpXmuPsIE?si=70e209a12c3c4b43", "icon": "fa-spotify" },
                 { "name": "noteを読む", "url": "https://note.com/nagoya_ura/n/nbe5c47c19a99", "icon": "fa-note" }
@@ -99,6 +109,7 @@
             "title": "Vol5：初期宇宙の姿、研究者にはどのように'見える'のか？",
             "caption": "市來淨與（いちききよとも）さん (KMI准教授) をお招きし、お話を伺いました。市來さんは、初期宇宙から現在の宇宙までの歴史や、未来の宇宙のようすを知るため、宇宙マイクロ波背景放射（CMB）や宇宙磁場、21cm宇宙論などをキーワードに理論研究を進めています。今回は、特にCMBと21cm線について聞きました。また、理論研究と観測研究の違いなど、研究スタイルの話も必聴です!",
             "image": "images/home/IMG_0906.jpg",
+            "modalImage": "images/home/IMG_0906.jpg",
             "links": [
                 { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/7bqT2ENhwbIjgRVt5yKsa5?si=6a4b46343b6c4c84", "icon": "fa-spotify" },
                 { "name": "noteを読む", "url": "https://note.com/nagoya_ura/n/nfc873caea4cd", "icon": "fa-note" }
@@ -108,6 +119,7 @@
             "title": "Vol4：Space, cosmos, universe!高エネ物理で解き明かせ",
             "caption": "中澤知洋（なかざわかずひろ）さん（KMI准教授）をお招きし、お話を伺いました。中澤さんの研究テーマは、高エネルギー宇宙物理学。銀河団やブラックホールなどの高エネルギー現象を観測、分析するとともに、新しい観測装置の開発を行っています。自身の専門性を生かしながら、様々なプロジェクトを経験する中で培ったチームで開発を進めるポイントなど、研究の魅力をたくさん語ってくださいました。前編・後編に分けて公開します!!",
             "image": "images/home/IMG_0906.jpg",
+            "modalImage": "images/home/IMG_0906.jpg",
             "links": [
                 { "name": "Spotifyで聴く（前編）", "url": "https://open.spotify.com/episode/66j1GCfU1a2kYC71lpcDsA?si=afc3905b002143d2", "icon": "fa-spotify" },
                 { "name": "Spotifyで聴く（後編）", "url": "https://open.spotify.com/episode/5K25IuRIJFvaNW8F8zyoUG?si=3dcb8ba2bff04226", "icon": "fa-spotify" },
@@ -118,6 +130,7 @@
             "title": "Vol3：「本当の」重力理論を目指して",
             "caption": "野尻伸一（のじりしんいち）さん（KMI 教授, 写真右端）をお招きし、お話を伺いました。野尻さんの研究テーマは、修正重力理論。現存のアインシュタインの重力理論ではうまく説明できていない問題を解決するため、アインシュタインの重力理論からのずれを調べます。そして、その裏に隠された「本当の」重力理論の手がかりを得ようと、研究していらっしゃいます。こうして宇宙の膨張や歴史の解明に取り組む野尻さんが、研究者生活を赤裸々に語ってくださいました。「Dark Candy」と合わせて読んでいただくと、トークをよりお楽しみいただけます。",
             "image": "images/home/IMG_0906.jpg",
+            "modalImage": "images/home/IMG_0906.jpg",
             "links": [
                 { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/6fSPOtNvjXUZKfM9APEycz?si=0bf5880225ff4c35", "icon": "fa-spotify" },
                 { "name": "noteを読む", "url": "https://note.com/nagoya_ura/n/nb0521edf1241", "icon": "fa-note" }
@@ -127,6 +140,7 @@
             "title": "Vol2：異なる視点から暗黒物質を探索",
             "caption": "番組趣旨を語った第1回に続き、初めて研究者ゲストを迎える今回は、風間慎吾（かざましんご）さん (KMI・宇宙地球環境研究所 准教授 / 写真中段右) と奥村暁（おくむらあきら）さん (KMI・宇宙地球環境研究所 講師 / 写真下段右) をお招きし、オンラインでお話を伺いました。暗黒物質の正体に異なる角度から迫るお二人の、ポジティブでクリエイティブな研究&研究者ライフを、たっぷり1時間のポッドキャストでお聴きください。",
             "image": "images/home/IMG_0906.jpg",
+            "modalImage": "images/home/IMG_0906.jpg",
             "links": [
                 { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/7fTdOu2M86vSMMoLwzORmb?si=93bbc66666994d6f", "icon": "fa-spotify" },
                 { "name": "noteを読む", "url": "https://note.com/nagoya_ura/n/n949d44c5ba44", "icon": "fa-note" }
@@ -136,6 +150,7 @@
             "title": "Vol1：新企画、始まりました",
             "caption": "名古屋大学研究フロントラインさんとコラボし、今月から新しいポッドキャスト企画「素粒子宇宙円卓会議」を立ち上げました。「KMIの研究者と、KMIサイエンスコミュニケーションチームと名大研究フロントラインが台本なしに交流し、どのような相互作用が生まれるのか」という切り口で配信していきます。初回である今回は、この企画がはじまった経緯や、私たちKMISCTのご紹介をしました。",
             "image": "images/home/IMG_0906.jpg",
+            "modalImage": "images/home/IMG_0906.jpg",
             "links": [
                 { "name": "Spotifyで聴く", "url": "https://open.spotify.com/episode/5xJmrFGQqNsYr4PqT5FoB1?si=47bbb4883e2e486c", "icon": "fa-spotify" },
                 { "name": "noteを読む", "url": "https://note.com/nagoya_ura/n/n97dca1fb5bed", "icon": "fa-note" }
