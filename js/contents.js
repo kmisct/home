@@ -55,7 +55,7 @@ function createContentCard(item) {
 
     // ★修正：style="..." を削除し、CSSクラスで管理
     return `
-        <div class="member-card is-content js-fade-up">
+        <div class="member-card js-fade-up">
             <a ${linkAttr} ${targetAttr}>
                 <div class="member-img">
                     <img src="${imagePath}" alt="${item.title}">
