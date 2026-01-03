@@ -640,3 +640,25 @@ input:focus, select:focus, textarea:focus {
 .collab-title a, .collab-desc a { color: var(--color-primary) !important; text-decoration: none; font-weight: bold; }
 .collab-title a:hover, .collab-desc a:hover { text-decoration: underline; opacity: 0.7; }
 .collab-desc { font-size: 0.9rem; line-height: 1.8; margin: 0; color: #555; }
+
+/* =========================================
+   23. カード内リンクの調整 (Contentsページなど)
+   ========================================= */
+.member-card a {
+    text-decoration: none; /* 下線を消す */
+    color: inherit;        /* 文字色を親要素に合わせる */
+    display: block;        /* カード全体をクリック可能に */
+    height: 100%;          /* 高さをカードいっぱいに */
+}
+
+/* カード内のテキスト余白調整 */
+.member-info {
+    padding: 20px;
+}
+
+/* タイトル下の余白調整 */
+.member-info h4 {
+    font-size: 1.2rem;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
