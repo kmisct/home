@@ -17,6 +17,14 @@
     /* ▼▼▼ アクセントカラー設定 ▼▼▼ */
     --color-badge-cafe: #d97706;    /* CAFE (オレンジ) */
     --color-service-booth: #27ae60; /* BOOTH (展示ブース用の濃い緑) */
+    
+    /* ▼▼▼ コンテンツ・サービス固有カラー（完全変数化） ▼▼▼ */
+    --color-service-youtube: #ff0000;   /* YouTube (赤) */
+    --color-service-spotify: #1DB954;   /* Spotify (緑) ★追加 */
+    --color-service-apple: #872EC4;     /* Apple/Podcast (紫) ★追加 */
+    --color-service-darkcandy: #2c3e50; /* Dark Candy (紺) */
+    --color-service-pocket: #27ae60;    /* Pocket Physics (緑) */
+    --color-service-note: #2cb696;      /* Note (エメラルド) */
 }
 
 /* =========================================
@@ -607,11 +615,11 @@ input:focus, select:focus, textarea:focus {
 }
 .modal-link-btn-simple:hover { opacity: 0.9; transform: translateY(-2px); }
 
-/* ▼▼▼ サービスカラー（変数を使用） ▼▼▼ */
-.btn-spotify { background-color: #1DB954; }
-.btn-apple { background-color: #872EC4; }
-.btn-youtube { background-color: #FF0000; }
-.btn-note { background-color: #2cb696;}
+/* ▼▼▼ サービスカラー（変数を使用） ★ここを修正しました ▼▼▼ */
+.btn-spotify { background-color: var(--color-service-spotify); }
+.btn-apple { background-color: var(--color-service-apple); }
+.btn-youtube { background-color: var(--color-service-youtube); }
+.btn-note { background-color: var(--color-service-note); }
 .btn-default { background-color: var(--color-text-main); }
 
 @media (max-width: 600px) {
@@ -662,3 +670,18 @@ input:focus, select:focus, textarea:focus {
     margin: 0 0 10px 0;
     font-weight: 700;
 }
+
+/* =========================================
+   24. コンテンツカテゴリ別のバッジ色（変数使用）
+   ========================================= */
+/* YouTube: 赤 */
+.news-badge.youtube { background-color: var(--color-service-youtube) !important; }
+
+/* Podcast: 紫 */
+.news-badge.podcast { background-color: var(--color-service-podcast) !important; }
+
+/* Dark Candy: 濃い紺色 */
+.news-badge.darkcandy { background-color: var(--color-service-darkcandy) !important; }
+
+/* Pocket Physics: 緑 */
+.news-badge.pocket { background-color: var(--color-service-pocket) !important; }

@@ -15,8 +15,9 @@ async function loadContents() {
 
         // データをカテゴリごとに振り分け
         data.forEach(item => {
-            const container = containers[item.category];
-            if (container) {
+            // カテゴリが存在するかチェックしてから処理
+            if (item.category && containers[item.category]) {
+                const container = containers[item.category];
                 const html = createContentCard(item);
                 container.insertAdjacentHTML('beforeend', html);
             }
@@ -27,12 +28,18 @@ async function loadContents() {
     }
 }
 
-// カードのHTMLを作る関数（member-cardのデザインを流用）
+// ★新規追加：カテゴリからCSSクラス名を決める関数
+function getCategoryClass(category) {
+    if (!category) return '';
+    return category.toLowerCase(); // "YOUTUBE" -> "youtube"
+}
+
+// カードのHTMLを作る関数
 function createContentCard(item) {
     // 画像がない場合のダミー
     const imagePath = item.image ? item.image : 'images/home/IMG_0906.jpg';
 
-    // リンク判定（外部なら_blank）
+    // リンク判定
     let linkAttr = 'href="#"';
     let targetAttr = '';
     
@@ -43,24 +50,21 @@ function createContentCard(item) {
         }
     }
 
-    // カテゴリごとのバッジ色設定
-    let badgeColor = '#333';
-    if (item.category === 'YOUTUBE') badgeColor = '#ff0000';
-    else if (item.category === 'PODCAST') badgeColor = '#8e44ad';
-    else if (item.category === 'DARKCANDY') badgeColor = '#2c3e50';
-    else if (item.category === 'POCKET') badgeColor = '#27ae60';
+    // ★修正：色指定ロジックを削除し、クラス名を取得
+    const categoryClass = getCategoryClass(item.category);
 
+    // ★修正：style="..." を削除し、CSSクラスで管理
     return `
         <div class="member-card js-fade-up">
-            <a ${linkAttr} ${targetAttr} style="text-decoration: none; color: inherit; display: block;">
+            <a ${linkAttr} ${targetAttr}>
                 <div class="member-img">
                     <img src="${imagePath}" alt="${item.title}">
                 </div>
                 <div class="member-info">
-                    <span class="news-badge" style="background-color: ${badgeColor}; margin-bottom: 10px;">
+                    <span class="news-badge ${categoryClass}" style="margin-bottom: 10px;">
                         ${item.category}
                     </span>
-                    <h4 style="margin-bottom: 10px;">${item.title}</h4>
+                    <h4>${item.title}</h4>
                     <p class="member-comment">
                         ${item.desc}
                     </p>
