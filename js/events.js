@@ -30,6 +30,21 @@ async function loadEvents() {
 }
 
 // ---------------------------------------------------
+// ★新規追加：カテゴリからCSSクラス名を決める関数
+// 色はCSS(style.css)側で管理します
+// ---------------------------------------------------
+function getCategoryClass(category) {
+    if (!category) return '';
+    const cat = category.toLowerCase(); // 小文字に変換 (Ex: CAFE -> cafe)
+    
+    // "TALK" も "CAFE" と同じオレンジ色にするための設定
+    if (cat === 'talk') return 'cafe';
+    
+    // それ以外はそのまま返す (booth, cafe, workshop, events など)
+    return cat;
+}
+
+// ---------------------------------------------------
 // 1. ホーム画面用：カード表示（最新3件）
 // ---------------------------------------------------
 function renderLatestEvents(data, container) {
@@ -39,15 +54,13 @@ function renderLatestEvents(data, container) {
     const latestData = data.slice(0, 3);
 
     latestData.forEach(item => {
-        // カテゴリごとの色
-        let badgeColor = '#0056b3'; 
-        if (item.category === 'CAFE') badgeColor = '#e67e22'; 
-        else if (item.category === 'BOOTH') badgeColor = '#27ae60'; 
+        // ★修正：色指定をやめて、クラス名を取得
+        const categoryClass = getCategoryClass(item.category);
 
-        // 画像がない場合のダミー画像（必要なら変更してください）
+        // 画像がない場合のダミー画像
         const imagePath = item.image ? item.image : 'images/home/IMG_0906.jpg';
 
-        // リンク設定（ボックス全体をクリック可能にする）
+        // リンク設定
         let linkStart = `<div class="latest-card">`;
         let linkEnd = `</div>`;
         
@@ -59,11 +72,12 @@ function renderLatestEvents(data, container) {
         }
 
         // HTML生成
+        // ★修正：style="background..." を削除し、クラス名を追加
         const html = `
             ${linkStart}
                 <div class="latest-card-img-wrapper">
                     <img src="${imagePath}" alt="${item.title}" class="latest-card-img">
-                    <span class="latest-card-badge" style="background-color: ${badgeColor};">${item.category}</span>
+                    <span class="latest-card-badge news-badge ${categoryClass}">${item.category}</span>
                 </div>
                 <div class="latest-card-body">
                     <time class="latest-card-date">${item.date}</time>
@@ -96,9 +110,8 @@ function renderArchiveList(data, container) {
         const iconRotation = index === 0 ? 'transform: rotate(180deg);' : '';
 
         const listItems = events.map(item => {
-            let badgeColor = '#0056b3'; 
-            if (item.category === 'TALK' || item.category === 'CAFE') badgeColor = '#e67e22'; 
-            else if (item.category === 'BOOTH') badgeColor = '#27ae60'; 
+            // ★修正：色指定をやめて、クラス名を取得
+            const categoryClass = getCategoryClass(item.category);
 
             const displayDate = item.date.substring(5);
             
@@ -109,10 +122,11 @@ function renderArchiveList(data, container) {
                 titleHtml = `<a href="${item.url}" class="archive-link" target="${target}">${item.title}</a>`;
             }
 
+            // ★修正：style="background..." を削除し、クラス名を追加
             return `
                 <li>
                     <span class="archive-date">${displayDate}</span>
-                    <span class="news-badge" style="background-color: ${badgeColor};">${item.category}</span>
+                    <span class="news-badge ${categoryClass}">${item.category}</span>
                     <span class="archive-title">${titleHtml}</span>
                 </li>
             `;
