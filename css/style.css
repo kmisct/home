@@ -18,7 +18,6 @@
     --color-badge-cafe: #d97706;    /* CAFE (オレンジ) */
     
     /* ★ここを修正しました */
-    --color-service-note: #2cb696;  /* note (エメラルドグリーン) */
     --color-service-booth: #27ae60; /* BOOTH (展示ブース用の濃い緑) - JSの指定色 */
 }
 
@@ -614,8 +613,7 @@ input:focus, select:focus, textarea:focus {
 .btn-spotify { background-color: #1DB954; }
 .btn-apple { background-color: #872EC4; }
 .btn-youtube { background-color: #FF0000; }
-.btn-note { background-color: var(--color-service-note); }   /* Note (緑) */
-.btn-booth { background-color: var(--color-service-booth); } /* BOOTH (展示ブース用の濃い緑) */
+.btn-note { background-color: #2cb696;}
 .btn-default { background-color: var(--color-text-main); }
 
 @media (max-width: 600px) {

@@ -22,6 +22,14 @@ async function loadNews() {
     }
 }
 
+// ---------------------------------------------------
+// ★新規追加：カテゴリからCSSクラス名を決める関数
+// ---------------------------------------------------
+function getCategoryClass(category) {
+    if (!category) return '';
+    return category.toLowerCase(); // "INFO" -> "info" に変換
+}
+
 // リスト（<li>）を生成して表示する関数
 function renderNewsList(data, targetId, page, perPage) {
     const container = document.getElementById(targetId);
@@ -39,8 +47,13 @@ function renderNewsList(data, targetId, page, perPage) {
 
     // HTML生成
     pageData.forEach(item => {
-        // カテゴリがある場合のみ、バッジ用spanタグを生成
-        const categoryBadge = item.category ? `<span class="news-badge">${item.category}</span>` : '';
+        // ★修正：カテゴリがある場合、クラス名(info, press等)を付与してバッジ生成
+        let categoryBadge = '';
+        if (item.category) {
+            const categoryClass = getCategoryClass(item.category);
+            // class="news-badge info" のようになります
+            categoryBadge = `<span class="news-badge ${categoryClass}">${item.category}</span>`;
+        }
 
         // ★リンク生成ロジック
         let titleHtml = item.title; // デフォルトは文字のみ
