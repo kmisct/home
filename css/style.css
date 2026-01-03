@@ -286,6 +286,12 @@ body, html {
     white-space: normal; overflow: visible; line-height: 1.5; word-break: break-word;
 }
 
+/* Contentsページの記事タイトルは長くなりがちなので、
+   Membersページ（人名）より少し文字を小さくする */
+.member-card.is-content .member-info h4 {
+    font-size: 1.0rem; /* 通常1.2rem → 1.0remに縮小 */
+    line-height: 1.6;  /* 行間を少し広げて読みやすく */
+}
 
 /* =========================================
    6. ページ固有: Home & General Sections
