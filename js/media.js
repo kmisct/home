@@ -83,8 +83,7 @@ function openMediaModal(type, index) {
 
     const modal = document.getElementById('media-modal');
     
-    // ▼▼▼ 画像の出し分けロジック（ここが新しい部分！） ▼▼▼
-    // item.modalImage があればそれを使い、なければ item.image を使い、それもなければデフォルト画像を使う
+    // ▼▼▼ 画像の出し分けロジック ▼▼▼
     let displayImage = 'images/home/IMG_0906.jpg'; // 万が一のデフォルト
     
     if (item.modalImage) {
@@ -96,7 +95,10 @@ function openMediaModal(type, index) {
     document.getElementById('modal-img').src = displayImage;
     // ▲▲▲ 出し分けここまで ▲▲▲
 
-    document.getElementById('modal-title').textContent = item.title;
+    // ★修正：タイトルから <br> タグを削除してセットする
+    // .replace(/<br\s*\/?>/gi, '') は、<br>, <br/>, <br /> などを全て空文字に置換します
+    document.getElementById('modal-title').textContent = item.title.replace(/<br\s*\/?>/gi, '');
+    
     document.getElementById('modal-caption').textContent = item.caption; 
 
     // リンクボタンを生成
